@@ -22,8 +22,8 @@ public class World : MonoBehaviour
   //Creating game objects and adding them to the list
   public static void PopulatePilots()
   {
-    pilots.Add(new Pilot(PILOT_BOB_ID, "Bobson The Third", "Germany", 22));
-    pilots.Add(new Pilot(PILOT_JOHN_ID, "John Johnson", "Italy", 25));
-    pilots.Add(new Pilot(PILOT_JESUS_ID, "Jesus", "Brazil", 18));
+    pilots.Add(new Pilot(PILOT_BOB_ID, "Maicon Smith", "Germany", 21, 67));
+    pilots.Add(new Pilot(PILOT_JOHN_ID, "Carlos Lori", "England", 21, 65));
+    pilots.Add(new Pilot(PILOT_JESUS_ID, "Roger Suzen", "Russia", 21, 64));
   }
 }
