@@ -2085,7 +2085,7 @@ GameObject:
   - component: {fileID: 1263904736}
   - component: {fileID: 1263904735}
   m_Layer: 0
-  m_Name: pointer
+  m_Name: Arrow Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
