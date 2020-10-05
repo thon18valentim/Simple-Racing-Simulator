@@ -17,6 +17,8 @@ public class MovingArrow : MonoBehaviour
       transform.position = new Vector2(transform.position.x + 5f, 2f);
       CheckBoundaries();
     }
+
+
   }
 
   public void CheckBoundaries()
