@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 059549a98a54455499225243e174369a
+guid: 15a95173016bdfe41b2ae5f965767f03
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: VCR OSD Mono
+  fontName: 8BIT WONDER
   fontNames:
-  - VCR OSD Mono
+  - 8BIT WONDER
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

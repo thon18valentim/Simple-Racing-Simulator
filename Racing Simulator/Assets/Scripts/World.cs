@@ -8,9 +8,9 @@ public class World : MonoBehaviour
   public static List<Pilot> pilots = new List<Pilot>();
 
   // Definig the variables with id for use later
-  public const int PILOT_BOB_ID = 1;
-  public const int PILOT_JOHN_ID = 2;
-  public const int PILOT_JESUS_ID = 3;
+  public const int PILOT_MAICON_ID = 1;
+  public const int PILOT_CARLOS_ID = 2;
+  public const int PILOT_ROGER_ID = 3;
 
   // Class constructor
   // It populates the list with the data needed
@@ -22,8 +22,8 @@ public class World : MonoBehaviour
   //Creating game objects and adding them to the list
   public static void PopulatePilots()
   {
-    pilots.Add(new Pilot(PILOT_BOB_ID, "Maicon Smith", "Germany", 21, 67));
-    pilots.Add(new Pilot(PILOT_JOHN_ID, "Carlos Lori", "England", 21, 65));
-    pilots.Add(new Pilot(PILOT_JESUS_ID, "Roger Suzen", "Russia", 21, 64));
+    pilots.Add(new Pilot(PILOT_MAICON_ID, "Maicon Smith", "Germany", 21, 67));
+    pilots.Add(new Pilot(PILOT_CARLOS_ID, "Carlos Lori", "England", 21, 65));
+    pilots.Add(new Pilot(PILOT_ROGER_ID, "Roger Suzen", "Russia", 21, 64));
   }
 }

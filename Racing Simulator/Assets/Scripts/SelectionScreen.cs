@@ -24,6 +24,8 @@ public class SelectionScreen : MonoBehaviour
   public TextMeshProUGUI agePilot3;
   public TextMeshProUGUI overPilot3;
 
+  public GameObject arrow;
+
   private void Start()
   {
     // Getting the info from World.cs
@@ -41,5 +43,32 @@ public class SelectionScreen : MonoBehaviour
     countryPilot3.text = World.pilots[2].Country;
     agePilot3.text = World.pilots[2].Age.ToString() + " Years";
     overPilot3.text = World.pilots[2].Over.ToString() + " Over";
-   }
+  }
+
+  private void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.LeftArrow))
+    {
+      arrow.transform.position = new Vector2(arrow.transform.position.x - 5f, 2f);
+      CheckBoundaries();
+    }
+
+    if (Input.GetKeyDown(KeyCode.RightArrow))
+    {
+      arrow.transform.position = new Vector2(arrow.transform.position.x + 5f, 2f);
+      CheckBoundaries();
+    }
+  }
+
+  public void CheckBoundaries()
+  {
+    if (arrow.transform.position.x > 5f)
+    {
+      arrow.transform.position = new Vector2(5f, 2f);
+    }
+    if (arrow.transform.position.x < -5f)
+    {
+      arrow.transform.position = new Vector2(-5f, 2f);
+    }
+  }
 }
