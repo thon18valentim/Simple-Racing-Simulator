@@ -10,6 +10,7 @@ public class CreateTeam : MonoBehaviour
   // Object reference to the team name, logo and car
   public GameObject logo;
   public TextMeshProUGUI teamName;
+  public GameObject car;
 
   // Array for team names
   string[] names = { "Italy Team", "American Mono Team", "Yell Motors" };
@@ -49,5 +50,6 @@ public class CreateTeam : MonoBehaviour
   {
     teamName.text = names[selection].ToString();
     logo.GetComponent<SpriteRenderer>().sprite = logos[selection];
+    car.GetComponent<SpriteRenderer>().sprite = cars[selection];
   }
 }
