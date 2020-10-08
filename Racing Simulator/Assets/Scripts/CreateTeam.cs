@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class CreateTeam : MonoBehaviour
 {
+  SceneLoader sl;
+  Team team;
+
   // Object reference to the team name, logo and car
   public GameObject logo;
   public TextMeshProUGUI teamName;
@@ -24,6 +27,7 @@ public class CreateTeam : MonoBehaviour
   private void Start()
   {
     SetValues(); // Showing the first team
+    sl = FindObjectOfType<SceneLoader>();
   }
 
   private void Update()
@@ -43,6 +47,11 @@ public class CreateTeam : MonoBehaviour
         selection = 0;
       SetValues();
     }
+
+    if (Input.GetKeyDown(KeyCode.Return))
+    {
+      sl.LoadNextScene();
+    }
   }
 
   // Setting the corretc team name, logo and car
@@ -51,5 +60,10 @@ public class CreateTeam : MonoBehaviour
     teamName.text = names[selection].ToString();
     logo.GetComponent<SpriteRenderer>().sprite = logos[selection];
     car.GetComponent<SpriteRenderer>().sprite = cars[selection];
+  }
+
+  public int GetChosenTeamId()
+  {
+    return selection;
   }
 }

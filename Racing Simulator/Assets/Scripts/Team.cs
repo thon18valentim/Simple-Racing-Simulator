@@ -10,15 +10,15 @@ namespace Assets.Scripts
   {
     public int Id { get; set; }
     public string Name { get; set; }
-    public string LogoName { get; set; }
-    public string CarName { get; set; }
+    public string LogoString { get; set; }
+    public string CarString { get; set; }
 
     public Team(int id, string name, string logoName, string carName)
     {
       Id = id;
       Name = name;
-      LogoName = logoName;
-      CarName = carName;
+      LogoString = logoName;
+      CarString = carName;
     }
   }
 }
