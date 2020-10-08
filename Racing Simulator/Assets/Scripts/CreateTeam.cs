@@ -16,7 +16,7 @@ public class CreateTeam : MonoBehaviour
   public GameObject car;
 
   // Array for team names
-  string[] names = { "Italy Team", "American Mono Team", "Yell Motors" };
+  string[] names = { "Italy Team", "American Mono Team", "Yell Motors", "Silver Tech" };
   // Sprite array for logos and cars
   public Sprite[] logos;
   public Sprite[] cars;
