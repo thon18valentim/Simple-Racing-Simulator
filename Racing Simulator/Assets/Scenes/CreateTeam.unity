@@ -239,11 +239,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cebe87e11108d784ea4fa8245fe11541, type: 3}
   - {fileID: 21300000, guid: 752b4112fbe55584e9b2064c10ce9687, type: 3}
   - {fileID: 21300000, guid: 60cbcf45ba5944a4091759b11b5853d6, type: 3}
+  - {fileID: 21300000, guid: d9f1b9175ed06cb46ae7833751ce14d5, type: 3}
+  - {fileID: 21300000, guid: e908f2a03334a294d8ec89befca49fc9, type: 3}
+  - {fileID: 21300000, guid: dc64f72327619ef42a8ca72a67eaa02d, type: 3}
   cars:
   - {fileID: 21300000, guid: e207bba12142b464f9000908a759038d, type: 3}
   - {fileID: 21300000, guid: 5bce190aec8a3454aa45972d0728d476, type: 3}
   - {fileID: 21300000, guid: 32294b57ed1af3f46a4a0c1c51ec0c45, type: 3}
   - {fileID: 21300000, guid: edf324a4047cfb545827a4da235e6770, type: 3}
+  - {fileID: 21300000, guid: 8e896f8553218044aaccebb8bf5a4470, type: 3}
+  - {fileID: 21300000, guid: 818393c4def738c4d960a593c5f323ea, type: 3}
+  - {fileID: 21300000, guid: 26b10e2747cd5244298d792551b3e74f, type: 3}
 --- !u!4 &125832076
 Transform:
   m_ObjectHideFlags: 0
