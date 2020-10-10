@@ -7,19 +7,10 @@ using UnityEngine.UI;
 
 public class CreateTeam : MonoBehaviour
 {
-  SceneLoader sl;
-  Team team;
-
   // Object reference to the team name, logo and car
   public GameObject logo;
   public TextMeshProUGUI teamName;
   public GameObject car;
-
-  // Array for team names
-  string[] names = { "Italy Team", "American Mono Team", "Yell Motors", "Silver Tech", "Blue Devils", "White Devils", "Orange Team" };
-  // Sprite array for logos and cars
-  public Sprite[] logos;
-  public Sprite[] cars;
 
   // Integer for changing between teams
   int selection = 0;
@@ -27,7 +18,6 @@ public class CreateTeam : MonoBehaviour
   private void Start()
   {
     SetValues(); // Showing the first team
-    sl = FindObjectOfType<SceneLoader>();
   }
 
   private void Update()
@@ -50,16 +40,17 @@ public class CreateTeam : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
-      sl.LoadNextScene();
+      FindObjectOfType<GameSession>().SetPlayerTeam(selection);
+      FindObjectOfType<SceneLoader>().LoadNextScene();
     }
   }
 
   // Setting the corretc team name, logo and car
   public void SetValues()
   {
-    teamName.text = names[selection].ToString();
-    logo.GetComponent<SpriteRenderer>().sprite = logos[selection];
-    car.GetComponent<SpriteRenderer>().sprite = cars[selection];
+    teamName.text = World.op_teams[selection].Name;
+    logo.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.op_teams[selection].LogoString);
+    car.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.op_teams[selection].CarString);
   }
 
   public int GetChosenTeamId()
