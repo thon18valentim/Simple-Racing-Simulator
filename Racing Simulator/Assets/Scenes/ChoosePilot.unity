@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 71859158}
   - component: {fileID: 71859157}
   m_Layer: 0
-  m_Name: World
+  m_Name: Scene Management
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
   agePilot3: {fileID: 573295225}
   overPilot3: {fileID: 1272506394}
   arrow: {fileID: 1263904734}
+  teamName: 
 --- !u!4 &71859158
 Transform:
   m_ObjectHideFlags: 0

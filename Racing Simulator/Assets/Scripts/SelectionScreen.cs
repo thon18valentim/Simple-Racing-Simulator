@@ -25,6 +25,10 @@ public class SelectionScreen : MonoBehaviour
   public TextMeshProUGUI overPilot3;
 
   public GameObject arrow;
+  public string teamName;
+
+  // Integer for pilot selection
+  int selection = 1;
 
   private void Start()
   {
@@ -43,8 +47,6 @@ public class SelectionScreen : MonoBehaviour
     countryPilot3.text = World.op_pilots[2].Country;
     agePilot3.text = World.op_pilots[2].Age.ToString() + " Years";
     overPilot3.text = World.op_pilots[2].Over.ToString() + " Over";
-
-    Debug.Log("Here");
   }
 
   private void Update()
@@ -53,15 +55,29 @@ public class SelectionScreen : MonoBehaviour
     {
       arrow.transform.position = new Vector2(arrow.transform.position.x - 5f, 2f);
       CheckBoundaries();
+      selection--;
+      if (selection < 0)
+        selection = 0;
     }
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
       arrow.transform.position = new Vector2(arrow.transform.position.x + 5f, 2f);
       CheckBoundaries();
+      selection++;
+      if (selection > 2)
+        selection = 2;
+    }
+
+    if (Input.GetKeyDown(KeyCode.Return))
+    {
+      // Setting the player chosen pilot on game session
+      FindObjectOfType<GameSession>().SetPlayerPilot(selection);
+      FindObjectOfType<SceneLoader>().LoadNextScene();
     }
   }
 
+  // Checking the boundaries in which the arrow pointer can move
   public void CheckBoundaries()
   {
     if (arrow.transform.position.x > 5f)

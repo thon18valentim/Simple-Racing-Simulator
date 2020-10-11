@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-  public string teamName;
-
-  Team team;
-  Pilot pilot;
+  Team team; // Player chosen team
+  Pilot pilot; // Player chosen pilot
 
   private void Awake()
   {
     SetUpSingleton();
   }
 
+  // Keep only one Game Session
   private void SetUpSingleton()
   {
     int numberGameSessions = FindObjectsOfType<GameSession>().Length;
@@ -28,14 +27,15 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Setting the player team
   public void SetPlayerTeam(int i)
   {
-    teamName = World.op_teams[i].Name;
     team = new Team(World.op_teams[i].Id, World.op_teams[i].Name, World.op_teams[i].LogoString, World.op_teams[i].CarString);
   }
 
-  public string GetTeamName()
+  // Setting the player pilot
+  public void SetPlayerPilot(int i)
   {
-    return team.Name;
+    pilot = new Pilot(World.op_pilots[i].Id, World.op_pilots[i].Name, World.op_pilots[i].Country, World.op_pilots[i].Age, World.op_pilots[i].Over);
   }
 }
