@@ -13,9 +13,13 @@ public class World : MonoBehaviour
   public const int OP_PILOT_CARLOS_ID = 2;
   public const int OP_PILOT_ROGER_ID = 3;
 
-  public const int OP_TEAM_ITALY_ID = 1;
-  public const int OP_AMERICAN_MONO_ID = 2;
-  public const int OP_YELL_MOTORS_ID = 3;
+  public const int OP_SILVER_TECH_ID = 1;
+  public const int OP_BLUE_DEVILS_ID = 2;
+  public const int OP_TEAM_ITALY_ID = 3;
+  public const int OP_ORANGE_TEAM_ID = 4;
+  public const int OP_YELL_MOTORS_ID = 5;
+  public const int OP_WHITE_DEVILS_ID = 6;
+  public const int OP_AMERICAN_MONO_ID = 7;
 
   // Class constructor
   // It populates the list with the data needed
@@ -36,9 +40,13 @@ public class World : MonoBehaviour
   // Creating the teams
   public static void PopulateOpTeams()
   {
+    op_teams.Add(new Team(OP_SILVER_TECH_ID, "Silver Tech", "silverLogo", "silverTechCar"));
+    op_teams.Add(new Team(OP_BLUE_DEVILS_ID, "Blue Devils", "blueDevilsLogo", "blueDev"));
     op_teams.Add(new Team(OP_TEAM_ITALY_ID, "Team Italy", "logoItaly1", "italyCar"));
-    op_teams.Add(new Team(OP_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar"));
+    op_teams.Add(new Team(OP_ORANGE_TEAM_ID, "Orange Team", "orangeTeamLogo", "orangeTeam"));
     op_teams.Add(new Team(OP_YELL_MOTORS_ID, "Yell Motors", "logoYell", "yellCar"));
+    op_teams.Add(new Team(OP_WHITE_DEVILS_ID, "White Devils", "whiteDevilsLogo", "whiteDev"));
+    op_teams.Add(new Team(OP_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar"));
   }
 
   public Team GetOpTeam(int i)

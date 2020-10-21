@@ -27,13 +27,13 @@ public class CreateTeam : MonoBehaviour
     {
       selection--;
       if (selection < 0)
-        selection = 2;
+        selection = 6;
       SetValues();
     }
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
       selection++;
-      if (selection > 2)
+      if (selection > 6)
         selection = 0;
       SetValues();
     }
