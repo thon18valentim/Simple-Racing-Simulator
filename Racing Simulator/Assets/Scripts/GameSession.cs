@@ -55,7 +55,32 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void IncreasePower()
+  {
+    if (points != 0)
+    {
+      power++;
+      points--;
+    }
+  }
 
+  public void IncreaseAerodynamics()
+  {
+    if (points != 0)
+    {
+      aerodynamics++;
+      points--;
+    }
+  }
+
+  public void IncreaseChassis()
+  {
+    if (points != 0)
+    {
+      chassis++;
+      points--;
+    }
+  }
 
   public int GetPoints()
   {
