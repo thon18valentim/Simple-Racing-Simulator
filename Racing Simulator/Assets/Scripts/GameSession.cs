@@ -8,6 +8,13 @@ public class GameSession : MonoBehaviour
   Team team; // Player chosen team
   Pilot pilot; // Player chosen pilot
 
+  public int points = 10;
+
+  public int durability = 0;
+  public int power = 0;
+  public int aerodynamics = 0;
+  public int chassis = 0;
+
   private void Awake()
   {
     SetUpSingleton();
@@ -37,5 +44,21 @@ public class GameSession : MonoBehaviour
   public void SetPlayerPilot(int i)
   {
     pilot = new Pilot(World.op_pilots[i].Id, World.op_pilots[i].Name, World.op_pilots[i].Country, World.op_pilots[i].Age, World.op_pilots[i].Over);
+  }
+
+  public void IncreaseDurability()
+  {
+    if (points != 0)
+    {
+      durability++;
+      points--;
+    }
+  }
+
+
+
+  public int GetPoints()
+  {
+    return points;
   }
 }
