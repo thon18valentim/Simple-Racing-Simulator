@@ -86,4 +86,24 @@ public class GameSession : MonoBehaviour
   {
     return points;
   }
+
+  public int GetPower()
+  {
+    return power;
+  }
+
+  public int GetDura()
+  {
+    return durability;
+  }
+
+  public int GetAero()
+  {
+    return aerodynamics;
+  }
+
+  public int GetChassis()
+  {
+    return chassis;
+  }
 }

@@ -7,11 +7,19 @@ public class ImprovementsScene : MonoBehaviour
 {
 
   public TextMeshProUGUI points;
+  public TextMeshProUGUI power;
+  public TextMeshProUGUI aero;
+  public TextMeshProUGUI dura;
+  public TextMeshProUGUI chassis;
 
   // Update is called once per frame
   void Update()
   {
     points.text = "Points: " + FindObjectOfType<GameSession>().GetPoints().ToString();
+    power.text = "> " + FindObjectOfType<GameSession>().GetPower().ToString();
+    aero.text = "> " + FindObjectOfType<GameSession>().GetAero().ToString();
+    dura.text = "> " + FindObjectOfType<GameSession>().GetDura().ToString();
+    chassis.text = "> " + FindObjectOfType<GameSession>().GetChassis().ToString();
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
