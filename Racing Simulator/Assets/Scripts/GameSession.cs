@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-  Team team; // Player chosen team
-  Pilot pilot; // Player chosen pilot
+  static Team team; // Player chosen team
+  static Pilot pilot; // Player chosen pilot
 
   public int points = 10;
 

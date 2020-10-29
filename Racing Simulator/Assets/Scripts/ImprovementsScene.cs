@@ -17,13 +17,8 @@ public class ImprovementsScene : MonoBehaviour
 
   private void Start()
   {
-    GameSession gs = (GameSession)FindObjectOfType<GameSession>();
-    if (gs == null)
-      Debug.Log("Nope");
-    else
-      Debug.Log("Yep");
-    pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + gs.GetPilotFaceString());
-    carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + gs.GetCarString());
+    pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
+    carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
   }
 
   // Update is called once per frame
