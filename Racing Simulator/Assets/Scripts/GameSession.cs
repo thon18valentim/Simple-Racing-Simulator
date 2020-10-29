@@ -55,12 +55,30 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void DecreaseDurability()
+  {
+    if (durability != 0)
+    {
+      durability--;
+      points++;
+    }
+  }
+
   public void IncreasePower()
   {
     if (points != 0)
     {
       power++;
       points--;
+    }
+  }
+
+  public void DecreasePower()
+  {
+    if (power != 0)
+    {
+      power--;
+      points++;
     }
   }
 
@@ -73,12 +91,30 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void DecreaseAerodynamics()
+  {
+    if (aerodynamics != 0)
+    {
+      aerodynamics--;
+      points++;
+    }
+  }
+
   public void IncreaseChassis()
   {
     if (points != 0)
     {
       chassis++;
       points--;
+    }
+  }
+
+  public void DecreaseChassis()
+  {
+    if (chassis != 0)
+    {
+      chassis--;
+      points++;
     }
   }
 

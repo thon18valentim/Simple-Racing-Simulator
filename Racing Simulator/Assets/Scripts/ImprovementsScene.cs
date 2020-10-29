@@ -47,14 +47,34 @@ public class ImprovementsScene : MonoBehaviour
     FindObjectOfType<GameSession>().IncreaseDurability();
   }
 
+  public void duraLessBtn()
+  {
+    FindObjectOfType<GameSession>().DecreaseDurability();
+  }
+
+  public void powerLessBtn()
+  {
+    FindObjectOfType<GameSession>().DecreasePower();
+  }
+
   public void powerBtn()
   {
     FindObjectOfType<GameSession>().IncreasePower();
   }
 
+  public void aeroLessBtn()
+  {
+    FindObjectOfType<GameSession>().DecreaseAerodynamics();
+  }
+
   public void aerodynamicsBtn()
   {
     FindObjectOfType<GameSession>().IncreaseAerodynamics();
+  }
+
+  public void chassisLessBtn()
+  {
+    FindObjectOfType<GameSession>().DecreaseChassis();
   }
 
   public void chassisBtn()
