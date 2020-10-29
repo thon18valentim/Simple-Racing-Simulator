@@ -35,9 +35,9 @@ public class World : MonoBehaviour
   //Creating pilots and adding them to the list
   public static void PopulateOpPilots()
   {
-    op_pilots.Add(new Pilot(OP_PILOT_MAICON_ID, "Maicon Smith", "Germany", 21, 67));
-    op_pilots.Add(new Pilot(OP_PILOT_CARLOS_ID, "Carlos Lori", "England", 21, 65));
-    op_pilots.Add(new Pilot(OP_PILOT_ROGER_ID, "Roger Suzen", "Russia", 21, 64));
+    op_pilots.Add(new Pilot(OP_PILOT_MAICON_ID, "Maicon Smith", "Germany","PilotFace1", 21, 67));
+    op_pilots.Add(new Pilot(OP_PILOT_CARLOS_ID, "Carlos Lori", "England","PilotFace2", 21, 65));
+    op_pilots.Add(new Pilot(OP_PILOT_ROGER_ID, "Roger Suzen", "Russia","PilotFace3", 21, 64));
   }
 
   // Creating the teams

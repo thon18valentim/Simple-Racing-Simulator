@@ -5,12 +5,26 @@ using TMPro;
 
 public class ImprovementsScene : MonoBehaviour
 {
+  public GameObject pilotFace;
+  public GameObject carDisplay;
 
   public TextMeshProUGUI points;
   public TextMeshProUGUI power;
   public TextMeshProUGUI aero;
   public TextMeshProUGUI dura;
   public TextMeshProUGUI chassis;
+
+
+  private void Start()
+  {
+    GameSession gs = (GameSession)FindObjectOfType<GameSession>();
+    if (gs == null)
+      Debug.Log("Nope");
+    else
+      Debug.Log("Yep");
+    pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + gs.GetPilotFaceString());
+    carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + gs.GetCarString());
+  }
 
   // Update is called once per frame
   void Update()

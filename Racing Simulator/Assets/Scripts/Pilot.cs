@@ -11,15 +11,17 @@ namespace Assets.Scripts
     public int Id { get; set; }
     public string Name { get; set; }
     public string Country { get; set; }
+    public string PilotString { get; set; }
     public int Age { get; set; }
     public int Over { get; set; }
 
     // Constructor
-    public Pilot(int id, string name, string country, int age, int over)
+    public Pilot(int id, string name, string country, string faceString, int age, int over)
     {
       Id = id;
       Name = name;
       Country = country;
+      PilotString = faceString;
       Age = age;
       Over = over;
     }

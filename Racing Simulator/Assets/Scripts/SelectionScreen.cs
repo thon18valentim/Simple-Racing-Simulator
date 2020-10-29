@@ -11,18 +11,21 @@ public class SelectionScreen : MonoBehaviour
   public TextMeshProUGUI countryPilot1;
   public TextMeshProUGUI agePilot1;
   public TextMeshProUGUI overPilot1;
+  public GameObject pilot1;
 
   // Pilot 2 Texts
   public TextMeshProUGUI namePilot2;
   public TextMeshProUGUI countryPilot2;
   public TextMeshProUGUI agePilot2;
   public TextMeshProUGUI overPilot2;
+  public GameObject pilot2;
 
   // Pilot 3 Texts
   public TextMeshProUGUI namePilot3;
   public TextMeshProUGUI countryPilot3;
   public TextMeshProUGUI agePilot3;
   public TextMeshProUGUI overPilot3;
+  public GameObject pilot3;
 
   public GameObject arrow;
   public string teamName;
@@ -37,16 +40,19 @@ public class SelectionScreen : MonoBehaviour
     countryPilot1.text = World.op_pilots[0].Country;
     agePilot1.text = World.op_pilots[0].Age.ToString() + " Years";
     overPilot1.text = World.op_pilots[0].Over.ToString() + " Over";
+    pilot1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.op_pilots[0].PilotString);
 
     namePilot2.text = World.op_pilots[1].Name;
     countryPilot2.text = World.op_pilots[1].Country;
     agePilot2.text = World.op_pilots[1].Age.ToString() + " Years";
     overPilot2.text = World.op_pilots[1].Over.ToString() + " Over";
+    pilot2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.op_pilots[1].PilotString);
 
     namePilot3.text = World.op_pilots[2].Name;
     countryPilot3.text = World.op_pilots[2].Country;
     agePilot3.text = World.op_pilots[2].Age.ToString() + " Years";
     overPilot3.text = World.op_pilots[2].Over.ToString() + " Over";
+    pilot3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.op_pilots[2].PilotString);
   }
 
   private void Update()

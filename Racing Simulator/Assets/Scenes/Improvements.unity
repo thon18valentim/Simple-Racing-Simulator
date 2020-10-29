@@ -583,7 +583,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9227101bdd8ddf4f8a4002b3ae89292, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -591,7 +591,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &515555986
@@ -1785,7 +1785,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bce190aec8a3454aa45972d0728d476, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1793,7 +1793,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1170173407
@@ -2255,6 +2255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b6e1f723014314397a6fb545c43d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pilotFace: {fileID: 515555984}
+  carDisplay: {fileID: 1170173405}
   points: {fileID: 832446429}
   power: {fileID: 1669158577}
   aero: {fileID: 1038691705}
@@ -2405,7 +2407,7 @@ PrefabInstance:
     - target: {fileID: 5037434182826490148, guid: 48024fc9baae29745a2e464f3ba6f69c,
         type: 3}
       propertyPath: m_Name
-      value: Game Session
+      value: GameSession
       objectReference: {fileID: 0}
     - target: {fileID: 5037434182826490150, guid: 48024fc9baae29745a2e464f3ba6f69c,
         type: 3}

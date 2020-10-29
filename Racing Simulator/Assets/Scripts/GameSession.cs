@@ -43,7 +43,7 @@ public class GameSession : MonoBehaviour
   // Setting the player pilot
   public void SetPlayerPilot(int i)
   {
-    pilot = new Pilot(World.op_pilots[i].Id, World.op_pilots[i].Name, World.op_pilots[i].Country, World.op_pilots[i].Age, World.op_pilots[i].Over);
+    pilot = new Pilot(World.op_pilots[i].Id, World.op_pilots[i].Name, World.op_pilots[i].Country, World.op_pilots[i].PilotString, World.op_pilots[i].Age, World.op_pilots[i].Over);
   }
 
   public void IncreaseDurability()
@@ -80,6 +80,16 @@ public class GameSession : MonoBehaviour
       chassis++;
       points--;
     }
+  }
+
+  public string GetPilotFaceString()
+  {
+    return pilot.PilotString;
+  }
+
+  public string GetCarString()
+  {
+    return team.CarString;
   }
 
   public int GetPoints()

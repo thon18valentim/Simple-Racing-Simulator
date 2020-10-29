@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: e31af709ef466e547ba34a7a33e00a9f
   - enabled: 1
-    path: Assets/Scenes/CreateTeam.unity
+    path: Assets/Scenes/SelectTeam.unity
     guid: 6b3d488ce7b36564785a783e1731a95b
   - enabled: 1
-    path: Assets/Scenes/ChoosePilot.unity
+    path: Assets/Scenes/SelectPilot.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Improvements.unity
