@@ -12,6 +12,7 @@ namespace Assets.Scripts
     public string Name { get; set; }
     public string LogoString { get; set; }
     public string CarString { get; set; }
+    public Car Car { get; set; }
 
     public Team(int id, string name, string logoName, string carName)
     {

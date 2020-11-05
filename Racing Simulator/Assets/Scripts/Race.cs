@@ -4,23 +4,7 @@ using UnityEngine;
 
 public class Race : MonoBehaviour
 {
-  public class Car
-  {
-    int power1, aero1, dura1, chass1;
-
-    public void Set_Cars(int power, int aero, int dura, int chass)
-    {
-      this.power1 = power;
-      this.aero1 = aero;
-      this.dura1 = dura;
-      this.chass1 = chass;
-    }
-
-    public int Pit_stop(int volta) //Função para selecionar a volta do Pit-Stop
-    {
-      return volta;
-    }
-  }
+  
   public class Corrida
   {
     /*Todos os carros começam com um tempo X até o final da corrida (como 60 minutos), e a cada volta
