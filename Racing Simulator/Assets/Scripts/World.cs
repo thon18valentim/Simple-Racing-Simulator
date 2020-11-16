@@ -58,17 +58,33 @@ public class World : MonoBehaviour
 
   public static Car CreatePlayerCar()
   {
-    Car car = new Car(5, 5, 5, 5);
+    Car car = new Car(5, 5, 5, 5); //Player Starting points
 
     return car;
   }
 
   public static void PopulateCars()
   {
-    Car car = new Car(6, 2, 8, 10);
-    op_teams[0].Car = car;
-    car = new Car(8, 2, 10, 5);
-    op_teams[1].Car = car;
+    Car car = new Car(21, 17, 19, 17); //Power, Aero, Dura, Chassis
+    op_teams[0].Car = car; //Silver Tech
+    car = new Car(17, 18, 16, 15);
+    op_teams[1].Car = car; //Blue Devils
+    car = new Car(14, 13, 10, 13);
+    op_teams[2].Car = car; //Team Italy
+    car = new Car(15, 14, 13, 14);
+    op_teams[3].Car = car; //Float Point
+    car = new Car(13, 13, 17, 12);
+    op_teams[4].Car = car; //Orange Team
+    car = new Car(13, 15, 12, 13);
+    op_teams[5].Car = car; //Yell Motors
+    car = new Car(11, 11, 15, 10);
+    op_teams[6].Car = car; //White Devils
+    car = new Car(8, 10, 15, 8);
+    op_teams[7].Car = car; //Juliet Motors
+    car = new Car(7, 9, 9, 10);
+    op_teams[8].Car = car; //American Mono
+    car = new Car(8, 8, 8, 9);
+    op_teams[9].Car = car; //Blue Sky
   }
 
   public Team GetOpTeam(int i)
