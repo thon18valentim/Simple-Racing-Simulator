@@ -27,13 +27,10 @@ public class Race : MonoBehaviour
     }
   }
 
-  Car Teste; //Teste
-
   // Start is called before the first frame update
   void Start()
     {
-    Teste = new Car(); //Teste...
-    Teste.Set_Cars(2, 3, 4, 5);
+    
     }
 
     // Update is called once per frame

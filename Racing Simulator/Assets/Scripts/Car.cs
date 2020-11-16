@@ -21,7 +21,7 @@ namespace Assets.Scripts
       Chassis = chass;
     }
 
-    public int Pit_stop(int volta) //Função para selecionar a volta do Pit-Stop
+    public int Pit_stop(int volta) // Função para selecionar a volta do Pit-Stop
     {
       return volta;
     }

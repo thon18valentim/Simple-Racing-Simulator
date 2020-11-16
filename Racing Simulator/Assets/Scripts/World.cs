@@ -30,6 +30,7 @@ public class World : MonoBehaviour
   {
     PopulateOpPilots();
     PopulateOpTeams();
+    PopulateCars();
   }
 
   //Creating pilots and adding them to the list
@@ -53,6 +54,21 @@ public class World : MonoBehaviour
     op_teams.Add(new Team(OP_WHITE_DEVILS_ID, "Juliet Motors", "julietLogo", "julietCar"));
     op_teams.Add(new Team(OP_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar"));
     op_teams.Add(new Team(OP_BLUE_SKY_ID, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar"));
+  }
+
+  public static Car CreatePlayerCar()
+  {
+    Car car = new Car(5, 5, 5, 5);
+
+    return car;
+  }
+
+  public static void PopulateCars()
+  {
+    Car car = new Car(6, 2, 8, 10);
+    op_teams[0].Car = car;
+    car = new Car(8, 2, 10, 5);
+    op_teams[1].Car = car;
   }
 
   public Team GetOpTeam(int i)

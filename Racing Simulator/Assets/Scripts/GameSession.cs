@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-  static Team team; // Player chosen team
+  public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
 
   public int points = 10;
@@ -38,6 +38,7 @@ public class GameSession : MonoBehaviour
   public void SetPlayerTeam(int i)
   {
     team = new Team(World.op_teams[i].Id, World.op_teams[i].Name, World.op_teams[i].LogoString, World.op_teams[i].CarString);
+    team.Car = World.CreatePlayerCar();
   }
 
   // Setting the player pilot
@@ -46,75 +47,73 @@ public class GameSession : MonoBehaviour
     pilot = new Pilot(World.op_pilots[i].Id, World.op_pilots[i].Name, World.op_pilots[i].Country, World.op_pilots[i].PilotString, World.op_pilots[i].Age, World.op_pilots[i].Over);
   }
 
-  public void IncreaseDurability()
+  public void IncreaseStatus(string improvement)
   {
-    if (points != 0)
+    switch (improvement)
     {
-      durability++;
-      points--;
+      case "power":
+        if (points > 0)
+        {
+          team.Car.Power++;
+          points--;
+        }
+        break;
+      case "durability":
+        if (points > 0)
+        {
+          team.Car.Durability++;
+          points--;
+        }
+        break;
+      case "aerodynamics":
+        if (points > 0)
+        {
+          team.Car.Aerodynamics++;
+          points--;
+        }
+        break;
+      case "chassi":
+        if (points > 0)
+        {
+          team.Car.Chassis++;
+          points--;
+        }
+        break;
     }
   }
 
-  public void DecreaseDurability()
+  public void DecreaseStatus(string improvement)
   {
-    if (durability != 0)
+    switch (improvement)
     {
-      durability--;
-      points++;
-    }
-  }
-
-  public void IncreasePower()
-  {
-    if (points != 0)
-    {
-      power++;
-      points--;
-    }
-  }
-
-  public void DecreasePower()
-  {
-    if (power != 0)
-    {
-      power--;
-      points++;
-    }
-  }
-
-  public void IncreaseAerodynamics()
-  {
-    if (points != 0)
-    {
-      aerodynamics++;
-      points--;
-    }
-  }
-
-  public void DecreaseAerodynamics()
-  {
-    if (aerodynamics != 0)
-    {
-      aerodynamics--;
-      points++;
-    }
-  }
-
-  public void IncreaseChassis()
-  {
-    if (points != 0)
-    {
-      chassis++;
-      points--;
-    }
-  }
-
-  public void DecreaseChassis()
-  {
-    if (chassis != 0)
-    {
-      chassis--;
-      points++;
+      case "power":
+        if (team.Car.Power > 0)
+        {
+          team.Car.Power--;
+          points++;
+        }
+        break;
+      case "durability":
+        if (team.Car.Durability > 0)
+        {
+          team.Car.Durability--;
+          points++;
+        }
+        break;
+      case "aerodynamics":
+        if (team.Car.Aerodynamics > 0)
+        {
+          team.Car.Aerodynamics--;
+          points++;
+        }
+        break;
+      case "chassi":
+        if (team.Car.Chassis > 0)
+        {
+          team.Car.Chassis--;
+          points++;
+        }
+        break;
     }
   }
 
@@ -128,28 +127,28 @@ public class GameSession : MonoBehaviour
     return team.CarString;
   }
 
-  public int GetPoints()
-  {
-    return points;
-  }
-
   public int GetPower()
   {
-    return power;
+    return team.Car.Power;
   }
 
   public int GetDura()
   {
-    return durability;
+    return team.Car.Durability;
   }
 
   public int GetAero()
   {
-    return aerodynamics;
+    return team.Car.Aerodynamics;
   }
 
   public int GetChassis()
   {
-    return chassis;
+    return team.Car.Chassis;
+  }
+
+  public int GetPoints()
+  {
+    return points;
   }
 }

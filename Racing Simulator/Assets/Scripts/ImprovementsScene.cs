@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Assets.Scripts;
 
 public class ImprovementsScene : MonoBehaviour
 {
@@ -39,41 +40,41 @@ public class ImprovementsScene : MonoBehaviour
 
   public void durabilityBtn()
   {
-    FindObjectOfType<GameSession>().IncreaseDurability();
+    FindObjectOfType<GameSession>().IncreaseStatus("durability");
   }
 
   public void duraLessBtn()
   {
-    FindObjectOfType<GameSession>().DecreaseDurability();
-  }
-
-  public void powerLessBtn()
-  {
-    FindObjectOfType<GameSession>().DecreasePower();
+    FindObjectOfType<GameSession>().DecreaseStatus("durability");
   }
 
   public void powerBtn()
   {
-    FindObjectOfType<GameSession>().IncreasePower();
+    FindObjectOfType<GameSession>().IncreaseStatus("power");
   }
 
-  public void aeroLessBtn()
+  public void powerLessBtn()
   {
-    FindObjectOfType<GameSession>().DecreaseAerodynamics();
+    FindObjectOfType<GameSession>().DecreaseStatus("power");
   }
 
   public void aerodynamicsBtn()
   {
-    FindObjectOfType<GameSession>().IncreaseAerodynamics();
+    FindObjectOfType<GameSession>().IncreaseStatus("aerodynamics");
   }
 
-  public void chassisLessBtn()
+  public void aeroLessBtn()
   {
-    FindObjectOfType<GameSession>().DecreaseChassis();
+    FindObjectOfType<GameSession>().DecreaseStatus("aerodynamics");
   }
 
   public void chassisBtn()
   {
-    FindObjectOfType<GameSession>().IncreaseChassis();
+    FindObjectOfType<GameSession>().IncreaseStatus("chassi");
+  }
+
+  public void chassisLessBtn()
+  {
+    FindObjectOfType<GameSession>().DecreaseStatus("chassi");
   }
 }
