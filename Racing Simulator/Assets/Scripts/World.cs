@@ -7,6 +7,7 @@ public class World : MonoBehaviour
 {
   public static List<Pilot> op_pilots = new List<Pilot>();
   public static List<Team> op_teams = new List<Team>();
+  public static List<Track> op_tracks = new List<Track>();
 
   // Definig the variables with id for use later
   public const int OP_PILOT_MAICON_ID = 1;
@@ -54,6 +55,14 @@ public class World : MonoBehaviour
     op_teams.Add(new Team(OP_WHITE_DEVILS_ID, "Juliet Motors", "julietLogo", "julietCar"));
     op_teams.Add(new Team(OP_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar"));
     op_teams.Add(new Team(OP_BLUE_SKY_ID, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar"));
+  }
+
+  //Creating the Tracks
+  public static void PopulateOpTracks()
+  {
+    op_tracks.Add(new Track("Alberto Correia","Australia",58,30,35,28,32));
+    op_tracks.Add(new Track("Autódromo das Areias", "Bahrein", 57, 34, 30, 30, 32));
+    op_tracks.Add(new Track("Autódromo de São Paulo", "Brasil", 71, 32, 32, 32, 32));
   }
 
   public static Car CreatePlayerCar()
