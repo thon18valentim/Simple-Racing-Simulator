@@ -59,7 +59,7 @@ public class SelectionScreen : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
-      arrow.transform.position = new Vector2(arrow.transform.position.x - 5f, 2f);
+      arrow.transform.position = new Vector2(arrow.transform.position.x - 5f, arrow.transform.position.y);
       CheckBoundaries();
       selection--;
       if (selection < 0)
@@ -68,7 +68,7 @@ public class SelectionScreen : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
-      arrow.transform.position = new Vector2(arrow.transform.position.x + 5f, 2f);
+      arrow.transform.position = new Vector2(arrow.transform.position.x + 5f, arrow.transform.position.y);
       CheckBoundaries();
       selection++;
       if (selection > 2)
