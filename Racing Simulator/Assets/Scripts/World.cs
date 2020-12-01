@@ -8,6 +8,8 @@ public class World : MonoBehaviour
   public static List<Pilot> op_pilots = new List<Pilot>();
   public static List<Team> op_teams = new List<Team>();
   public static List<Track> op_tracks = new List<Track>();
+  public static List<Classificacao> op_grid = new List<Classificacao>();
+
 
   // Definig the variables with id for use later
   public const int OP_PILOT_MAICON_ID = 1;
@@ -99,6 +101,20 @@ public class World : MonoBehaviour
     op_teams[8].Car = car; //American Mono
     car = new Car(8, 8, 8, 9);
     op_teams[9].Car = car; //Blue Sky
+  }
+
+  public static void PopulateGrid()
+  {
+    op_grid.Add(new Classificacao("Lewis Hamilton", op_teams[0]));
+    op_grid.Add(new Classificacao("Max Verstappen", op_teams[1]));
+    op_grid.Add(new Classificacao("Charles Leclerc", op_teams[2]));
+    op_grid.Add(new Classificacao("Lance Stroll", op_teams[3]));
+    op_grid.Add(new Classificacao("Carlos Sainz", op_teams[4]));
+    op_grid.Add(new Classificacao("Daniel Ricciardo", op_teams[5]));
+    op_grid.Add(new Classificacao("Pierre Gasly", op_teams[6]));
+    op_grid.Add(new Classificacao("Kimi Raikkonen", op_teams[7]));
+    op_grid.Add(new Classificacao("Kevin Magnussen", op_teams[8]));
+    op_grid.Add(new Classificacao("George Russel", op_teams[9]));
   }
 
   public Team GetOpTeam(int i)

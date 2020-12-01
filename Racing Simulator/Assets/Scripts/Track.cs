@@ -25,4 +25,16 @@ namespace Assets.Scripts
       Cha_max = chas_max;
     }
   }
+
+  public class Classificacao
+  {
+    public string Nome_piloto { get; set; }
+    public Team Time { get; set; }
+
+    public Classificacao(string nome, Team time)
+    {
+      Nome_piloto = nome;
+      Time = time;
+    }
+  }
 }

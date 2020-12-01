@@ -1,41 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class Race : MonoBehaviour
 {
-  
-  public class Corrida
+  public TextMeshProUGUI[] grid_corrida;
+
+  private void Start()
   {
-    /*Todos os carros começam com um tempo X até o final da corrida (como 60 minutos), e a cada volta
-     * eles abaixam esse tempo. Logo, quem abaixar mais tempo por volta, realizará as ultrapassagens e
-     * terá vantagem sobre os adversários.*/
-
-    float tempo_de_pista = 60.0f; //Tempo até o final da corrida
-
-    public float Get_Race_Time()
-    {
-      return tempo_de_pista;
-    }
+    grid_corrida[0].text = World.op_grid[0].Nome_piloto;
+    grid_corrida[1].text = World.op_grid[1].Nome_piloto;
+    grid_corrida[2].text = World.op_grid[2].Nome_piloto;
+    grid_corrida[3].text = World.op_grid[3].Nome_piloto;
+    grid_corrida[4].text = World.op_grid[4].Nome_piloto;
+    grid_corrida[5].text = World.op_grid[5].Nome_piloto;
+    grid_corrida[6].text = World.op_grid[6].Nome_piloto;
+    grid_corrida[7].text = World.op_grid[7].Nome_piloto;
+    grid_corrida[8].text = World.op_grid[8].Nome_piloto;
+    grid_corrida[9].text = World.op_grid[9].Nome_piloto;
   }
 
-  public void Ultrapassagem(float tempo1, float tempo2)
+  private void Update()
   {
-    if(tempo2 < tempo1)
-    {
-      //O carro de trás realiza a ultrapassagem
-    }
-  }
-
-  // Start is called before the first frame update
-  void Start()
-    {
     
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  }
 }
