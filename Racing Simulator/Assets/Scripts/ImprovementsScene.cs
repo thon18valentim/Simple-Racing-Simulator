@@ -34,7 +34,7 @@ public class ImprovementsScene : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Return))
     {
       //Loading Next Scene on Return click
-      FindObjectOfType<SceneLoader>().LoadNextScene();
+      FindObjectOfType<SceneLoader>().LoadScene(1);
     }
   }
 

@@ -37,7 +37,7 @@ public class GameSession : MonoBehaviour
   // Setting the player team
   public void SetPlayerTeam(int i)
   {
-    team = new Team(World.teams[i].Id, World.teams[i].Name, World.teams[i].LogoString, World.teams[i].CarString);
+    team = new Team(World.teams[i].Id, World.teams[i].Name, World.teams[i].LogoString, World.teams[i].CarString, i);
     team.Car = World.CreatePlayerCar();
   }
 

@@ -38,7 +38,7 @@ public class MenuController : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Return))
     {
       if (buttons[selection].name == "Campaign Button") // Changing the scene
-        FindObjectOfType<SceneLoader>().LoadNextScene();
+        FindObjectOfType<SceneLoader>().LoadScene(1);
     }
   }
 

@@ -42,7 +42,7 @@ public class CreateTeam : MonoBehaviour
     {
       // Setting the player chosen team on game session
       FindObjectOfType<GameSession>().SetPlayerTeam(selection);
-      FindObjectOfType<SceneLoader>().LoadNextScene();
+      FindObjectOfType<SceneLoader>().LoadScene(1);
     }
   }
 

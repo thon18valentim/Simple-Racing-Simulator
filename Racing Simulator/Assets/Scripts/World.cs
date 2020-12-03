@@ -10,9 +10,16 @@ public class World : MonoBehaviour
   public static List<Track> tracks = new List<Track>();
 
   // Definig the variables with id for use later
-  public const int PILOT_MAICON_ID = 1;
-  public const int PILOT_CARLOS_ID = 2;
-  public const int PILOT_ROGER_ID = 3;
+  public const int PILOT_HAMILTON_ID = 1;
+  public const int PILOT_VERSTAPPEN_ID = 2;
+  public const int PILOT_LECLERC_ID = 3;
+  public const int PILOT_STROLL_ID = 4;
+  public const int PILOT_SAINZ_ID = 5;
+  public const int PILOT_RIC_ID = 6;
+  public const int PILOT_GASLY_ID = 7;
+  public const int PILOT_RAIK_ID = 8;
+  public const int PILOT_MAG_ID = 9;
+  public const int PILOT_RUSS_ID = 10;
 
   // Id for teams
   public const int TEAM_SILVER_TECH_ID = 1;
@@ -39,30 +46,36 @@ public class World : MonoBehaviour
     PopulateOpTeams();
     PopulateCars();
     PopulateOpTracks();
-    PopulateGrid();
   }
 
   //Creating pilots and adding them to the list
   public static void PopulateOpPilots()
   {
-    pilots.Add(new Pilot(PILOT_MAICON_ID, "Maicon Smith", "Germany", "PilotFace1", 21, 67));
-    pilots.Add(new Pilot(PILOT_CARLOS_ID, "Carlos Lori", "England", "PilotFace2", 21, 65));
-    pilots.Add(new Pilot(PILOT_ROGER_ID, "Roger Suzen", "Russia", "PilotFace3", 21, 64));
+    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Lewis Hamilton", "England", "PilotFace1", 21, 94));
+    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Max Verstappen", "Netherlands", "PilotFace2", 21, 90));
+    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Charles Leclerc", "Monaco", "PilotFace3", 21, 87));
+    pilots.Add(new Pilot(PILOT_STROLL_ID, "Lance Stroll", "Canada", "PilotFace3", 20, 83));
+    pilots.Add(new Pilot(PILOT_SAINZ_ID, "Carlos Sainz", "Spanish", "PilotFace3", 22, 85));
+    pilots.Add(new Pilot(PILOT_RIC_ID, "Daniel Ricciardo", "Australia", "PilotFace3", 35, 89));
+    pilots.Add(new Pilot(PILOT_GASLY_ID, "Pierre Gasly", "France", "PilotFace3", 25, 83));
+    pilots.Add(new Pilot(PILOT_RAIK_ID, "Kimi Raikkonen", "Finland", "PilotFace3", 19, 88));
+    pilots.Add(new Pilot(PILOT_MAG_ID, "Kevin Magnussen", "Denmark", "PilotFace3", 22, 80));
+    pilots.Add(new Pilot(PILOT_RUSS_ID, "George Russel", "England", "PilotFace3", 36, 78));
   }
 
   // Creating the teams
   public static void PopulateOpTeams()
   {
-    teams.Add(new Team(TEAM_SILVER_TECH_ID, "Silver Tech", "silverLogo", "silverTechCar", PILOT_CARLOS_ID));
-    teams.Add(new Team(TEAM_BLUE_DEVILS_ID, "Blue Devils", "blueDevilsLogo", "blueDev", PILOT_MAICON_ID));
-    teams.Add(new Team(TEAM_ITALY_ID, "Team Italy", "logoItaly1", "italyCar", PILOT_ROGER_ID));
-    teams.Add(new Team(TEAM_FLOAT_POINT_TEAM_ID, "Float Point Team", "floatPointLogo", "floatPointCar"));
-    teams.Add(new Team(TEAM_ORANGE_TEAM_ID, "Orange Team", "orangeTeamLogo", "orangeTeam"));
-    teams.Add(new Team(TEAM_YELL_MOTORS_ID, "Yell Motors", "logoYell", "yellCar"));
-    teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "White Devils", "whiteDevilsLogo", "whiteDev"));
-    teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "Juliet Motors", "julietLogo", "julietCar"));
-    teams.Add(new Team(TEAM_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar"));
-    teams.Add(new Team(TEAM_BLUE_SKY_ID, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar"));
+    teams.Add(new Team(TEAM_SILVER_TECH_ID, "Silver Tech", "silverLogo", "silverTechCar", PILOT_HAMILTON_ID));
+    teams.Add(new Team(TEAM_BLUE_DEVILS_ID, "Blue Devils", "blueDevilsLogo", "blueDev", PILOT_VERSTAPPEN_ID));
+    teams.Add(new Team(TEAM_ITALY_ID, "Team Italy", "logoItaly1", "italyCar", PILOT_LECLERC_ID));
+    teams.Add(new Team(TEAM_FLOAT_POINT_TEAM_ID, "Float Point Team", "floatPointLogo", "floatPointCar", PILOT_STROLL_ID));
+    teams.Add(new Team(TEAM_ORANGE_TEAM_ID, "Orange Team", "orangeTeamLogo", "orangeTeam", PILOT_SAINZ_ID));
+    teams.Add(new Team(TEAM_YELL_MOTORS_ID, "Yell Motors", "logoYell", "yellCar", PILOT_RIC_ID));
+    teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "White Devils", "whiteDevilsLogo", "whiteDev", PILOT_GASLY_ID));
+    teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "Juliet Motors", "julietLogo", "julietCar", PILOT_RAIK_ID));
+    teams.Add(new Team(TEAM_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar", PILOT_MAG_ID));
+    teams.Add(new Team(TEAM_BLUE_SKY_ID, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar", PILOT_RUSS_ID));
   }
 
   //Creating the Tracks

@@ -79,7 +79,7 @@ public class SelectionScreen : MonoBehaviour
     {
       // Setting the player chosen pilot on game session
       FindObjectOfType<GameSession>().SetPlayerPilot(selection);
-      FindObjectOfType<SceneLoader>().LoadNextScene();
+      FindObjectOfType<SceneLoader>().LoadScene(1);
     }
   }
 
