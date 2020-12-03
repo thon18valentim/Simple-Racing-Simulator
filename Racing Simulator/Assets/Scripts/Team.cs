@@ -13,13 +13,20 @@ namespace Assets.Scripts
     public string LogoString { get; set; }
     public string CarString { get; set; }
     public Car Car { get; set; }
+    public Pilot Pilot { get; set; }
 
-    public Team(int id, string name, string logoName, string carName)
+    public Team(int id, string name, string logoName, string carName, int pilotId)
     {
       Id = id;
       Name = name;
       LogoString = logoName;
       CarString = carName;
+      Pilot = World.GetPilotById(pilotId);
+    }
+
+    public void SetPilot(int id)
+    {
+      Pilot = World.GetPilotById(id);
     }
   }
 }

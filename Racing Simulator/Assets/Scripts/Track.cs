@@ -6,35 +6,25 @@ namespace Assets.Scripts
 {
   public class Track
   {
-    public string Nome { get; set; }
-    public string Pais { get; set; }
-    public int Voltas { get; set; }
-    public int Aer_max { get; set; }
-    public int Pow_max { get; set; }
-    public int Dur_max { get; set; }
-    public int Cha_max { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Country { get; set; }
+    public int Laps { get; set; }
+    public int Aerodynamics { get; set; }
+    public int Power { get; set; }
+    public int Durability { get; set; }
+    public int Chassi { get; set; }
 
-    public Track(string name, string country, int laps, int aero_max, int power_max, int dura_max, int chas_max)
+    public Track(int id, string name, string country, int laps, int aero, int power, int dura, int chassi)
     {
-      Nome = name;
-      Pais = country;
-      Voltas = laps;
-      Aer_max = aero_max;
-      Pow_max = power_max;
-      Dur_max = dura_max;
-      Cha_max = chas_max;
-    }
-  }
-
-  public class Classificacao
-  {
-    public string Nome_piloto { get; set; }
-    public Team Time { get; set; }
-
-    public Classificacao(string nome, Team time)
-    {
-      Nome_piloto = nome;
-      Time = time;
+      Id = id;
+      Name = name;
+      Country = country;
+      Laps = laps;
+      Aerodynamics = aero;
+      Power = power;
+      Durability = dura;
+      Chassi = chassi;
     }
   }
 }

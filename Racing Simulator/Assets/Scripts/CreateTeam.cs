@@ -49,8 +49,8 @@ public class CreateTeam : MonoBehaviour
   // Setting the correct team name, logo and car
   public void SetValues()
   {
-    teamName.text = World.op_teams[selection].Name;
-    logo.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.op_teams[selection].LogoString); // Accessing the sprites via file name in the resoruces file
-    car.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.op_teams[selection].CarString);
+    teamName.text = World.teams[selection].Name;
+    logo.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[selection].LogoString); // Accessing the sprites via file name in the resoruces file
+    car.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[selection].CarString);
   }
 }

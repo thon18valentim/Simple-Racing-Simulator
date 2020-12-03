@@ -20,10 +20,5 @@ namespace Assets.Scripts
       Durability = dura;
       Chassis = chass;
     }
-
-    public int Pit_stop(int volta) // Função para selecionar a volta do Pit-Stop
-    {
-      return volta;
-    }
   }
 }
