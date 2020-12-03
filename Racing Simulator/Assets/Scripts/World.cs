@@ -10,6 +10,9 @@ public class World : MonoBehaviour
   public static List<Track> op_tracks = new List<Track>();
   public static List<Classificacao> op_grid = new List<Classificacao>();
 
+  // Controling GP order
+  public int gp_count = 1;
+
 
   // Definig the variables with id for use later
   public const int OP_PILOT_MAICON_ID = 1;
