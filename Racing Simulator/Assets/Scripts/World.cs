@@ -38,6 +38,8 @@ public class World : MonoBehaviour
     PopulateOpPilots();
     PopulateOpTeams();
     PopulateCars();
+    PopulateOpTracks();
+    PopulateGrid();
   }
 
   //Creating pilots and adding them to the list
