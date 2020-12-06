@@ -10,11 +10,27 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI gp_name;
   public TextMeshProUGUI gp_country;
 
+  //Pit markers
+  public TextMeshProUGUI mark1;
+  public TextMeshProUGUI mark2;
+
+  //Lap Count
+  int current_lap = 1;
+
+  //Lap marker
+  public TextMeshProUGUI mark_lap;
+
+  // Integer for changing the pit lap
+  int select1 = 10;
+  int select2 = 30;
+
   public TextMeshProUGUI[] grid_corrida = new TextMeshProUGUI[10];
 
   private void Start()
   {
-    
+    SetPit();
+    mark_lap.text = "Laps: " + current_lap.ToString() + " / " + World.tracks[0].Laps;
+
     gp_name.text = World.tracks[0].Name;
     gp_country.text = World.tracks[0].Country;
    
@@ -32,6 +48,50 @@ public class Race : MonoBehaviour
 
   private void Update()
   {
-    
+    if (Input.GetKeyDown(KeyCode.A))
+    {
+      select1--;
+      if(select1 < 1)
+      {
+        select1 = World.tracks[0].Laps;
+      }
+      SetPit();
+    }
+
+    if (Input.GetKeyDown(KeyCode.S))
+    {
+      select2--;
+      if(select2 < 1)
+      {
+        select2 = World.tracks[0].Laps;
+      }
+      SetPit();
+    }
+
+    if (Input.GetKeyDown(KeyCode.D))
+    {
+      select1++;
+      if (select1 > World.tracks[0].Laps)
+      {
+        select1 = 1;
+      }
+      SetPit();
+    }
+
+    if (Input.GetKeyDown(KeyCode.F))
+    {
+      select2++;
+      if (select2 > World.tracks[0].Laps)
+      {
+        select2 = 1;
+      }
+      SetPit();
+    }
+  }
+
+  public void SetPit()
+  {
+    mark1.text = select1.ToString();
+    mark2.text = select2.ToString();
   }
 }
