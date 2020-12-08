@@ -51,7 +51,7 @@ public class Race : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.A))
     {
       select1--;
-      if(select1 < 1)
+      if(select1 < 1 || select1 >= select2)
       {
         select1 = World.tracks[0].Laps;
       }
@@ -61,7 +61,7 @@ public class Race : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.S))
     {
       select2--;
-      if(select2 < 1)
+      if(select2 <= select1)
       {
         select2 = World.tracks[0].Laps;
       }
@@ -71,7 +71,7 @@ public class Race : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.D))
     {
       select1++;
-      if (select1 > World.tracks[0].Laps)
+      if (select1 > World.tracks[0].Laps || select1 >= select2)
       {
         select1 = 1;
       }
@@ -83,7 +83,7 @@ public class Race : MonoBehaviour
       select2++;
       if (select2 > World.tracks[0].Laps)
       {
-        select2 = 1;
+        select2 = select1+1;
       }
       SetPit();
     }
@@ -93,5 +93,69 @@ public class Race : MonoBehaviour
   {
     mark1.text = select1.ToString();
     mark2.text = select2.ToString();
+  }
+
+  public void SetTyre(int i)
+  {
+    if(i == 1)
+    {
+      print("Soft Tyre had been chosen!");
+    }
+    else if(i == 2)
+    {
+      print("Medium Tyre had been chosen!");
+    }
+    else if(i == 3)
+    {
+      print("Hard Tyre had been chosen!");
+    }
+    else
+    {
+      print("ERROR! Tyre not found!");
+    }
+  }
+
+  public void ArrowClicker(int i)
+  {
+    if(i == 1) //Seta D
+    {
+      select1++;
+      if (select1 > World.tracks[0].Laps || select1 >= select2)
+      {
+        select1 = 1;
+      }
+      SetPit();
+    }
+    else if(i == 2) //Seta F
+    {
+      select2++;
+      if (select2 > World.tracks[0].Laps)
+      {
+        select2 = select1 + 1;
+      }
+      SetPit();
+    }
+    else if(i == 3) //Seta A
+    {
+      select1--;
+      if (select1 < 1 || select1 >= select2)
+      {
+        select1 = World.tracks[0].Laps;
+      }
+      SetPit();
+    }
+    else if(i == 4) //Seta S
+    {
+      select2--;
+      if (select2 <= select1)
+      {
+        select2 = World.tracks[0].Laps;
+      }
+      SetPit();
+    }
+    else
+    {
+      Debug.Log("Arrow not found!");
+    }
   }
 }
