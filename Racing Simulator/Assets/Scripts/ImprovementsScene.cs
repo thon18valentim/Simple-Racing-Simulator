@@ -15,6 +15,7 @@ public class ImprovementsScene : MonoBehaviour
   public TextMeshProUGUI dura;
   public TextMeshProUGUI chassis;
 
+  int selection = 0;
 
   private void Start()
   {
@@ -30,6 +31,16 @@ public class ImprovementsScene : MonoBehaviour
     aero.text = "> " + FindObjectOfType<GameSession>().GetAero().ToString();
     dura.text = "> " + FindObjectOfType<GameSession>().GetDura().ToString();
     chassis.text = "> " + FindObjectOfType<GameSession>().GetChassis().ToString();
+
+    if (Input.GetKeyDown(KeyCode.DownArrow))
+    {
+
+    }
+
+    if (Input.GetKeyUp(KeyCode.UpArrow))
+    {
+
+    }
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
