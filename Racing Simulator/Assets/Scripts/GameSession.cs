@@ -8,7 +8,7 @@ public class GameSession : MonoBehaviour
   public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
 
-  public int points = 10;
+  public int points = 3;
 
   public int durability = 0;
   public int power = 0;

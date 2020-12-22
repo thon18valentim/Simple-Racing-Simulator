@@ -88,7 +88,7 @@ public class World : MonoBehaviour
 
   public static Car CreatePlayerCar()
   {
-    Car car = new Car(5, 5, 5, 5); //Player Starting points
+    Car car = new Car(6, 7, 5, 4); //Player Starting points
 
     return car;
   }

@@ -12,6 +12,7 @@ namespace Assets.Scripts
     public int Aerodynamics { get; set; }
     public int Durability { get; set; }
     public int Chassis { get; set; }
+    public int sdkghsod { get; set; }
 
     public Car(int power, int aero, int dura, int chass)
     {

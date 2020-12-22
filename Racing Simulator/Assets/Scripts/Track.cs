@@ -14,6 +14,7 @@ namespace Assets.Scripts
     public int Power { get; set; }
     public int Durability { get; set; }
     public int Chassi { get; set; }
+    public List<Car> Cars { get; set; }
 
     public Track(int id, string name, string country, int laps, int aero, int power, int dura, int chassi)
     {
