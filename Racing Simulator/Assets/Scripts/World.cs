@@ -51,16 +51,16 @@ public class World : MonoBehaviour
   //Creating pilots and adding them to the list
   public static void PopulateOpPilots()
   {
-    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace1", 21, 94));
-    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace2", 21, 90));
-    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace3", 21, 87));
-    pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace3", 20, 83));
-    pilots.Add(new Pilot(PILOT_SAINZ_ID, "Sainz", "Spanish", "PilotFace3", 22, 85));
-    pilots.Add(new Pilot(PILOT_RIC_ID, "Ricciardo", "Australia", "PilotFace3", 35, 89));
-    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace3", 25, 83));
-    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace3", 19, 88));
-    pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace3", 22, 80));
-    pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace3", 36, 78));
+    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace1", 35, 94));
+    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace2", 23, 90));
+    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace3", 23, 87));
+    pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace3", 22, 82));
+    pilots.Add(new Pilot(PILOT_SAINZ_ID, "Sainz", "Spanish", "PilotFace3", 26, 85));
+    pilots.Add(new Pilot(PILOT_RIC_ID, "Ricciardo", "Australia", "PilotFace3", 31, 89));
+    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace3", 24, 83));
+    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace3", 41, 88));
+    pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace3", 28, 80));
+    pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace3", 22, 78));
   }
 
   // Creating the teams

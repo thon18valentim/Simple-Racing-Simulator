@@ -50,4 +50,8 @@ public class MenuController : MonoBehaviour
       y.GetComponent<Image>().color = new Color(0, 0, 0);
     stripes[x].GetComponent<Image>().color = new Color(200, 200, 200);
   }
+  public void QuitGame()
+  {
+    Application.Quit();
+  }
 }

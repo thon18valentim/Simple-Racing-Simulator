@@ -200,7 +200,7 @@ public class Race : MonoBehaviour
 
     for(i = 0; i < 10; i++)
     {
-      World.teams[i].Car.Quali_power = aero_quali[i] + chassi_quali[i] + power_quali[i];
+      World.teams[i].Car.Quali_power = aero_quali[i] + chassi_quali[i] + power_quali[i] + World.teams[i].Pilot.Over;
       if (World.teams[i].Name == "Silver Tech")
         World.teams[i].Car.Quali_power += 6;
       else if (World.teams[i].Name == "Blue Devils")
@@ -244,7 +244,7 @@ public class Race : MonoBehaviour
       if (World.teams[i].Car.Quali_power < World.teams[i + 1].Car.Quali_power)
         auxiliar = World.teams[i].Pilot.Name;
         World.teams[i].Pilot.Name = World.teams[i + 1].Pilot.Name;
-        World.teams[i + 1].Pilot.Name = auxiliar;
+        //World.teams[i + 1].Pilot.Name = auxiliar;
 
       if (i == 9)
           i = 0;
