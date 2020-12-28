@@ -11,12 +11,15 @@ public class ImprovementsScene : MonoBehaviour
 
   public GameObject pilotFace;
   public GameObject carDisplay;
+  public GameObject arrow;
 
-  public TextMeshProUGUI points;
+  public TextMeshProUGUI player_points;
   public TextMeshProUGUI power;
   public TextMeshProUGUI aero;
   public TextMeshProUGUI dura;
   public TextMeshProUGUI chassis;
+
+  GameSession session;
 
   int selection = 0;
 
@@ -24,33 +27,59 @@ public class ImprovementsScene : MonoBehaviour
   {
     pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
     carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
+
+    session = FindObjectOfType<GameSession>();
   }
 
   // Update is called once per frame
   void Update()
   {
-    points.text = FindObjectOfType<GameSession>().GetPoints().ToString();
-    power.text = FindObjectOfType<GameSession>().GetPower().ToString();
-    aero.text = FindObjectOfType<GameSession>().GetAero().ToString();
-    dura.text = FindObjectOfType<GameSession>().GetDura().ToString();
-    chassis.text = FindObjectOfType<GameSession>().GetChassis().ToString();
+    player_points.text = session.GetPoints().ToString() + " pts";
+    power.text = session.GetPower().ToString();
+    aero.text = session.GetAero().ToString();
+    dura.text = session.GetDura().ToString();
+    chassis.text = session.GetChassis().ToString();
 
     DisableTexts(selection);
 
     if (Input.GetKeyDown(KeyCode.DownArrow))
     {
+      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y + 0.84f);
+      CheckBoundaries();
       selection++;
       if (selection > 3)
         selection = 3;
       DisableTexts(selection);
+      //0.84
     }
 
-    if (Input.GetKeyUp(KeyCode.UpArrow))
+    if (Input.GetKeyDown(KeyCode.UpArrow))
     {
+      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y - 0.84f);
+      CheckBoundaries();
       selection--;
       if (selection < 0)
         selection = 0;
       DisableTexts(selection);
+    }
+
+    if (Input.GetKeyDown(KeyCode.RightArrow))
+    {
+      switch (selection)
+      {
+        case 0:
+          session.IncreaseStatus("power");
+          break;
+        case 1:
+          session.IncreaseStatus("durability");
+          break;
+        case 2:
+          session.IncreaseStatus("aerodynamics");
+          break;
+        case 3:
+          session.IncreaseStatus("chassi");
+          break;
+      }
     }
 
     if (Input.GetKeyDown(KeyCode.Return))
@@ -60,13 +89,13 @@ public class ImprovementsScene : MonoBehaviour
     }
   }
 
-  private void DisableTexts(int x)
+  private void DisableTexts(int s)
   { 
     for (int i = 0; i < 4; i++)
     {
-      if (i == x)
+      if (i == s)
       {
-        scoreText[i].text = (FindObjectOfType<GameSession>().GetPower() + 1).ToString();
+        scoreText[i].text = (session.GetCarStatus(s) + 1).ToString();
         pointers[i].SetActive(true);
       }
       else
@@ -78,43 +107,15 @@ public class ImprovementsScene : MonoBehaviour
     }
   }
 
-  public void DurabilityBtn()
+  public void CheckBoundaries()
   {
-    FindObjectOfType<GameSession>().IncreaseStatus("durability");
-  }
-
-  public void DuraLessBtn()
-  {
-    FindObjectOfType<GameSession>().DecreaseStatus("durability");
-  }
-
-  public void PowerBtn()
-  {
-    FindObjectOfType<GameSession>().IncreaseStatus("power");
-  }
-
-  public void PowerLessBtn()
-  {
-    FindObjectOfType<GameSession>().DecreaseStatus("power");
-  }
-
-  public void AerodynamicsBtn()
-  {
-    FindObjectOfType<GameSession>().IncreaseStatus("aerodynamics");
-  }
-
-  public void AeroLessBtn()
-  {
-    FindObjectOfType<GameSession>().DecreaseStatus("aerodynamics");
-  }
-
-  public void ChassisBtn()
-  {
-    FindObjectOfType<GameSession>().IncreaseStatus("chassi");
-  }
-
-  public void ChassisLessBtn()
-  {
-    FindObjectOfType<GameSession>().DecreaseStatus("chassi");
+    if (arrow.transform.position.y < -225.68f)
+    {
+      arrow.transform.position = new Vector2(-403.5f, -225.68f);
+    }
+    if (arrow.transform.position.y > -223.16f)
+    {
+      arrow.transform.position = new Vector2(-403.5f, -223.16f);
+    }
   }
 }

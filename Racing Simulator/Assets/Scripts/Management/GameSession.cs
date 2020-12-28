@@ -8,12 +8,7 @@ public class GameSession : MonoBehaviour
   public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
 
-  public int points = 3;
-
-  public int durability = 0;
-  public int power = 0;
-  public int aerodynamics = 0;
-  public int chassis = 0;
+  public int points = 10;
 
   private void Awake()
   {
@@ -125,6 +120,17 @@ public class GameSession : MonoBehaviour
   public string GetCarString()
   {
     return team.CarString;
+  }
+
+  public int GetCarStatus(int selection)
+  {
+    if (selection == 0)
+      return GetPower();
+    if (selection == 1)
+      return GetDura();
+    if (selection == 2)
+      return GetAero();
+    return GetChassis();
   }
 
   public int GetPower()

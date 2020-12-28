@@ -1818,7 +1818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113372859}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -403.5, y: -224, z: 0}
+  m_LocalPosition: {x: -403.5, y: -223.16, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.2}
   m_Children: []
   m_Father: {fileID: 86177780}
@@ -2545,7 +2545,8 @@ MonoBehaviour:
   - {fileID: 1246979863}
   pilotFace: {fileID: 515555984}
   carDisplay: {fileID: 1170173405}
-  points: {fileID: 2033383227}
+  arrow: {fileID: 1113372859}
+  player_points: {fileID: 2033383227}
   power: {fileID: 1889720246}
   aero: {fileID: 1138466485}
   dura: {fileID: 733378000}
@@ -2946,7 +2947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10 pts
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1d959326476416499deed721f111157, type: 2}
   m_sharedMaterial: {fileID: 234215342290706192, guid: b1d959326476416499deed721f111157,

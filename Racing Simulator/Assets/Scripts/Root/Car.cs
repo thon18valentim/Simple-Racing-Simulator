@@ -15,7 +15,7 @@ namespace Assets.Scripts
     public int Time { get; set; }
     public int Quali_power { get; set; }
 
-    public Car(int power, int aero, int dura, int chass)
+    public Car(int power, int dura, int aero, int chass)
     {
       Power = power;
       Aerodynamics = aero;
