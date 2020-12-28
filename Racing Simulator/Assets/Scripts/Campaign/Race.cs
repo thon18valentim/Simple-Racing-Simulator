@@ -27,6 +27,7 @@ public class Race : MonoBehaviour
   int select2 = 30;
 
   public TextMeshProUGUI[] grid_corrida = new TextMeshProUGUI[10];
+  public int[] grid_auxiliar = new int[10];
   public int[] aero_quali = new int[10];
   public int[] chassi_quali = new int[10];
   public int[] power_quali = new int[10];
@@ -201,7 +202,7 @@ public class Race : MonoBehaviour
     for(i = 0; i < 10; i++)
     {
       World.teams[i].Car.Quali_power = aero_quali[i] + chassi_quali[i] + power_quali[i] + World.teams[i].Pilot.Over;
-      if (World.teams[i].Name == "Silver Tech")
+      /*if (World.teams[i].Name == "Silver Tech")
         World.teams[i].Car.Quali_power += 6;
       else if (World.teams[i].Name == "Blue Devils")
         World.teams[i].Car.Quali_power += 4;
@@ -220,31 +221,31 @@ public class Race : MonoBehaviour
       else if (World.teams[i].Name == "American Mono")
         World.teams[i].Car.Quali_power += 1;
       else if (World.teams[i].Name == "Blue Sky Racing")
-        World.teams[i].Car.Quali_power += 1;
+        World.teams[i].Car.Quali_power += 1;*/
     }
 
-    grid_corrida[0].text = World.teams[0].Pilot.Name;
-    grid_corrida[1].text = World.teams[1].Pilot.Name;
-    grid_corrida[2].text = World.teams[2].Pilot.Name;
-    grid_corrida[3].text = World.teams[3].Pilot.Name;
-    grid_corrida[4].text = World.teams[4].Pilot.Name;
-    grid_corrida[5].text = World.teams[5].Pilot.Name;
-    grid_corrida[6].text = World.teams[6].Pilot.Name;
-    grid_corrida[7].text = World.teams[7].Pilot.Name;
-    grid_corrida[8].text = World.teams[8].Pilot.Name;
-    grid_corrida[9].text = World.teams[9].Pilot.Name;
+    grid_auxiliar[0] = World.teams[0].Car.Quali_power;
+    grid_auxiliar[1] = World.teams[1].Car.Quali_power;
+    grid_auxiliar[2] = World.teams[2].Car.Quali_power;
+    grid_auxiliar[3] = World.teams[3].Car.Quali_power;
+    grid_auxiliar[4] = World.teams[4].Car.Quali_power;
+    grid_auxiliar[5] = World.teams[5].Car.Quali_power;
+    grid_auxiliar[6] = World.teams[6].Car.Quali_power;
+    grid_auxiliar[7] = World.teams[7].Car.Quali_power;
+    grid_auxiliar[8] = World.teams[8].Car.Quali_power;
+    grid_auxiliar[9] = World.teams[9].Car.Quali_power;
 
     //World.teams[0].Pilot.Name;
 
     int z = 0;
     i = 0;
-    string auxiliar;
+    int auxiliar = 0;
     while(z < 100)
     {
-      if (World.teams[i].Car.Quali_power < World.teams[i + 1].Car.Quali_power)
-        auxiliar = World.teams[i].Pilot.Name;
-        World.teams[i].Pilot.Name = World.teams[i + 1].Pilot.Name;
-        //World.teams[i + 1].Pilot.Name = auxiliar;
+      if (grid_auxiliar[i] < grid_auxiliar[i + 1])
+        auxiliar = grid_auxiliar[i];
+        grid_auxiliar[i] = grid_auxiliar[i + 1];
+        grid_auxiliar[i + 1] = auxiliar;
 
       if (i == 9)
           i = 0;
