@@ -12,6 +12,7 @@ namespace Assets.Scripts
     public string Name { get; set; }
     public string LogoString { get; set; }
     public string CarString { get; set; }
+    public int Score { get; set; }
     public Car Car { get; set; }
     public Pilot Pilot { get; set; }
 
@@ -27,6 +28,11 @@ namespace Assets.Scripts
     public void SetPilot(int id)
     {
       Pilot = World.GetPilotById(id);
+    }
+
+    public void SetScore(int score)
+    {
+      Score = score;
     }
   }
 }

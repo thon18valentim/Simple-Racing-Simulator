@@ -93,6 +93,11 @@ public class World : MonoBehaviour
     return car;
   }
 
+  public static void SetPlayerTeam(Team team)
+  {
+    teams[team.Id - 1] = team; 
+  }
+
   public static void PopulateCars()
   {
     Car car = new Car(21, 17, 19, 17); //Power, Aero, Dura, Chassis

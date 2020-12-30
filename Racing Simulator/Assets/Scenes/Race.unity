@@ -1560,25 +1560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc31e2bf1579b054c8fafc6f7e7b3d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gp_name: {fileID: 389260788}
-  gp_country: {fileID: 395405204}
-  mark1: {fileID: 984271812}
-  mark2: {fileID: 1015766576}
-  mark_lap: {fileID: 1543420314}
-  grid_corrida:
-  - {fileID: 1914385679}
-  - {fileID: 1473938037}
-  - {fileID: 9480678}
-  - {fileID: 1642390535}
-  - {fileID: 1269865216}
-  - {fileID: 2112881270}
-  - {fileID: 273648409}
-  - {fileID: 1185731177}
-  - {fileID: 680099685}
-  - {fileID: 876561685}
-  aero_quali: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  chassi_quali: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  power_quali: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &729366015
 Transform:
   m_ObjectHideFlags: 0
@@ -4337,7 +4318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2070760163
 Transform:
   m_ObjectHideFlags: 0

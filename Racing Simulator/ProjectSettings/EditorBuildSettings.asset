@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Campaign.unity
     guid: f6ad3a2c57aae4540aa90d43cba5e2ed
   - enabled: 1
+    path: Assets/Scenes/Race.unity
+    guid: 30984c507400c8944a559c579814e211
+  - enabled: 1
     path: Assets/Scenes/Calender.unity
     guid: c64db5ea48fc92c41ac978059fc34d49
   m_configObjects: {}
