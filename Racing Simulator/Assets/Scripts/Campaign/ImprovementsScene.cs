@@ -44,18 +44,17 @@ public class ImprovementsScene : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.DownArrow))
     {
-      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y + 0.84f);
+      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y - 1.11f);
       CheckBoundaries();
       selection++;
       if (selection > 3)
         selection = 3;
       DisableTexts(selection);
-      //0.84
     }
 
     if (Input.GetKeyDown(KeyCode.UpArrow))
     {
-      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y - 0.84f);
+      arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y + 1.11f);
       CheckBoundaries();
       selection--;
       if (selection < 0)
@@ -109,13 +108,13 @@ public class ImprovementsScene : MonoBehaviour
 
   public void CheckBoundaries()
   {
-    if (arrow.transform.position.y < -225.68f)
+    if (arrow.transform.position.y < -0.88f)
     {
-      arrow.transform.position = new Vector2(-403.5f, -225.68f);
+      arrow.transform.position = new Vector2(-4.5f, -0.88f);
     }
-    if (arrow.transform.position.y > -223.16f)
+    if (arrow.transform.position.y > 2.45f)
     {
-      arrow.transform.position = new Vector2(-403.5f, -223.16f);
+      arrow.transform.position = new Vector2(-4.5f, 2.45f);
     }
   }
 }
