@@ -17,31 +17,45 @@ public class Race : MonoBehaviour
     session = FindObjectOfType<GameSession>();
 
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
+
+    DefineLeaderboard();
   }
 
-  public void DefineLeaderboard()
+  private void DefineLeaderboard()
   {
     int r_power, r_dura, r_aero, r_chass, score = 0;
     foreach (Team team in World.teams)
     {
-      if (team.Id == session.GetTeamId())
-      {
-        r_power = RandomNumberGenerator.NumberBetween(session.GetPower(), track.Power);
-        r_dura = RandomNumberGenerator.NumberBetween(session.GetDura(), track.Durability);
-        r_aero = RandomNumberGenerator.NumberBetween(session.GetAero(), track.Aerodynamics);
-        r_chass = RandomNumberGenerator.NumberBetween(session.GetChassis(), track.Chassi);
+      r_power = RandomNumberGenerator.NumberBetween(team.Car.Power, track.Power);
+      r_dura = RandomNumberGenerator.NumberBetween(team.Car.Durability, track.Durability);
+      r_aero = RandomNumberGenerator.NumberBetween(team.Car.Aerodynamics, track.Aerodynamics);
+      r_chass = RandomNumberGenerator.NumberBetween(team.Car.Chassis, track.Chassi);
 
-        score = r_power + r_dura + r_aero + r_chass + session.GetPilotOver();
-        session.SetTeamScore(score);
-      }
-      else
-      {
-        r_power = RandomNumberGenerator.NumberBetween(team.Car.Power, track.Power);
-        r_dura = RandomNumberGenerator.NumberBetween(team.Car.Durability, track.Durability);
-        r_aero = RandomNumberGenerator.NumberBetween(team.Car.Aerodynamics, track.Aerodynamics);
-        r_chass = RandomNumberGenerator.NumberBetween(team.Car.Chassis, track.Chassi);
+      score = r_power + r_dura + r_aero + r_chass + session.GetPilotOver();
+      team.SetScore(score);
 
-        score = r_power + r_dura + r_aero + r_chass + session.GetPilotOver();
+      leaderboard.Add(team);
+    }
+
+    SortLeaderboard();
+
+    foreach (Team t in leaderboard)
+      Debug.Log(t.Name + " " + t.Score);
+  }
+
+  private void SortLeaderboard()
+  {
+    Team temp;
+    for (int i = 0; i < leaderboard.Count; i++)
+    {
+      for (int j = 0; j < leaderboard.Count - 1; j++)
+      {
+        if (leaderboard[j].Score > leaderboard[j + 1].Score)
+        {
+          temp = leaderboard[j];
+          leaderboard[j] = leaderboard[j + 1];
+          leaderboard[j + 1] = temp;
+        }
       }
     }
   }

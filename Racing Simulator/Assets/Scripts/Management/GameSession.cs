@@ -8,7 +8,7 @@ public class GameSession : MonoBehaviour
   public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
 
-  int points = 10;
+  int points = 3;
   int currentTrack = 0;
 
   private void Awake()
@@ -43,7 +43,7 @@ public class GameSession : MonoBehaviour
   public void SetPlayerPilot(int i)
   {
     pilot = new Pilot(World.pilots[i].Id, World.pilots[i].Name, World.pilots[i].Country, World.pilots[i].PilotString, World.pilots[i].Age, World.pilots[i].Over);
-    team.SetPilot(i);
+    team.SetPilot(i + 1);
     World.SetPlayerTeam(team);
   }
 

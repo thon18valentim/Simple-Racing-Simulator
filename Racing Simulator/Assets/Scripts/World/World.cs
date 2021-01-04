@@ -42,14 +42,14 @@ public class World : MonoBehaviour
   // It populates the list with the data needed
   static World()
   {
-    PopulateOpPilots();
-    PopulateOpTeams();
+    PopulatePilots();
+    PopulateTeams();
     PopulateCars();
-    PopulateOpTracks();
+    PopulateTracks();
   }
 
   //Creating pilots and adding them to the list
-  public static void PopulateOpPilots()
+  public static void PopulatePilots()
   {
     pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace1", 35, 94));
     pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace2", 23, 90));
@@ -64,7 +64,7 @@ public class World : MonoBehaviour
   }
 
   // Creating the teams
-  public static void PopulateOpTeams()
+  public static void PopulateTeams()
   {
     teams.Add(new Team(TEAM_SILVER_TECH_ID, "Silver Tech", "silverLogo", "silverTechCar", PILOT_HAMILTON_ID));
     teams.Add(new Team(TEAM_BLUE_DEVILS_ID, "Blue Devils", "blueDevilsLogo", "blueDev", PILOT_VERSTAPPEN_ID));
@@ -79,7 +79,7 @@ public class World : MonoBehaviour
   }
 
   //Creating the Tracks
-  public static void PopulateOpTracks()
+  public static void PopulateTracks()
   {
     tracks.Add(new Track(TRACK_AUSTRALIA_ID, "Albert Park", "Australia", 58, 30, 35, 28, 32));
     tracks.Add(new Track(TRACK_BAHREIN_ID, "Autódromo de Bahrein", "Bahrein", 57, 34, 30, 30, 32));
