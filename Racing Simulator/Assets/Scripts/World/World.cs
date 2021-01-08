@@ -20,6 +20,9 @@ public class World : MonoBehaviour
   public const int PILOT_RAIK_ID = 8;
   public const int PILOT_MAG_ID = 9;
   public const int PILOT_RUSS_ID = 10;
+  public const int PILOT_VAND_ID = 11;
+  public const int PILOT_MICK_ID = 12;
+  public const int PILOT_DRUG_ID = 13;
 
   // Id for teams
   public const int TEAM_SILVER_TECH_ID = 1;
@@ -51,16 +54,19 @@ public class World : MonoBehaviour
   //Creating pilots and adding them to the list
   public static void PopulatePilots()
   {
-    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace1", 35, 94));
-    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace2", 23, 90));
-    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace3", 23, 87));
+    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace2", 35, 94));
+    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace1", 23, 90));
+    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace1", 23, 87));
     pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace3", 22, 82));
     pilots.Add(new Pilot(PILOT_SAINZ_ID, "Sainz", "Spanish", "PilotFace3", 26, 85));
     pilots.Add(new Pilot(PILOT_RIC_ID, "Ricciardo", "Australia", "PilotFace3", 31, 89));
-    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace3", 24, 83));
-    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace3", 41, 88));
+    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace1", 24, 83));
+    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace1", 41, 88));
     pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace3", 28, 80));
     pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace3", 22, 78));
+    pilots.Add(new Pilot(PILOT_VAND_ID, "Vandoorne", "Belgium", "PilotFace3", 28, 74));
+    pilots.Add(new Pilot(PILOT_MICK_ID, "Shumacher", "Germany", "PilotFace1", 21, 72));
+    pilots.Add(new Pilot(PILOT_DRUG_ID, "Drugovich", "Brazil", "PilotFace1", 20, 69));
   }
 
   // Creating the teams
@@ -100,19 +106,19 @@ public class World : MonoBehaviour
 
   public static void PopulateCars()
   {
-    Car car = new Car(21, 17, 19, 17); //Power, Aero, Dura, Chassis
+    Car car = new Car(26, 20, 21, 19); //Power, Aero, Dura, Chassis
     teams[0].Car = car; //Silver Tech
-    car = new Car(17, 18, 16, 15);
+    car = new Car(20, 18, 22, 18);
     teams[1].Car = car; //Blue Devils
     car = new Car(14, 13, 10, 13);
     teams[2].Car = car; //Team Italy
-    car = new Car(15, 14, 13, 14);
+    car = new Car(17, 16, 15, 16);
     teams[3].Car = car; //Float Point
-    car = new Car(13, 13, 17, 12);
+    car = new Car(15, 15, 19, 14);
     teams[4].Car = car; //Orange Team
-    car = new Car(13, 15, 12, 13);
+    car = new Car(15, 17, 14, 15);
     teams[5].Car = car; //Yell Motors
-    car = new Car(11, 11, 15, 10);
+    car = new Car(13, 13, 17, 12);
     teams[6].Car = car; //White Devils
     car = new Car(8, 10, 15, 8);
     teams[7].Car = car; //Juliet Motors

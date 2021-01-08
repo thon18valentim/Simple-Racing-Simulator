@@ -36,23 +36,23 @@ public class SelectionScreen : MonoBehaviour
   private void Start()
   {
     // Getting the info from World.cs
-    namePilot1.text = World.pilots[0].Name; 
-    countryPilot1.text = World.pilots[0].Country;
-    agePilot1.text = World.pilots[0].Age.ToString() + " Years";
-    overPilot1.text = World.pilots[0].Over.ToString() + " Over";
-    pilot1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[0].PilotString);
+    namePilot1.text = World.pilots[10].Name; 
+    countryPilot1.text = World.pilots[10].Country;
+    agePilot1.text = World.pilots[10].Age.ToString() + " Years";
+    overPilot1.text = World.pilots[10].Over.ToString() + " Over";
+    pilot1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[10].PilotString);
 
-    namePilot2.text = World.pilots[1].Name;
-    countryPilot2.text = World.pilots[1].Country;
-    agePilot2.text = World.pilots[1].Age.ToString() + " Years";
-    overPilot2.text = World.pilots[1].Over.ToString() + " Over";
-    pilot2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[1].PilotString);
+    namePilot2.text = World.pilots[11].Name;
+    countryPilot2.text = World.pilots[11].Country;
+    agePilot2.text = World.pilots[11].Age.ToString() + " Years";
+    overPilot2.text = World.pilots[11].Over.ToString() + " Over";
+    pilot2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[11].PilotString);
 
-    namePilot3.text = World.pilots[2].Name;
-    countryPilot3.text = World.pilots[2].Country;
-    agePilot3.text = World.pilots[2].Age.ToString() + " Years";
-    overPilot3.text = World.pilots[2].Over.ToString() + " Over";
-    pilot3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[2].PilotString);
+    namePilot3.text = World.pilots[12].Name;
+    countryPilot3.text = World.pilots[12].Country;
+    agePilot3.text = World.pilots[12].Age.ToString() + " Years";
+    overPilot3.text = World.pilots[12].Over.ToString() + " Over";
+    pilot3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[12].PilotString);
   }
 
   private void Update()
