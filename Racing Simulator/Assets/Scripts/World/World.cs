@@ -10,19 +10,19 @@ public class World : MonoBehaviour
   public static List<Track> tracks = new List<Track>();
 
   // Definig the variables with id for use later
-  public const int PILOT_VAND_ID = 1;
-  public const int PILOT_MICK_ID = 2;
-  public const int PILOT_DRUG_ID = 3;
-  public const int PILOT_HAMILTON_ID = 4;
-  public const int PILOT_VERSTAPPEN_ID = 5;
-  public const int PILOT_LECLERC_ID = 6;
-  public const int PILOT_STROLL_ID = 7;
-  public const int PILOT_SAINZ_ID = 8;
-  public const int PILOT_RIC_ID = 9;
-  public const int PILOT_GASLY_ID = 10;
-  public const int PILOT_RAIK_ID = 11;
-  public const int PILOT_MAG_ID = 12;
-  public const int PILOT_RUSS_ID = 13;
+  public const int PILOT_HAMILTON_ID = 1;
+  public const int PILOT_VERSTAPPEN_ID = 2;
+  public const int PILOT_LECLERC_ID = 3;
+  public const int PILOT_STROLL_ID = 4;
+  public const int PILOT_SAINZ_ID = 5;
+  public const int PILOT_RIC_ID = 6;
+  public const int PILOT_GASLY_ID = 7;
+  public const int PILOT_RAIK_ID = 8;
+  public const int PILOT_MAG_ID = 9;
+  public const int PILOT_RUSS_ID = 10;
+  public const int PILOT_VAND_ID = 11;
+  public const int PILOT_MICK_ID = 12;
+  public const int PILOT_DRUG_ID = 13;
 
   // Id for teams
   public const int TEAM_SILVER_TECH_ID = 1;
