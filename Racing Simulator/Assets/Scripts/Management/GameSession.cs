@@ -8,7 +8,6 @@ public class GameSession : MonoBehaviour
   public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
 
-  int points = 3;
   int currentTrack = 0;
 
   private void Awake()
@@ -43,6 +42,7 @@ public class GameSession : MonoBehaviour
   public void SetPlayerPilot(int i)
   {
     pilot = new Pilot(World.pilots[i].Id, World.pilots[i].Name, World.pilots[i].Country, World.pilots[i].PilotString, World.pilots[i].Age, World.pilots[i].Over);
+    pilot.SetPoints(3);
     team.SetPilot(i + 1);
     World.SetPlayerTeam(team);
   }
@@ -100,7 +100,7 @@ public class GameSession : MonoBehaviour
 
   public int GetPoints()
   {
-    return points;
+    return pilot.Points;
   }
 
   public int GetCurrentTrack()
@@ -118,31 +118,31 @@ public class GameSession : MonoBehaviour
     switch (improvement)
     {
       case "power":
-        if (points > 0)
+        if (pilot.Points > 0)
         {
           team.Car.Power++;
-          points--;
+          pilot.Points--;
         }
         break;
       case "durability":
-        if (points > 0)
+        if (pilot.Points > 0)
         {
           team.Car.Durability++;
-          points--;
+          pilot.Points--;
         }
         break;
       case "aerodynamics":
-        if (points > 0)
+        if (pilot.Points > 0)
         {
           team.Car.Aerodynamics++;
-          points--;
+          pilot.Points--;
         }
         break;
       case "chassi":
-        if (points > 0)
+        if (pilot.Points > 0)
         {
           team.Car.Chassis++;
-          points--;
+          pilot.Points--;
         }
         break;
     }

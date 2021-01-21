@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5037434182826490150}
   - component: {fileID: 5037434182826490151}
   m_Layer: 0
-  m_Name: Game Session
+  m_Name: GameSession
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75ec06d5fb2d734c81182f923518109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 3
