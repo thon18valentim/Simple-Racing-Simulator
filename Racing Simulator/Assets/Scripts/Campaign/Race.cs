@@ -114,4 +114,20 @@ public class Race : MonoBehaviour
     }
   }
 
+  public int RaceEvo()
+  {
+    int r_power, r_dura, r_aero, r_chass, score = 0;
+    foreach (Team team in World.teams)
+    {
+      r_power = RandomNumberGenerator.NumberBetween(team.Car.Power, track.Power);
+      r_dura = RandomNumberGenerator.NumberBetween(team.Car.Durability, track.Durability);
+      r_aero = RandomNumberGenerator.NumberBetween(team.Car.Aerodynamics, track.Aerodynamics);
+      r_chass = RandomNumberGenerator.NumberBetween(team.Car.Chassis, track.Chassi);
+
+      score = (r_power + r_dura + r_aero + r_chass + session.GetPilotOver())/6;
+    }
+
+    return score;
+  }
+
 }
