@@ -13,6 +13,7 @@ namespace Assets.Scripts
     public string LogoString { get; set; }
     public string CarString { get; set; }
     public int Score { get; set; }
+    public float LapTime { get; set; }
     public Car Car { get; set; }
     public Pilot Pilot { get; set; }
 
@@ -33,6 +34,11 @@ namespace Assets.Scripts
     public void SetScore(int score)
     {
       Score = score;
+    }
+
+    public void SetLapTime(float time)
+    {
+      LapTime = time;
     }
   }
 }
