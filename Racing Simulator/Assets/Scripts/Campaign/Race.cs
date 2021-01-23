@@ -7,17 +7,22 @@ using Assets.Scripts;
 
 public class Race : MonoBehaviour
 {
+  // Set Qualification and Race Screen
   public GameObject quali_screen;
   public GameObject race_screen;
 
+  // Management of Qualification Texts
   public TextMeshProUGUI first_place;
   public TextMeshProUGUI second_place;
   public TextMeshProUGUI third_place;
   public TextMeshProUGUI fourth_place;
   public TextMeshProUGUI fifth_place;
 
+  // Management Grand Prix Name and lap Text 
   public TextMeshProUGUI gp_name;
+  public TextMeshProUGUI gp_lap;
 
+  // Management of Race Position Texts
   public TextMeshProUGUI first_race;
   public TextMeshProUGUI second_race;
   public TextMeshProUGUI third_race;
@@ -29,6 +34,18 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineth_race;
   public TextMeshProUGUI tenth_race;
 
+  // Management of Race Time Texts
+  //public TextMeshProUGUI first_time;
+  public TextMeshProUGUI second_time;
+  public TextMeshProUGUI third_time;
+  public TextMeshProUGUI fourth_time;
+  public TextMeshProUGUI fifth_time;
+  public TextMeshProUGUI sixth_time;
+  public TextMeshProUGUI seventh_time;
+  public TextMeshProUGUI eighth_time;
+  public TextMeshProUGUI nineth_time;
+  public TextMeshProUGUI tenth_time;
+
   public int contador = 0;
 
   public TextMeshProUGUI tempoText;
@@ -37,6 +54,7 @@ public class Race : MonoBehaviour
   Track track;
   GameSession session;
 
+  // Creating Leaderboard
   List<Team> leaderboard = new List<Team>();
 
   private void Start()
@@ -49,11 +67,10 @@ public class Race : MonoBehaviour
 
     ShowQuali();
     gp_name.text = track.Name;
-    ShowQualiLeaderboard();
-
-    //StartRace(); 
+    ShowQualiLeaderboard(); 
   }
 
+  // Racing
   public void StartRace()
   {
     int laps = track.Laps;
@@ -69,6 +86,7 @@ public class Race : MonoBehaviour
         ShowRaceLeaderboard(); 
       }
       Overtaking();
+      gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
       current_lap++;
     } while (current_lap <= laps);
 
@@ -80,6 +98,7 @@ public class Race : MonoBehaviour
     Debug.Log("Fim de corrida!");
   }
 
+  // Reducing each car lap time per lap
   private void ReduceLapTime(Team team)
   {
     if (team.Score >= 30)
@@ -108,6 +127,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Defining the correct leaderboard positions
   private void DefineLeaderboard()
   {
     foreach (Team team in World.teams)
@@ -127,6 +147,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Organizing Positions
   private void SortLeaderboard()
   {
     Team temp;
@@ -144,6 +165,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Cars overtaking each other
   private void Overtaking()
   {
     Team temp;
@@ -161,6 +183,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Creating each team score for Qualification & Race
   public int CalculateTeamScore(Team team)
   {
     int r_power, r_dura, r_aero, r_chass, score = 0;
@@ -175,17 +198,21 @@ public class Race : MonoBehaviour
     return score;
   }
 
+  // Showing Qualification elements
   public void ShowQuali()
   {
     race_screen.SetActive(false);
     quali_screen.SetActive(true);
   }
+
+  // Showing Race elements
   public void ShowRace()
   {
     quali_screen.SetActive(false);
     race_screen.SetActive(true);
   }
 
+  // Showing Qualification leaderboard
   public void ShowQualiLeaderboard()
   {
     int contador = 0;
@@ -205,6 +232,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Showing Race leaderboard
   public void ShowRaceLeaderboard()
   {
     int contador = 0;
@@ -213,27 +241,55 @@ public class Race : MonoBehaviour
     {
       if (contador == 0)
       {
-        first_race.text = t.Pilot.Name + " | 0.0";
+        first_race.text = t.Pilot.Name;
         gapAux = t.LapTime;
       }
       else if (contador == 1)
-        second_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        second_race.text = t.Pilot.Name;
+        second_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 2)
-        third_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        third_race.text = t.Pilot.Name;
+        third_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 3)
-        fourth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        fourth_race.text = t.Pilot.Name;
+        fourth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 4)
-        fifth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        fifth_race.text = t.Pilot.Name;
+        fifth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 5)
-        sixth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        sixth_race.text = t.Pilot.Name;
+        sixth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 6)
-        seventh_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        seventh_race.text = t.Pilot.Name;
+        seventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 7)
-        eighth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        eighth_race.text = t.Pilot.Name; 
+        eighth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 8)
-        nineth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        nineth_race.text = t.Pilot.Name;
+        nineth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
       else if (contador == 9)
-        tenth_race.text = t.Pilot.Name + " | " + (t.LapTime - gapAux).ToString();
+      {
+        tenth_race.text = t.Pilot.Name;
+        tenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+        
       contador++;
     }
   }
