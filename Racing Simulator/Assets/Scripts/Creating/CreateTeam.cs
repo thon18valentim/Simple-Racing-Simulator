@@ -12,6 +12,9 @@ public class CreateTeam : MonoBehaviour
   public TextMeshProUGUI teamName;
   public GameObject car;
 
+  public AudioSource conf_sound;
+  public AudioSource btn_sound;
+
   // Integer for changing between teams
   int selection = 0;
 
@@ -25,6 +28,7 @@ public class CreateTeam : MonoBehaviour
     // On pressing left or right arrow change between teams
     if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
+      btn_sound.Play();
       selection--;
       if (selection < 0)
         selection = 9;
@@ -32,6 +36,7 @@ public class CreateTeam : MonoBehaviour
     }
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
+      btn_sound.Play();
       selection++;
       if (selection > 9)
         selection = 0;
@@ -40,6 +45,7 @@ public class CreateTeam : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
+      conf_sound.Play();
       // Setting the player chosen team on game session
       FindObjectOfType<GameSession>().SetPlayerTeam(selection);
       FindObjectOfType<SceneLoader>().LoadScene(1);

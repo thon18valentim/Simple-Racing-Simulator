@@ -88,6 +88,7 @@ public class Race : MonoBehaviour
       Overtaking();
       gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
       current_lap++;
+      StartCoroutine("Wait()");
     } while (current_lap <= laps);
 
     foreach(Team t in leaderboard)
@@ -292,6 +293,12 @@ public class Race : MonoBehaviour
         
       contador++;
     }
+  }
+
+  IEnumerator Wait()
+  {
+    // Wait for X second
+    yield return new WaitForSeconds(2f);
   }
 
   //public void Cronometro()

@@ -30,6 +30,9 @@ public class SelectionScreen : MonoBehaviour
   public GameObject arrow;
   public string teamName;
 
+  public AudioSource conf_sound;
+  public AudioSource btn_sound;
+
   // Integer for pilot selection
   int selection = 1;
 
@@ -59,6 +62,7 @@ public class SelectionScreen : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
+      btn_sound.Play();
       arrow.transform.position = new Vector2(arrow.transform.position.x - 5f, arrow.transform.position.y);
       CheckBoundaries();
       selection--;
@@ -68,6 +72,7 @@ public class SelectionScreen : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
+      btn_sound.Play();
       arrow.transform.position = new Vector2(arrow.transform.position.x + 5f, arrow.transform.position.y);
       CheckBoundaries();
       selection++;
@@ -77,6 +82,7 @@ public class SelectionScreen : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
+      conf_sound.Play();
       // Setting the player chosen pilot on game session
       FindObjectOfType<GameSession>().SetPlayerPilot(selection);
       FindObjectOfType<SceneLoader>().LoadScene(1);

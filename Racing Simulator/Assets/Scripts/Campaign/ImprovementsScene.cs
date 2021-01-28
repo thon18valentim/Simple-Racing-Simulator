@@ -19,6 +19,9 @@ public class ImprovementsScene : MonoBehaviour
   public TextMeshProUGUI dura;
   public TextMeshProUGUI chassis;
 
+  public AudioSource conf_sound;
+  public AudioSource btn_sound;
+
   GameSession session;
 
   int selection = 0;
@@ -44,6 +47,7 @@ public class ImprovementsScene : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.DownArrow))
     {
+      btn_sound.Play();
       arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y - 1.11f);
       CheckBoundaries();
       selection++;
@@ -54,6 +58,7 @@ public class ImprovementsScene : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.UpArrow))
     {
+      btn_sound.Play();
       arrow.transform.position = new Vector2(arrow.transform.position.x, arrow.transform.position.y + 1.11f);
       CheckBoundaries();
       selection--;
@@ -64,6 +69,7 @@ public class ImprovementsScene : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
+      conf_sound.Play();
       switch (selection)
       {
         case 0:
@@ -83,6 +89,7 @@ public class ImprovementsScene : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.Return))
     {
+      conf_sound.Play();
       //Loading Next Scene on Return click
       FindObjectOfType<SceneLoader>().LoadScene(1);
     }
