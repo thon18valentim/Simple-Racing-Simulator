@@ -14,6 +14,7 @@ namespace Assets.Scripts
     public string CarString { get; set; }
     public int Score { get; set; }
     public float LapTime { get; set; }
+    public int points { get; set; }
     public Car Car { get; set; }
     public Pilot Pilot { get; set; }
 

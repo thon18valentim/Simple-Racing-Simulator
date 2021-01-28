@@ -108,6 +108,11 @@ public class GameSession : MonoBehaviour
     return currentTrack;
   }
 
+  public void NextRace()
+  {
+    currentTrack++;
+  }
+
   public int GetTeamId()
   {
     return team.Id;

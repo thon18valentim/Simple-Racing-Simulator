@@ -46,6 +46,12 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineth_time;
   public TextMeshProUGUI tenth_time;
 
+  // Setting race sound
+  public AudioSource race_sound;
+
+  // Setting back to menu btn
+  public GameObject btn_back;
+
   public int contador = 0;
 
   public TextMeshProUGUI tempoText;
@@ -73,30 +79,20 @@ public class Race : MonoBehaviour
   // Racing
   public void StartRace()
   {
-    int laps = track.Laps;
-    int current_lap = 0;
+    race_sound.Play();
 
-    do
-    {
-      foreach (Team team in leaderboard)
-      {
-        team.SetScore(CalculateTeamScore(team));
+    StartCoroutine("Wait");
 
-        ReduceLapTime(team);
-        ShowRaceLeaderboard(); 
-      }
-      Overtaking();
-      gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
-      current_lap++;
-      StartCoroutine("Wait()");
-    } while (current_lap <= laps);
-
-    foreach(Team t in leaderboard)
-    {
-      Debug.Log("Piloto: " + t.Pilot.Name + " | Tempo: " + t.LapTime.ToString());
-    }
+    //foreach (Team t in leaderboard)
+    //{
+      //Debug.Log("Piloto: " + t.Pilot.Name + " | Tempo: " + t.LapTime.ToString());
+    //}
     
     Debug.Log("Fim de corrida!");
+    race_sound.Stop();
+    btn_back.SetActive(true);
+    GivingPoints();
+    FindObjectOfType<GameSession>().NextRace();
   }
 
   // Reducing each car lap time per lap
@@ -297,24 +293,73 @@ public class Race : MonoBehaviour
 
   IEnumerator Wait()
   {
-    // Wait for X second
-    yield return new WaitForSeconds(2f);
+    int laps = track.Laps;
+    int current_lap = 0;
+    do
+    {
+      foreach (Team team in leaderboard)
+      {
+        team.SetScore(CalculateTeamScore(team));
+
+        ReduceLapTime(team);
+        ShowRaceLeaderboard();
+      }
+      Overtaking();
+      gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
+      current_lap++;
+      // Wait for X second
+      yield return new WaitForSeconds(2f);
+    } while (current_lap <= laps);
   }
 
-  //public void Cronometro()
-  //{
-  //  quali_screen.SetActive(false);
+  public void GivingPoints()
+  {
+    int contador = 0;
 
-  //  if (tempo > 0)
-  //  {
-  //    tempo -= Time.deltaTime;
-  //    int tempoInt = (int)tempo;
-  //    tempoText.text = tempoInt.ToString();
-  //  }
-  //  if (tempo <= 0)
-  //  {
-  //    tempoText.text = "LIGHTS OUT!";
-  //    race_screen.SetActive(true);
-  //  }
-  //}
+    foreach (Team t in leaderboard)
+    {
+      if(contador == 0)
+      {
+        t.points += 25;
+      }
+      else if(contador == 1)
+      {
+        t.points += 18;
+      }
+      else if(contador == 2)
+      {
+        t.points += 15;
+      }
+      else if(contador == 3)
+      {
+        t.points += 12;
+      }
+      else if(contador == 4)
+      {
+        t.points += 10;
+      }
+      else if(contador == 5)
+      {
+        t.points += 8;
+      }
+      else if(contador == 6)
+      {
+        t.points += 6;
+      }
+      else if(contador == 7)
+      {
+        t.points += 4;
+      }
+      else if(contador == 8)
+      {
+        t.points += 2;
+      }
+      else if(contador == 9)
+      {
+        t.points += 1;
+      }
+
+      contador++;
+    }
+  }
 }
