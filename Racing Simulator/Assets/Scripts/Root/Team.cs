@@ -15,6 +15,8 @@ namespace Assets.Scripts
     public int Score { get; set; }
     public float LapTime { get; set; }
     public int points { get; set; }
+    public int pneu_id { get; set; }
+    public int pneu_dura { get; set; }
     public Car Car { get; set; }
     public Pilot Pilot { get; set; }
 

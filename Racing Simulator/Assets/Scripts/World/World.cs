@@ -88,8 +88,8 @@ public class World : MonoBehaviour
   public static void PopulateTracks()
   {
     tracks.Add(new Track(TRACK_AUSTRALIA_ID, "Albert Park", "Australia", 58, 30, 35, 28, 32));
-    tracks.Add(new Track(TRACK_BAHREIN_ID, "Autódromo de Bahrein", "Bahrein", 57, 34, 30, 30, 32));
-    tracks.Add(new Track(TRACK_BRAZIL_ID, "Autódromo de Interlagos", "Brasil", 71, 32, 32, 32, 32));
+    tracks.Add(new Track(TRACK_BAHREIN_ID, "Autodromo de Bahrein", "Bahrein", 57, 34, 30, 30, 32));
+    tracks.Add(new Track(TRACK_BRAZIL_ID, "Autodromo de Interlagos", "Brasil", 71, 32, 32, 32, 32));
   }
 
   public static Car CreatePlayerCar()

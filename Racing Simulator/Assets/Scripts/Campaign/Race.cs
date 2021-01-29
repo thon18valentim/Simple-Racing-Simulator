@@ -46,6 +46,18 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineth_time;
   public TextMeshProUGUI tenth_time;
 
+  // Tyres Text
+  public TextMeshProUGUI first_tyre;
+  public TextMeshProUGUI sec_tyre;
+  public TextMeshProUGUI thi_tyre;
+  public TextMeshProUGUI four_tyre;
+  public TextMeshProUGUI fif_tyre;
+  public TextMeshProUGUI six_tyre;
+  public TextMeshProUGUI sev_tyre;
+  public TextMeshProUGUI eig_tyre;
+  public TextMeshProUGUI nin_tyre;
+  public TextMeshProUGUI ten_tyre;
+
   // Setting race sound
   public AudioSource race_sound;
 
@@ -129,7 +141,8 @@ public class Race : MonoBehaviour
     foreach (Team team in World.teams)
     {
       team.SetScore(CalculateTeamScore(team));
-
+      team.pneu_id = 1;
+      team.pneu_dura = 20;
       leaderboard.Add(team);
     }
 
@@ -302,10 +315,13 @@ public class Race : MonoBehaviour
 
         ReduceLapTime(team);
         ShowRaceLeaderboard();
+        team.pneu_dura--;
       }
       Overtaking();
       gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
       current_lap++;
+      PitStop();
+      SettingTyreText();
       // Wait for X second
       yield return new WaitForSeconds(2f);
     } while (current_lap <= laps);
@@ -362,8 +378,184 @@ public class Race : MonoBehaviour
     }
   }
 
+  public void PitStop()
+  {
+    //int contador = 0;
+    int sort_pneu;
+
+    foreach(Team t in leaderboard)
+    {
+      if(t.pneu_dura <= 0)
+      {
+        sort_pneu = RandomNumberGenerator.NumberBetween(1, 3);
+
+        if(sort_pneu == 1)
+        {
+          Debug.Log("Colocando Pneus Macios");
+          t.pneu_id = 1;
+          t.pneu_dura = 20;
+          t.SetLapTime(t.LapTime + 20.0f);
+        }
+        else if(sort_pneu == 2)
+        {
+          Debug.Log("Colocando Pneus Médios");
+          t.pneu_id = 2;
+          t.pneu_dura = 30;
+          t.SetLapTime(t.LapTime + 20.0f);
+        }
+        else if(sort_pneu == 3)
+        {
+          Debug.Log("Colocando Pneus Duros");
+          t.pneu_id = 3;
+          t.pneu_dura = 40;
+          t.SetLapTime(t.LapTime + 20.0f);
+        }
+      }
+    }
+  }
+
   public void StopMusic()
   {
     race_sound.Stop();
+  }
+
+  public void SettingTyreText()
+  {
+    int contador = 0;
+
+    foreach(Team t in leaderboard)
+    {
+      if(t.pneu_id == 1)
+      {
+        if(contador == 0)
+        {
+          first_tyre.text = "S";
+        }
+        else if (contador == 1)
+        {
+          sec_tyre.text = "S";
+        }
+        else if (contador == 2)
+        {
+          thi_tyre.text = "S";
+        }
+        else if (contador == 3)
+        {
+          four_tyre.text = "S";
+        }
+        else if (contador == 4)
+        {
+          fif_tyre.text = "S";
+        }
+        else if (contador == 5)
+        {
+          six_tyre.text = "S";
+        }
+        else if (contador == 6)
+        {
+          sev_tyre.text = "S";
+        }
+        else if(contador == 7)
+        {
+          eig_tyre.text = "S";
+        }
+        else if (contador == 8)
+        {
+          nin_tyre.text = "S";
+        }
+        else if (contador == 9)
+        {
+          ten_tyre.text = "S";
+        }
+      }
+      else if(t.pneu_id == 2)
+      {
+        if (contador == 0)
+        {
+          first_tyre.text = "M";
+        }
+        else if (contador == 1)
+        {
+          sec_tyre.text = "M";
+        }
+        else if (contador == 2)
+        {
+          thi_tyre.text = "M";
+        }
+        else if (contador == 3)
+        {
+          four_tyre.text = "M";
+        }
+        else if (contador == 4)
+        {
+          fif_tyre.text = "M";
+        }
+        else if (contador == 5)
+        {
+          six_tyre.text = "M";
+        }
+        else if (contador == 6)
+        {
+          sev_tyre.text = "M";
+        }
+        else if (contador == 7)
+        {
+          eig_tyre.text = "M";
+        }
+        else if (contador == 8)
+        {
+          nin_tyre.text = "M";
+        }
+        else if (contador == 9)
+        {
+          ten_tyre.text = "M";
+        }
+      }
+      else if(t.pneu_id == 3)
+      {
+        if (contador == 0)
+        {
+          first_tyre.text = "H";
+        }
+        else if (contador == 1)
+        {
+          sec_tyre.text = "H";
+        }
+        else if (contador == 2)
+        {
+          thi_tyre.text = "H";
+        }
+        else if (contador == 3)
+        {
+          four_tyre.text = "H";
+        }
+        else if (contador == 4)
+        {
+          fif_tyre.text = "H";
+        }
+        else if (contador == 5)
+        {
+          six_tyre.text = "H";
+        }
+        else if (contador == 6)
+        {
+          sev_tyre.text = "H";
+        }
+        else if (contador == 7)
+        {
+          eig_tyre.text = "H";
+        }
+        else if (contador == 8)
+        {
+          nin_tyre.text = "H";
+        }
+        else if (contador == 9)
+        {
+          ten_tyre.text = "H";
+        }
+      }
+
+      contador++;
+    }
   }
 }
