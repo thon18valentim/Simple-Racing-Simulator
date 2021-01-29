@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Calender.unity
     guid: c64db5ea48fc92c41ac978059fc34d49
+  - enabled: 1
+    path: Assets/Scenes/Champ.unity
+    guid: 5a699110fc2b8c342909699696dd6615
   m_configObjects: {}

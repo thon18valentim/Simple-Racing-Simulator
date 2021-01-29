@@ -89,7 +89,6 @@ public class Race : MonoBehaviour
     //}
     
     Debug.Log("Fim de corrida!");
-    race_sound.Stop();
     btn_back.SetActive(true);
     GivingPoints();
     FindObjectOfType<GameSession>().NextRace();
@@ -361,5 +360,10 @@ public class Race : MonoBehaviour
 
       contador++;
     }
+  }
+
+  public void StopMusic()
+  {
+    race_sound.Stop();
   }
 }
