@@ -101,8 +101,8 @@ public class Race : MonoBehaviour
     //}
     
     Debug.Log("Fim de corrida!");
-    btn_back.SetActive(true);
-    GivingPoints();
+    //btn_back.SetActive(true);
+    //GivingPoints();
     FindObjectOfType<GameSession>().NextRace();
   }
 
@@ -141,7 +141,6 @@ public class Race : MonoBehaviour
     foreach (Team team in World.teams)
     {
       team.SetScore(CalculateTeamScore(team));
-      team.pneu_id = 1;
       team.pneu_dura = 20;
       leaderboard.Add(team);
     }
@@ -202,7 +201,7 @@ public class Race : MonoBehaviour
     r_aero = RandomNumberGenerator.NumberBetween(team.Car.Aerodynamics, track.Aerodynamics);
     r_chass = RandomNumberGenerator.NumberBetween(team.Car.Chassis, track.Chassi);
 
-    score = (r_power + r_dura + r_aero + r_chass + session.GetPilotOver()) / 6;
+    score = (r_power + r_dura + r_aero + r_chass + session.GetPilotOver() + session.GetPilotTyre()) / 7;
 
     return score;
   }
@@ -325,6 +324,8 @@ public class Race : MonoBehaviour
       // Wait for X second
       yield return new WaitForSeconds(2f);
     } while (current_lap <= laps);
+    btn_back.SetActive(true);
+    GivingPoints();
   }
 
   public void GivingPoints()
@@ -392,21 +393,21 @@ public class Race : MonoBehaviour
         if(sort_pneu == 1)
         {
           Debug.Log("Colocando Pneus Macios");
-          t.pneu_id = 1;
+          t.pneu_id = 30;
           t.pneu_dura = 20;
           t.SetLapTime(t.LapTime + 20.0f);
         }
         else if(sort_pneu == 2)
         {
           Debug.Log("Colocando Pneus Médios");
-          t.pneu_id = 2;
+          t.pneu_id = 27;
           t.pneu_dura = 30;
           t.SetLapTime(t.LapTime + 20.0f);
         }
         else if(sort_pneu == 3)
         {
           Debug.Log("Colocando Pneus Duros");
-          t.pneu_id = 3;
+          t.pneu_id = 24;
           t.pneu_dura = 40;
           t.SetLapTime(t.LapTime + 20.0f);
         }
@@ -425,7 +426,7 @@ public class Race : MonoBehaviour
 
     foreach(Team t in leaderboard)
     {
-      if(t.pneu_id == 1)
+      if(t.pneu_id == 30)
       {
         if(contador == 0)
         {
@@ -468,7 +469,7 @@ public class Race : MonoBehaviour
           ten_tyre.text = "S";
         }
       }
-      else if(t.pneu_id == 2)
+      else if(t.pneu_id == 27)
       {
         if (contador == 0)
         {
@@ -511,7 +512,7 @@ public class Race : MonoBehaviour
           ten_tyre.text = "M";
         }
       }
-      else if(t.pneu_id == 3)
+      else if(t.pneu_id == 24)
       {
         if (contador == 0)
         {

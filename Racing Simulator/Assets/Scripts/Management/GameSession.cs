@@ -62,6 +62,11 @@ public class GameSession : MonoBehaviour
     return pilot.Over;
   }
 
+  public int GetPilotTyre()
+  {
+    return team.pneu_id;
+  }
+
   public string GetCarString()
   {
     return team.CarString;

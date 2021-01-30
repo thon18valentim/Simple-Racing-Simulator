@@ -27,6 +27,7 @@ namespace Assets.Scripts
       LogoString = logoName;
       CarString = carName;
       Pilot = World.GetPilotById(pilotId);
+      pneu_id = 30;
     }
 
     public void SetPilot(int id)
