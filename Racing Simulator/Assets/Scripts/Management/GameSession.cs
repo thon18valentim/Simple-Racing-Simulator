@@ -7,6 +7,7 @@ public class GameSession : MonoBehaviour
 {
   public static Team team; // Player chosen team
   static Pilot pilot; // Player chosen pilot
+  static Track track; // Currently track
 
   int currentTrack = 0;
 
@@ -55,6 +56,11 @@ public class GameSession : MonoBehaviour
   public string GetPilotFaceString()
   {
     return pilot.PilotString;
+  }
+
+  public string GetTrackString()
+  {
+    return track.TrackString;
   }
 
   public int GetPilotOver()

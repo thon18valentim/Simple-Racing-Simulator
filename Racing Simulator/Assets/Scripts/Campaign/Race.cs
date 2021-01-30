@@ -75,11 +75,14 @@ public class Race : MonoBehaviour
   // Creating Leaderboard
   List<Team> leaderboard = new List<Team>();
 
+  public GameObject flag;
+
   private void Start()
   {
     session = FindObjectOfType<GameSession>();
 
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
+    flag.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Flags/" + World.tracks[0].TrackString);
 
     DefineLeaderboard();
 
