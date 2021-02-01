@@ -129,6 +129,11 @@ public class GameSession : MonoBehaviour
     return team.Id;
   }
 
+  public void IncreasePlayerStatus(int points)
+  {
+    pilot.Points += points;
+  }
+
   public void IncreaseStatus(string improvement)
   {
     switch (improvement)
