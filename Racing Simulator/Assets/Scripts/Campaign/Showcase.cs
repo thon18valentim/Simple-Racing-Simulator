@@ -14,39 +14,39 @@ public class Showcase : MonoBehaviour
 
   private int select = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+  // Start is called before the first frame update
+  void Start()
+  {
     piloto1.text = World.pilots[0].Name;
     country1.text = World.pilots[0].Country;
     team1.text = World.teams[0].Name;
     over1.text = World.pilots[0].Over.ToString();
-    }
+  }
 
-    // Update is called once per frame
-    void Update()
+  // Update is called once per frame
+  void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
-      if (Input.GetKeyDown(KeyCode.LeftArrow))
+      btn_sound.Play();
+      select--;
+      if(select < 0)
       {
-        btn_sound.Play();
-        select--;
-        if(select < 0)
-        {
-          select = 9;
-        }
-        Selection(select);
+        select = 9;
       }
-      else if (Input.GetKeyDown(KeyCode.RightArrow))
-      {
-        btn_sound.Play();
-        select++;
-        if(select > 9)
-        {
-          select = 0;
-        }
-        Selection(select);
-      }
+      Selection(select);
     }
+    else if (Input.GetKeyDown(KeyCode.RightArrow))
+    {
+      btn_sound.Play();
+      select++;
+      if(select > 9)
+      {
+        select = 0;
+      }
+      Selection(select);
+    }
+  }
 
   public void Selection(int opc)
   {
@@ -66,6 +66,7 @@ public class Showcase : MonoBehaviour
     }
     Selection(select);
   }
+
   public void BackItem()
   {
     btn_sound.Play();

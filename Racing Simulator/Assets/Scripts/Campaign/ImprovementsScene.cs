@@ -28,6 +28,7 @@ public class ImprovementsScene : MonoBehaviour
 
   private void Start()
   {
+    // Loading player pilot and car images
     pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
     carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
 
@@ -37,6 +38,7 @@ public class ImprovementsScene : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // Player points for improvements
     player_points.text = session.GetPoints().ToString() + " pts";
     power.text = session.GetPower().ToString();
     aero.text = session.GetAero().ToString();
@@ -45,6 +47,7 @@ public class ImprovementsScene : MonoBehaviour
 
     DisableTexts(selection);
 
+    // Adding points to desired category
     if (Input.GetKeyDown(KeyCode.DownArrow))
     {
       btn_sound.Play();
@@ -91,7 +94,7 @@ public class ImprovementsScene : MonoBehaviour
     {
       conf_sound.Play();
       //Loading Next Scene on Return click
-      FindObjectOfType<SceneLoader>().LoadScene(1);
+      FindObjectOfType<SceneLoader>().LoadNextScene();
     }
   }
 

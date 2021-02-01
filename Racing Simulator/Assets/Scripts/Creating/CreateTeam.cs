@@ -12,6 +12,7 @@ public class CreateTeam : MonoBehaviour
   public TextMeshProUGUI teamName;
   public GameObject car;
 
+  // Audios
   public AudioSource conf_sound;
   public AudioSource btn_sound;
 
@@ -48,7 +49,7 @@ public class CreateTeam : MonoBehaviour
       conf_sound.Play();
       // Setting the player chosen team on game session
       FindObjectOfType<GameSession>().SetPlayerTeam(selection);
-      FindObjectOfType<SceneLoader>().LoadScene(1);
+      FindObjectOfType<SceneLoader>().LoadNextScene();
     }
   }
 

@@ -9,22 +9,18 @@ public class CampaignMenu : MonoBehaviour
   public GameObject management_menu;
   public GameObject race_menu;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+  // Start is called before the first frame update
+  void Start()
+  {
     ShowRace();
-    }
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
   public void ShowRace()
   {
     race_menu.SetActive(true);
     management_menu.SetActive(false);
   }
+
   public void HideRace()
   {
     race_menu.SetActive(false);
