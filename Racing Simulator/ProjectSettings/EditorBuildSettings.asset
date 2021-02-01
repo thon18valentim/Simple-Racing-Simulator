@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Champ.unity
     guid: 5a699110fc2b8c342909699696dd6615
+  - enabled: 1
+    path: Assets/Scenes/Showcase.unity
+    guid: cca6d1591903eeb48b07d42060767eff
   m_configObjects: {}
