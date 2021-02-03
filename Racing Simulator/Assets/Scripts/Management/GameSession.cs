@@ -118,6 +118,10 @@ public class GameSession : MonoBehaviour
   {
     return currentTrack;
   }
+  public int ChooseTrack(int i)
+  {
+    return i;
+  }
 
   public void NextRace()
   {

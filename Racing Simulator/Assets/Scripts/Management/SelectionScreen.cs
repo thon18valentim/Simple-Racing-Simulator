@@ -85,7 +85,7 @@ public class SelectionScreen : MonoBehaviour
       conf_sound.Play();
       // Setting the player chosen pilot on game session
       FindObjectOfType<GameSession>().SetPlayerPilot(selection);
-      FindObjectOfType<SceneLoader>().LoadScene(1);
+      FindObjectOfType<SceneLoader>().LoadNextScene();
     }
   }
 
