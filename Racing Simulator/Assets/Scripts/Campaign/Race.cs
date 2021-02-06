@@ -11,6 +11,11 @@ public class Race : MonoBehaviour
   public GameObject quali_screen;
   public GameObject race_screen;
 
+  // Set Current Track Img
+  public GameObject australia_track;
+  public GameObject bahrain_track;
+  public GameObject brazil_track;
+
   // Management of Qualification Texts
   public TextMeshProUGUI first_place;
   public TextMeshProUGUI second_place;
@@ -323,9 +328,10 @@ public class Race : MonoBehaviour
       gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
       current_lap++;
       PitStop();
+      MechIssue();
       SettingTyreText();
       // Wait for X second
-      yield return new WaitForSeconds(0f);
+      yield return new WaitForSeconds(2f);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -416,6 +422,51 @@ public class Race : MonoBehaviour
           t.pneu_id = 24;
           t.pneu_dura = 40;
           t.SetLapTime(t.LapTime + 20.0f);
+        }
+      }
+    }
+  }
+
+  public void MechIssue()
+  {
+    int sort;
+
+    foreach(Team t in World.teams)
+    {
+      if(t.Car.Durability <= 10)
+      {
+        sort = RandomNumberGenerator.NumberBetween(1,15);
+        if(sort == 1)
+        {
+          t.SetLapTime(t.LapTime + 5.0f);
+          Debug.Log("Problema mecânico!");
+        }
+      }
+      else if(t.Car.Durability > 10 && t.Car.Durability <= 15)
+      {
+        sort = RandomNumberGenerator.NumberBetween(1, 20);
+        if (sort == 1)
+        {
+          t.SetLapTime(t.LapTime + 5.0f);
+          Debug.Log("Problema mecânico!");
+        }
+      }
+      else if (t.Car.Durability > 15 && t.Car.Durability <= 20)
+      {
+        sort = RandomNumberGenerator.NumberBetween(1, 25);
+        if (sort == 1)
+        {
+          t.SetLapTime(t.LapTime + 5.0f);
+          Debug.Log("Problema mecânico!");
+        }
+      }
+      else if (t.Car.Durability > 20)
+      {
+        sort = RandomNumberGenerator.NumberBetween(1, 35);
+        if (sort == 1)
+        {
+          t.SetLapTime(t.LapTime + 5.0f);
+          Debug.Log("Problema mecânico!");
         }
       }
     }
@@ -563,6 +614,28 @@ public class Race : MonoBehaviour
       }
 
       contador++;
+    }
+  }
+
+  public void ShowGpImg()
+  {
+    if(track.Id == 1)
+    {
+      australia_track.SetActive(true);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+    }
+    else if(track.Id == 2)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(true);
+      brazil_track.SetActive(false);
+    }
+    else if(track.Id == 3)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(true);
     }
   }
 }
