@@ -103,14 +103,6 @@ public class Race : MonoBehaviour
 
     StartCoroutine("Wait");
 
-    //foreach (Team t in leaderboard)
-    //{
-      //Debug.Log("Piloto: " + t.Pilot.Name + " | Tempo: " + t.LapTime.ToString());
-    //}
-    
-    Debug.Log("Fim de corrida!");
-    //btn_back.SetActive(true);
-    //GivingPoints();
     FindObjectOfType<GameSession>().NextRace();
   }
 
@@ -335,6 +327,7 @@ public class Race : MonoBehaviour
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
+    session.GameOver();
   }
 
   public void GivingPoints()

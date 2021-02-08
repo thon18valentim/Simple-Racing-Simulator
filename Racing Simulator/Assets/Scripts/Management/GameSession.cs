@@ -129,6 +129,14 @@ public class GameSession : MonoBehaviour
     currentTrack++;
   }
 
+  public void GameOver()
+  {
+    if(currentTrack > 2)
+    {
+      FindObjectOfType<SceneLoader>().LoadScene(10);
+    }
+  }
+
   public int GetTeamId()
   {
     return team.Id;
