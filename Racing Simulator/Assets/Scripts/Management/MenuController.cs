@@ -23,7 +23,7 @@ public class MenuController : MonoBehaviour
     {
       selection++;
       if (selection > 3)
-        selection = 3;
+        selection = 0;
       SetOption(selection);
     }
 
@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
     {
       selection--;
       if (selection < 0)
-        selection = 0;
+        selection = 3;
       SetOption(selection);
     }
 

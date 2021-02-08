@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Showcase.unity
     guid: cca6d1591903eeb48b07d42060767eff
+  - enabled: 1
+    path: Assets/Scenes/TeamsChamp.unity
+    guid: e3772cd0fff9df142bcf013fb8314a0e
   m_configObjects: {}

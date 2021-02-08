@@ -10,7 +10,6 @@ public class GameSession : MonoBehaviour
   static Track track; // Currently track
 
   int currentTrack = 0;
-  int trainePoints = 0;
 
   private void Awake()
   {
@@ -118,16 +117,6 @@ public class GameSession : MonoBehaviour
   public int GetCurrentTrack()
   {
     return currentTrack;
-  }
-
-  public int GetCurrentTrainePoints()
-  {
-    return trainePoints;
-  }
-
-  public void IncreaseTrainePoints()
-  {
-    trainePoints += 1;
   }
 
   public int ChooseTrack(int i)

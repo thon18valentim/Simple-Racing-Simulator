@@ -335,7 +335,6 @@ public class Race : MonoBehaviour
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
-    session.IncreaseTrainePoints();
   }
 
   public void GivingPoints()
