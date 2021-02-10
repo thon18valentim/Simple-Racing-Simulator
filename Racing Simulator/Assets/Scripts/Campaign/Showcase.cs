@@ -77,4 +77,9 @@ public class Showcase : MonoBehaviour
     }
     Selection(select);
   }
+
+  public void LoadPreviousScene()
+  {
+    FindObjectOfType<SceneLoader>().LoadPreviousScene();
+  }
 }
