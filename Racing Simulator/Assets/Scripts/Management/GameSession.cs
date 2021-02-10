@@ -10,6 +10,7 @@ public class GameSession : MonoBehaviour
   static Track track; // Currently track
 
   int currentTrack = 0;
+  int gpTrack = 0;
 
   private void Awake()
   {
@@ -28,6 +29,11 @@ public class GameSession : MonoBehaviour
     {
       DontDestroyOnLoad(gameObject);
     }
+  }
+
+  public int GetGpTrack()
+  {
+    return gpTrack;
   }
 
   // Setting the player team
@@ -119,9 +125,9 @@ public class GameSession : MonoBehaviour
     return currentTrack;
   }
 
-  public int ChooseTrack(int i)
+  public void ChooseTrack(int i)
   {
-    return i;
+    gpTrack = i;
   }
 
   public void NextRace()
