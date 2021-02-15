@@ -583,6 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 141492650}
   - component: {fileID: 141492651}
+  - component: {fileID: 141492652}
   m_Layer: 0
   m_Name: Scene Manager
   m_TagString: Untagged
@@ -636,6 +637,18 @@ MonoBehaviour:
   oitavo_pts: {fileID: 1901441543}
   nono_pts: {fileID: 891692444}
   decimo_pts: {fileID: 1648301869}
+--- !u!114 &141492652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141492649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4b40b76b240b442b4cf3333161a042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &178705897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,8 +3200,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 141492652}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:

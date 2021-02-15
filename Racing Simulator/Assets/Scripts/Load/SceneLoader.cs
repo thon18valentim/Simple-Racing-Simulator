@@ -26,18 +26,6 @@ public class SceneLoader : MonoBehaviour
     }
   }
 
-  public void LoadMainMenu()
-  {
-    SceneManager.LoadScene(0);
-  }
-
-  public void LoadPastScene(int i)
-  {
-    scene = SceneManager.GetActiveScene().buildIndex;
-
-    int currentScene = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(currentScene - i);
-  }
 
   public void LoadNextScene()
   {

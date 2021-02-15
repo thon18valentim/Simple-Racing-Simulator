@@ -137,7 +137,7 @@ public class GameSession : MonoBehaviour
 
   public void GameOver()
   {
-    if(currentTrack > 2)
+    if(currentTrack > 9)
     {
       FindObjectOfType<SceneLoader>().LoadScene(10);
     }

@@ -15,6 +15,13 @@ public class Race : MonoBehaviour
   public GameObject australia_track;
   public GameObject bahrain_track;
   public GameObject brazil_track;
+  public GameObject austria_track;
+  public GameObject singapore_track;
+  public GameObject abu_track;
+  public GameObject russia_track;
+  public GameObject usa_track;
+  public GameObject italy_track;
+  public GameObject england_track;
 
   // Management of Qualification Texts
   public TextMeshProUGUI first_place;
@@ -616,18 +623,130 @@ public class Race : MonoBehaviour
       australia_track.SetActive(true);
       bahrain_track.SetActive(false);
       brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
     }
     else if(track.Id == 2)
     {
       australia_track.SetActive(false);
       bahrain_track.SetActive(true);
       brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
     }
     else if(track.Id == 3)
     {
       australia_track.SetActive(false);
       bahrain_track.SetActive(false);
       brazil_track.SetActive(true);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if(track.Id == 4)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(true);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 5)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(true);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 6)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(true);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 7)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(true);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 8)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(true);
+      usa_track.SetActive(false);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 9)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(true);
+      abu_track.SetActive(false);
+    }
+    else if (track.Id == 10)
+    {
+      australia_track.SetActive(false);
+      bahrain_track.SetActive(false);
+      brazil_track.SetActive(false);
+      austria_track.SetActive(false);
+      england_track.SetActive(false);
+      italy_track.SetActive(false);
+      singapore_track.SetActive(false);
+      russia_track.SetActive(false);
+      usa_track.SetActive(false);
+      abu_track.SetActive(true);
     }
   }
 }

@@ -40,6 +40,15 @@ public class World : MonoBehaviour
   public const int TRACK_AUSTRALIA_ID = 1;
   public const int TRACK_BAHREIN_ID = 2;
   public const int TRACK_BRAZIL_ID = 3;
+  public const int TRACK_AUSTRIA_ID = 4;
+  public const int TRACK_ENGLAND_ID = 5;
+  public const int TRACK_ITALY_ID = 6;
+  public const int TRACK_SINGAPORE_ID = 7;
+  public const int TRACK_RUSSIA_ID = 8;
+  public const int TRACK_USA_ID = 9;
+  public const int TRACK_ABU_ID = 10;
+  
+  
 
   // Class constructor
   // It populates the list with the data needed
@@ -87,9 +96,16 @@ public class World : MonoBehaviour
   //Creating the Tracks
   public static void PopulateTracks()
   { 
-    tracks.Add(new Track(TRACK_AUSTRALIA_ID, "Albert Park", "Australia", 58, 30, 35, 28, 32, "bandeira_australia"));
+    tracks.Add(new Track(TRACK_AUSTRALIA_ID, "Albert Park", "Australia", 58, 30, 35, 30, 32, "bandeira_australia"));
     tracks.Add(new Track(TRACK_BAHREIN_ID, "Bahrain International Circuit", "Bahrain", 57, 34, 30, 30, 32, "bandeira_bahrein"));
     tracks.Add(new Track(TRACK_BRAZIL_ID, "Autodromo de Interlagos", "Brasil", 71, 32, 32, 32, 32, "bandeira_brasil"));
+    tracks.Add(new Track(TRACK_AUSTRIA_ID, "Red Bull Ring", "Austria", 71, 33, 28, 34, 32, "bandeira_austria"));
+    tracks.Add(new Track(TRACK_ENGLAND_ID, "Silverstone Circuit", "England", 52, 29, 31, 33, 30, "bandeira_england"));
+    tracks.Add(new Track(TRACK_ITALY_ID, "Autodromo Nazionale Monza", "Italy", 53, 30, 28, 34, 32, "bandeira_italy"));
+    tracks.Add(new Track(TRACK_SINGAPORE_ID, "Marina Bay Street Circuit", "Singapore", 61, 35, 35, 29, 28, "bandeira_singapore"));
+    tracks.Add(new Track(TRACK_RUSSIA_ID, "Sochi Autodrom", "Russia", 53, 34, 33, 30, 29, "bandeira_russia"));
+    tracks.Add(new Track(TRACK_USA_ID, "Circuit of the Americas", "United States", 56, 30, 30, 33, 32, "bandeira_usa"));
+    tracks.Add(new Track(TRACK_ABU_ID, "Yas Marina Circuit", "Abu Dhabi", 55, 30,29,35,32, "bandeira_abu"));
   }
 
   public static Car CreatePlayerCar()

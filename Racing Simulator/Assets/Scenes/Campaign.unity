@@ -341,10 +341,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadMainMenu
-        m_Mode: 1
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -784,7 +784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371931201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: PlayBackMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &371931201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,8 +954,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
@@ -1395,8 +1407,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -1457,18 +1469,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612827313}
   m_CullTransparentMesh: 0
---- !u!114 &626930220 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4819297922448399797, guid: ee70b5d5452ca0d4d8b5ef3410d56e2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1232596953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afaa65725d75c4e4393dcfc5d0c7c4b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &641653641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,8 +2034,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -2211,14 +2211,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadPastScene
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2427,6 +2427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1183037872}
   - component: {fileID: 1183037871}
+  - component: {fileID: 1183037873}
   m_Layer: 0
   m_Name: Scene Management
   m_TagString: Untagged
@@ -2463,6 +2464,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183037873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183037870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4b40b76b240b442b4cf3333161a042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  back_music: {fileID: 0}
 --- !u!1 &1201123225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,8 +2965,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -3630,8 +3644,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 626930220}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1183037873}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
