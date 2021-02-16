@@ -70,6 +70,11 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nin_tyre;
   public TextMeshProUGUI ten_tyre;
 
+  // Overtaking Screen
+  public TextMeshProUGUI overtaking_text;
+  public TextMeshProUGUI pitStop_text;
+  public TextMeshProUGUI mechIssue_text;
+
   // Setting race sound
   public AudioSource race_sound;
 
@@ -94,6 +99,7 @@ public class Race : MonoBehaviour
     session = FindObjectOfType<GameSession>();
 
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
+    IncreasingPilotsOver();
     flag.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Flags/" + World.tracks[0].TrackString);
 
     DefineLeaderboard();
@@ -193,6 +199,7 @@ public class Race : MonoBehaviour
           temp = leaderboard[j];
           leaderboard[j] = leaderboard[j + 1];
           leaderboard[j + 1] = temp;
+          overtaking_text.text = leaderboard[j].Pilot.Name + " is overtaking " + leaderboard[j + 1].Pilot.Name;
         }
       }
     }
@@ -422,6 +429,7 @@ public class Race : MonoBehaviour
           t.pneu_dura = 40;
           t.SetLapTime(t.LapTime + 20.0f);
         }
+        pitStop_text.text = t.Pilot.Name + " is changing tyres";
       }
     }
   }
@@ -440,6 +448,7 @@ public class Race : MonoBehaviour
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
         }
+        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
       else if(t.Car.Durability > 10 && t.Car.Durability <= 15)
       {
@@ -449,6 +458,7 @@ public class Race : MonoBehaviour
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
         }
+        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
       else if (t.Car.Durability > 15 && t.Car.Durability <= 20)
       {
@@ -458,6 +468,7 @@ public class Race : MonoBehaviour
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
         }
+        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
       else if (t.Car.Durability > 20)
       {
@@ -467,6 +478,7 @@ public class Race : MonoBehaviour
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
         }
+        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
     }
   }
@@ -747,6 +759,26 @@ public class Race : MonoBehaviour
       russia_track.SetActive(false);
       usa_track.SetActive(false);
       abu_track.SetActive(true);
+    }
+  }
+
+  public void IncreasingPilotsOver()
+  {
+    if(session.GetCurrentTrack() == 3 || session.GetCurrentTrack() == 6)
+    {
+      foreach(Team team in leaderboard)
+      {
+        int overIncrease = RandomNumberGenerator.NumberBetween(0, 2);
+
+        if (team.Pilot.Age < 30)
+        {
+          team.Pilot.Over += overIncrease;
+        }
+        else if(team.Pilot.Age > 30)
+        {
+          team.Pilot.Over -= overIncrease;
+        }
+      }
     }
   }
 }
