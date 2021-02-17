@@ -153,6 +153,26 @@ public class GameSession : MonoBehaviour
     pilot.Points += points;
   }
 
+  public void IncreasingPilotsOver()
+  {
+    if (currentTrack == 3 || currentTrack == 6)
+    {
+      foreach (Team team in World.teams)
+      {
+        int overIncrease = RandomNumberGenerator.NumberBetween(0, 2);
+
+        if (team.Pilot.Age < 30)
+        {
+          team.Pilot.Over += overIncrease;
+        }
+        else if (team.Pilot.Age > 30)
+        {
+          team.Pilot.Over -= overIncrease;
+        }
+      }
+    }
+  }
+
   public void IncreaseStatus(string improvement)
   {
     switch (improvement)

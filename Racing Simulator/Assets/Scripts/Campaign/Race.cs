@@ -99,7 +99,8 @@ public class Race : MonoBehaviour
     session = FindObjectOfType<GameSession>();
 
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
-    IncreasingPilotsOver();
+    session.IncreasingPilotsOver();
+    //IncreasingPilotsOver();
     flag.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Flags/" + World.tracks[0].TrackString);
 
     DefineLeaderboard();
@@ -337,7 +338,7 @@ public class Race : MonoBehaviour
       MechIssue();
       SettingTyreText();
       // Wait for X second
-      yield return new WaitForSeconds(2f);
+      yield return new WaitForSeconds(0f);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -762,7 +763,7 @@ public class Race : MonoBehaviour
     }
   }
 
-  public void IncreasingPilotsOver()
+  /*public void IncreasingPilotsOver()
   {
     if(session.GetCurrentTrack() == 3 || session.GetCurrentTrack() == 6)
     {
@@ -780,5 +781,5 @@ public class Race : MonoBehaviour
         }
       }
     }
-  }
+  }*/
 }

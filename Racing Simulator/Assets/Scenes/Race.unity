@@ -1905,6 +1905,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1227730551}
+        m_TargetAssemblyTypeName: GameSession, Assembly-CSharp
+        m_MethodName: NextRace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &223517743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4969,7 +4981,7 @@ GameObject:
   - component: {fileID: 590508363}
   - component: {fileID: 590508362}
   m_Layer: 5
-  m_Name: Text 1
+  m_Name: Overtaking_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5698,8 +5710,8 @@ MonoBehaviour:
   nin_tyre: {fileID: 1035861558}
   ten_tyre: {fileID: 770247754}
   overtaking_text: {fileID: 590508362}
-  pitStop_text: {fileID: 836840191}
-  mechIssue_text: {fileID: 792471477}
+  pitStop_text: {fileID: 792471477}
+  mechIssue_text: {fileID: 836840191}
   race_sound: {fileID: 1375122276}
   btn_back: {fileID: 97157105}
   contador: 0
@@ -6069,7 +6081,7 @@ GameObject:
   - component: {fileID: 792471476}
   - component: {fileID: 792471477}
   m_Layer: 5
-  m_Name: Text 3
+  m_Name: PitStop_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6339,7 +6351,7 @@ GameObject:
   - component: {fileID: 836840190}
   - component: {fileID: 836840191}
   m_Layer: 5
-  m_Name: Text 2
+  m_Name: MechIssue_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8563,6 +8575,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48024fc9baae29745a2e464f3ba6f69c, type: 3}
+--- !u!114 &1227730551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5037434182826490151, guid: 48024fc9baae29745a2e464f3ba6f69c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227730550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75ec06d5fb2d734c81182f923518109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1232323869
 GameObject:
   m_ObjectHideFlags: 0
