@@ -15,6 +15,7 @@ namespace Assets.Scripts
     public int Age { get; set; }
     public int Over { get; set; }
     public int Points { get; set; }
+    public int points { get; set; }
 
     // Constructor
     public Pilot(int id, string name, string country, string faceString, int age, int over)

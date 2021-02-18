@@ -436,46 +436,57 @@ public class Race : MonoBehaviour
     {
       if(contador == 0)
       {
+        t.Pilot.points += 25;
         t.points += 25;
       }
       else if(contador == 1)
       {
+        t.Pilot.points += 18;
         t.points += 18;
       }
       else if(contador == 2)
       {
+        t.Pilot.points += 15;
         t.points += 15;
       }
       else if(contador == 3)
       {
+        t.Pilot.points += 12;
         t.points += 12;
       }
       else if(contador == 4)
       {
+        t.Pilot.points += 10;
         t.points += 10;
       }
       else if(contador == 5)
       {
+        t.Pilot.points += 8;
         t.points += 8;
       }
       else if(contador == 6)
       {
+        t.Pilot.points += 6;
         t.points += 6;
       }
       else if(contador == 7)
       {
+        t.Pilot.points += 4;
         t.points += 4;
       }
       else if(contador == 8)
       {
+        t.Pilot.points += 2;
         t.points += 2;
       }
       else if(contador == 9)
       {
+        t.Pilot.points += 1;
         t.points += 1;
       }
       else
       {
+        t.Pilot.points += 0;
         t.points += 0;
       }
 
@@ -483,6 +494,7 @@ public class Race : MonoBehaviour
     }
 
     session.IncreasePlayerStatus(3);
+    SumTeamsPoints();
   }
 
   public void PitStop()
@@ -968,6 +980,30 @@ public class Race : MonoBehaviour
       usa_track.SetActive(false);
       abu_track.SetActive(true);
     }
+  }
+
+  private void SumTeamsPoints()
+  {
+    World.teams[0].points += World.teams[10].points;
+    World.teams[1].points += World.teams[11].points;
+    World.teams[2].points += World.teams[12].points;
+    World.teams[3].points += World.teams[13].points;
+    World.teams[4].points += World.teams[14].points;
+    World.teams[5].points += World.teams[15].points;
+    World.teams[6].points += World.teams[16].points;
+    World.teams[7].points += World.teams[17].points;
+    World.teams[8].points += World.teams[18].points;
+    World.teams[9].points += World.teams[19].points;
+
+    World.teams[11].points = 0;
+    World.teams[12].points = 0;
+    World.teams[13].points = 0;
+    World.teams[14].points = 0;
+    World.teams[15].points = 0;
+    World.teams[16].points = 0;
+    World.teams[17].points = 0;
+    World.teams[18].points = 0;
+    World.teams[19].points = 0;
   }
 
   /*public void IncreasingPilotsOver()

@@ -81,7 +81,7 @@ public class Champ : MonoBehaviour
     {
       for (int j = 0; j < championship.Count - 1; j++)
       {
-        if (championship[j + 1].points > championship[j].points)
+        if (championship[j + 1].Pilot.points > championship[j].Pilot.points)
         {
           temp = championship[j];
           championship[j] = championship[j + 1];
@@ -101,102 +101,102 @@ public class Champ : MonoBehaviour
       if (contador == 0)
       {
         primeiro_col.text = t.Pilot.Name;
-        primeiro_pts.text = t.points.ToString();
+        primeiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 1)
       {
         segundo_col.text = t.Pilot.Name;
-        segundo_pts.text = t.points.ToString();
+        segundo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 2)
       {
         terceiro_col.text = t.Pilot.Name;
-        terceiro_pts.text = t.points.ToString();
+        terceiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 3)
       {
         quarto_col.text = t.Pilot.Name;
-        quarto_pts.text = t.points.ToString();
+        quarto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 4)
       {
         quinto_col.text = t.Pilot.Name;
-        quinto_pts.text = t.points.ToString();
+        quinto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 5)
       {
         sexto_col.text = t.Pilot.Name;
-        sexto_pts.text = t.points.ToString();
+        sexto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 6)
       {
         setimo_col.text = t.Pilot.Name;
-        setimo_pts.text = t.points.ToString();
+        setimo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 7)
       {
         oitavo_col.text = t.Pilot.Name;
-        oitavo_pts.text = t.points.ToString();
+        oitavo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 8)
       {
         nono_col.text = t.Pilot.Name;
-        nono_pts.text = t.points.ToString();
+        nono_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 9)
       {
         decimo_col.text = t.Pilot.Name;
-        decimo_pts.text = t.points.ToString();
+        decimo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 10)
       {
         onze_col.text = t.Pilot.Name;
-        onze_pts.text = t.points.ToString();
+        onze_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 11)
       {
         doze_col.text = t.Pilot.Name;
-        doze_pts.text = t.points.ToString();
+        doze_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 12)
       {
         treze_col.text = t.Pilot.Name;
-        treze_pts.text = t.points.ToString();
+        treze_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 13)
       {
         quatorze_col.text = t.Pilot.Name;
-        quatorze_pts.text = t.points.ToString();
+        quatorze_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 14)
       {
         quinze_col.text = t.Pilot.Name;
-        quinze_pts.text = t.points.ToString();
+        quinze_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 15)
       {
         dezesseis_col.text = t.Pilot.Name;
-        dezesseis_pts.text = t.points.ToString();
+        dezesseis_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 16)
       {
         dezessete_col.text = t.Pilot.Name;
-        dezessete_pts.text = t.points.ToString();
+        dezessete_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 17)
       {
         dezoito_col.text = t.Pilot.Name;
-        dezoito_pts.text = t.points.ToString();
+        dezoito_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 18)
       {
         dezenove_col.text = t.Pilot.Name;
-        dezenove_pts.text = t.points.ToString();
+        dezenove_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 19)
       {
         vinte_col.text = t.Pilot.Name;
-        vinte_pts.text = t.points.ToString();
+        vinte_pts.text = t.Pilot.points.ToString();
       }
 
       contador++;

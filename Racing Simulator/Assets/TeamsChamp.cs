@@ -43,9 +43,12 @@ public class TeamsChamp : MonoBehaviour
 
   private void DefineStandings()
   {
+    int contador = 0;
     foreach (Team team in World.teams)
     {
-      Teamschampionship.Add(team);
+      if(contador < 10)
+        Teamschampionship.Add(team);
+      contador++;
     }
 
     SortStandings();
