@@ -24,6 +24,18 @@ public class World : MonoBehaviour
   public const int PILOT_MAG_ID = 12;
   public const int PILOT_RUSS_ID = 13;
 
+  // Definig the variables with id for use later on second pilot
+  public const int PILOT_BOT_ID = 14;
+  public const int PILOT_ALB_ID = 15;
+  public const int PILOT_VET_ID = 16;
+  public const int PILOT_PER_ID = 17;
+  public const int PILOT_NOR_ID = 18;
+  public const int PILOT_OCO_ID = 19;
+  public const int PILOT_KVY_ID = 20;
+  public const int PILOT_GIO_ID = 21;
+  public const int PILOT_GRO_ID = 22;
+  public const int PILOT_LAT_ID = 23;
+
   // Id for teams
   public const int TEAM_SILVER_TECH_ID = 1;
   public const int TEAM_BLUE_DEVILS_ID = 2;
@@ -35,6 +47,17 @@ public class World : MonoBehaviour
   public const int TEAM_JULIET_MOTORS_ID = 8;
   public const int TEAM_AMERICAN_MONO_ID = 9;
   public const int TEAM_BLUE_SKY_ID = 10;
+  // Second Pilot Team ID
+  public const int TEAM_SILVER_TECH_IDP2 = 11;
+  public const int TEAM_BLUE_DEVILS_IDP2 = 12;
+  public const int TEAM_ITALY_IDP2 = 13;
+  public const int TEAM_FLOAT_POINT_TEAM_IDP2 = 14;
+  public const int TEAM_ORANGE_TEAM_IDP2 = 15;
+  public const int TEAM_YELL_MOTORS_IDP2 = 16;
+  public const int TEAM_WHITE_DEVILS_IDP2 = 17;
+  public const int TEAM_JULIET_MOTORS_IDP2 = 18;
+  public const int TEAM_AMERICAN_MONO_IDP2 = 19;
+  public const int TEAM_BLUE_SKY_IDP2 = 20;
 
   // Id for tracks
   public const int TRACK_AUSTRALIA_ID = 1;
@@ -76,6 +99,17 @@ public class World : MonoBehaviour
     pilots.Add(new Pilot(PILOT_VAND_ID, "Vandoorne", "Belgium", "PilotFace3", 28, 74));
     pilots.Add(new Pilot(PILOT_MICK_ID, "Shumacher", "Germany", "PilotFace1", 21, 72));
     pilots.Add(new Pilot(PILOT_DRUG_ID, "Drugovich", "Brazil", "PilotFace1", 20, 69));
+    //Second Pilot
+    pilots.Add(new Pilot(PILOT_BOT_ID, "Bottas", "Finland", "PilotFace1", 31, 87));
+    pilots.Add(new Pilot(PILOT_ALB_ID, "Albon", "Thailand", "PilotFace3", 24, 81));
+    pilots.Add(new Pilot(PILOT_VET_ID, "Vettel", "Germany", "PilotFace1", 33, 84));
+    pilots.Add(new Pilot(PILOT_PER_ID, "Perez", "Mexico", "PilotFace3", 31, 86));
+    pilots.Add(new Pilot(PILOT_NOR_ID, "Norris", "England", "PilotFace3", 21, 83));
+    pilots.Add(new Pilot(PILOT_OCO_ID, "Ocon", "France", "PilotFace1", 24, 82));
+    pilots.Add(new Pilot(PILOT_KVY_ID, "Kvyat", "Russia", "PilotFace1", 26, 81));
+    pilots.Add(new Pilot(PILOT_GIO_ID, "Giovinazzi", "Italy", "PilotFace1", 27, 79));
+    pilots.Add(new Pilot(PILOT_GRO_ID, "Grosjean", "France", "PilotFace1", 34, 78));
+    pilots.Add(new Pilot(PILOT_LAT_ID, "Latifi", "Canada", "PilotFace1", 25, 73));
   }
 
   // Creating the teams
@@ -88,9 +122,20 @@ public class World : MonoBehaviour
     teams.Add(new Team(TEAM_ORANGE_TEAM_ID, "Orange Team", "orangeTeamLogo", "orangeTeam", PILOT_SAINZ_ID));
     teams.Add(new Team(TEAM_YELL_MOTORS_ID, "Yell Motors", "logoYell", "yellCar", PILOT_RIC_ID));
     teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "White Devils", "whiteDevilsLogo", "whiteDev", PILOT_GASLY_ID));
-    teams.Add(new Team(TEAM_WHITE_DEVILS_ID, "Juliet Motors", "julietLogo", "julietCar", PILOT_RAIK_ID));
+    teams.Add(new Team(TEAM_JULIET_MOTORS_ID, "Juliet Motors", "julietLogo", "julietCar", PILOT_RAIK_ID));
     teams.Add(new Team(TEAM_AMERICAN_MONO_ID, "American Mono", "logoAmericanMono", "americanCar", PILOT_MAG_ID));
     teams.Add(new Team(TEAM_BLUE_SKY_ID, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar", PILOT_RUSS_ID));
+    // Second Pilot Team
+    teams.Add(new Team(TEAM_SILVER_TECH_IDP2, "Silver Tech", "silverLogo", "silverTechCar", PILOT_BOT_ID));
+    teams.Add(new Team(TEAM_BLUE_DEVILS_IDP2, "Blue Devils", "blueDevilsLogo", "blueDev", PILOT_ALB_ID));
+    teams.Add(new Team(TEAM_ITALY_IDP2, "Team Italy", "logoItaly1", "italyCar", PILOT_VET_ID));
+    teams.Add(new Team(TEAM_FLOAT_POINT_TEAM_IDP2, "Float Point Team", "floatPointLogo", "floatPointCar", PILOT_PER_ID));
+    teams.Add(new Team(TEAM_ORANGE_TEAM_IDP2, "Orange Team", "orangeTeamLogo", "orangeTeam", PILOT_NOR_ID));
+    teams.Add(new Team(TEAM_YELL_MOTORS_IDP2, "Yell Motors", "logoYell", "yellCar", PILOT_OCO_ID));
+    teams.Add(new Team(TEAM_WHITE_DEVILS_IDP2, "White Devils", "whiteDevilsLogo", "whiteDev", PILOT_KVY_ID));
+    teams.Add(new Team(TEAM_JULIET_MOTORS_IDP2, "Juliet Motors", "julietLogo", "julietCar", PILOT_GIO_ID));
+    teams.Add(new Team(TEAM_AMERICAN_MONO_IDP2, "American Mono", "logoAmericanMono", "americanCar", PILOT_GRO_ID));
+    teams.Add(new Team(TEAM_BLUE_SKY_IDP2, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar", PILOT_LAT_ID));
   }
 
   //Creating the Tracks
@@ -123,25 +168,47 @@ public class World : MonoBehaviour
   public static void PopulateCars()
   {
     Car car = new Car(26, 20, 21, 19); //Power, Aero, Dura, Chassis
-    teams[0].Car = car; //Silver Tech
+    teams[0].Car = car; // Silver Tech
     car = new Car(20, 18, 22, 18);
-    teams[1].Car = car; //Blue Devils
+    teams[1].Car = car; // Blue Devils
     car = new Car(14, 13, 10, 13);
-    teams[2].Car = car; //Team Italy
+    teams[2].Car = car; // Team Italy
     car = new Car(17, 16, 15, 16);
-    teams[3].Car = car; //Float Point
+    teams[3].Car = car; // Float Point
     car = new Car(15, 15, 19, 14);
-    teams[4].Car = car; //Orange Team
+    teams[4].Car = car; // Orange Team
     car = new Car(15, 17, 14, 15);
-    teams[5].Car = car; //Yell Motors
+    teams[5].Car = car; // Yell Motors
     car = new Car(13, 13, 17, 12);
-    teams[6].Car = car; //White Devils
+    teams[6].Car = car; // White Devils
     car = new Car(8, 10, 15, 8);
-    teams[7].Car = car; //Juliet Motors
+    teams[7].Car = car; // Juliet Motors
     car = new Car(7, 9, 9, 10);
-    teams[8].Car = car; //American Mono
+    teams[8].Car = car; // American Mono
     car = new Car(8, 8, 8, 9);
-    teams[9].Car = car; //Blue Sky
+    teams[9].Car = car; // Blue Sky
+
+    // Second Team Car
+    car = new Car(26, 20, 21, 19);
+    teams[10].Car = car; // Silver Teach P2
+    car = new Car(20, 18, 22, 18);
+    teams[11].Car = car; // Blue Devils P2
+    car = new Car(14, 13, 10, 13);
+    teams[12].Car = car; // Team Italy P2
+    car = new Car(17, 16, 15, 16);
+    teams[13].Car = car; // Float Point P2
+    car = new Car(15, 15, 19, 14);
+    teams[14].Car = car; // Orange Team P2
+    car = new Car(15, 17, 14, 15);
+    teams[15].Car = car; // Yell Motors P2
+    car = new Car(13, 13, 17, 12);
+    teams[16].Car = car; // White Devils P2
+    car = new Car(8, 10, 15, 8);
+    teams[17].Car = car; // Juliet Motors P2
+    car = new Car(7, 9, 9, 10);
+    teams[18].Car = car; // American Mono P2
+    car = new Car(8, 8, 8, 9);
+    teams[19].Car = car; // Blue Sky P2
   }
 
   public static Pilot GetPilotById(int id)

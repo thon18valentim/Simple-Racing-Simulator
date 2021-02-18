@@ -46,6 +46,17 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineth_race;
   public TextMeshProUGUI tenth_race;
 
+  public TextMeshProUGUI eleventh_race;
+  public TextMeshProUGUI twelfth_race;
+  public TextMeshProUGUI thirdth_race;
+  public TextMeshProUGUI fourteenth_race;
+  public TextMeshProUGUI fifteenth_race;
+  public TextMeshProUGUI sixteenth_race;
+  public TextMeshProUGUI seventeenth_race;
+  public TextMeshProUGUI eighteenth_race;
+  public TextMeshProUGUI nineteenth_race;
+  public TextMeshProUGUI twenty_race;
+
   // Management of Race Time Texts
   //public TextMeshProUGUI first_time;
   public TextMeshProUGUI second_time;
@@ -58,6 +69,17 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineth_time;
   public TextMeshProUGUI tenth_time;
 
+  public TextMeshProUGUI eleventh_time;
+  public TextMeshProUGUI twelfth_time;
+  public TextMeshProUGUI thirdth_time;
+  public TextMeshProUGUI fourteenth_time;
+  public TextMeshProUGUI fifteenth_time;
+  public TextMeshProUGUI sixteenth_time;
+  public TextMeshProUGUI seventeenth_time;
+  public TextMeshProUGUI eighteenth_time;
+  public TextMeshProUGUI nineteenth_time;
+  public TextMeshProUGUI twenty_time;
+
   // Tyres Text
   public TextMeshProUGUI first_tyre;
   public TextMeshProUGUI sec_tyre;
@@ -69,6 +91,17 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI eig_tyre;
   public TextMeshProUGUI nin_tyre;
   public TextMeshProUGUI ten_tyre;
+
+  public TextMeshProUGUI eleventh_tyre;
+  public TextMeshProUGUI twelfth_tyre;
+  public TextMeshProUGUI thirdth_tyre;
+  public TextMeshProUGUI fourteenth_tyre;
+  public TextMeshProUGUI fifteenth_tyre;
+  public TextMeshProUGUI sixteenth_tyre;
+  public TextMeshProUGUI seventeenth_tyre;
+  public TextMeshProUGUI eighteenth_tyre;
+  public TextMeshProUGUI nineteenth_tyre;
+  public TextMeshProUGUI twenty_tyre;
 
   // Overtaking Screen
   public TextMeshProUGUI overtaking_text;
@@ -312,7 +345,57 @@ public class Race : MonoBehaviour
         tenth_race.text = t.Pilot.Name;
         tenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
-        
+      else if (contador == 10)
+      {
+        eleventh_race.text = t.Pilot.Name;
+        eleventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 11)
+      {
+        twelfth_race.text = t.Pilot.Name;
+        twelfth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 12)
+      {
+        thirdth_race.text = t.Pilot.Name;
+        thirdth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 13)
+      {
+        fourteenth_race.text = t.Pilot.Name;
+        fourteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 14)
+      {
+        fifteenth_race.text = t.Pilot.Name;
+        fifteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 15)
+      {
+        sixteenth_race.text = t.Pilot.Name;
+        sixteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 16)
+      {
+        seventeenth_race.text = t.Pilot.Name;
+        seventeenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 17)
+      {
+        eighteenth_race.text = t.Pilot.Name;
+        eighteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 18)
+      {
+        nineteenth_race.text = t.Pilot.Name;
+        nineteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+      else if (contador == 19)
+      {
+        twenty_race.text = t.Pilot.Name;
+        twenty_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+      }
+
       contador++;
     }
   }
@@ -391,6 +474,10 @@ public class Race : MonoBehaviour
       {
         t.points += 1;
       }
+      else
+      {
+        t.points += 0;
+      }
 
       contador++;
     }
@@ -443,43 +530,43 @@ public class Race : MonoBehaviour
     {
       if(t.Car.Durability <= 10)
       {
-        sort = RandomNumberGenerator.NumberBetween(1,15);
+        sort = RandomNumberGenerator.NumberBetween(1,25);
         if(sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
+          mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
-        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
       else if(t.Car.Durability > 10 && t.Car.Durability <= 15)
       {
-        sort = RandomNumberGenerator.NumberBetween(1, 20);
+        sort = RandomNumberGenerator.NumberBetween(1, 30);
         if (sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
+          mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
-        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
       }
       else if (t.Car.Durability > 15 && t.Car.Durability <= 20)
-      {
-        sort = RandomNumberGenerator.NumberBetween(1, 25);
-        if (sort == 1)
-        {
-          t.SetLapTime(t.LapTime + 5.0f);
-          Debug.Log("Problema mecânico!");
-        }
-        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
-      }
-      else if (t.Car.Durability > 20)
       {
         sort = RandomNumberGenerator.NumberBetween(1, 35);
         if (sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
           Debug.Log("Problema mecânico!");
+          mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
-        mechIssue_text.text = t.Pilot.Name + " had mech Issues";
+      }
+      else if (t.Car.Durability > 20)
+      {
+        sort = RandomNumberGenerator.NumberBetween(1, 55);
+        if (sort == 1)
+        {
+          t.SetLapTime(t.LapTime + 5.0f);
+          Debug.Log("Problema mecânico!");
+          mechIssue_text.text = t.Pilot.Name + " had mech Issues";
+        }
       }
     }
   }
@@ -537,6 +624,46 @@ public class Race : MonoBehaviour
         {
           ten_tyre.text = "S";
         }
+        else if (contador == 10)
+        {
+          eleventh_tyre.text = "S";
+        }
+        else if (contador == 11)
+        {
+          twelfth_tyre.text = "S";
+        }
+        else if (contador == 12)
+        {
+          thirdth_tyre.text = "S";
+        }
+        else if (contador == 13)
+        {
+          fourteenth_tyre.text = "S";
+        }
+        else if (contador == 14)
+        {
+          fifteenth_tyre.text = "S";
+        }
+        else if (contador == 15)
+        {
+          sixteenth_tyre.text = "S";
+        }
+        else if (contador == 16)
+        {
+          seventeenth_tyre.text = "S";
+        }
+        else if (contador == 17)
+        {
+          eighteenth_tyre.text = "S";
+        }
+        else if (contador == 18)
+        {
+          nineteenth_tyre.text = "S";
+        }
+        else if (contador == 19)
+        {
+          twenty_tyre.text = "S";
+        }
       }
       else if(t.pneu_id == 27)
       {
@@ -580,6 +707,46 @@ public class Race : MonoBehaviour
         {
           ten_tyre.text = "M";
         }
+        else if (contador == 10)
+        {
+          eleventh_tyre.text = "M";
+        }
+        else if (contador == 11)
+        {
+          twelfth_tyre.text = "M";
+        }
+        else if (contador == 12)
+        {
+          thirdth_tyre.text = "M";
+        }
+        else if (contador == 13)
+        {
+          fourteenth_tyre.text = "M";
+        }
+        else if (contador == 14)
+        {
+          fifteenth_tyre.text = "M";
+        }
+        else if (contador == 15)
+        {
+          sixteenth_tyre.text = "M";
+        }
+        else if (contador == 16)
+        {
+          seventeenth_tyre.text = "M";
+        }
+        else if (contador == 17)
+        {
+          eighteenth_tyre.text = "M";
+        }
+        else if (contador == 18)
+        {
+          nineteenth_tyre.text = "M";
+        }
+        else if (contador == 19)
+        {
+          twenty_tyre.text = "M";
+        }
       }
       else if(t.pneu_id == 24)
       {
@@ -622,6 +789,46 @@ public class Race : MonoBehaviour
         else if (contador == 9)
         {
           ten_tyre.text = "H";
+        }
+        else if (contador == 10)
+        {
+          eleventh_tyre.text = "H";
+        }
+        else if (contador == 11)
+        {
+          twelfth_tyre.text = "H";
+        }
+        else if (contador == 12)
+        {
+          thirdth_tyre.text = "H";
+        }
+        else if (contador == 13)
+        {
+          fourteenth_tyre.text = "H";
+        }
+        else if (contador == 14)
+        {
+          fifteenth_tyre.text = "H";
+        }
+        else if (contador == 15)
+        {
+          sixteenth_tyre.text = "H";
+        }
+        else if (contador == 16)
+        {
+          seventeenth_tyre.text = "H";
+        }
+        else if (contador == 17)
+        {
+          eighteenth_tyre.text = "H";
+        }
+        else if (contador == 18)
+        {
+          nineteenth_tyre.text = "H";
+        }
+        else if (contador == 19)
+        {
+          twenty_tyre.text = "H";
         }
       }
 
