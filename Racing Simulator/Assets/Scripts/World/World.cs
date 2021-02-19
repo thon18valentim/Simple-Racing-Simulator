@@ -86,7 +86,7 @@ public class World : MonoBehaviour
   //Creating pilots and adding them to the list
   public static void PopulatePilots()
   {
-    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace2", 35, 94));
+    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace01", 35, 94));
     pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace1", 23, 90));
     pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace1", 23, 87));
     pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace3", 22, 82));

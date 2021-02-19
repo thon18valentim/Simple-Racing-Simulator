@@ -9,6 +9,7 @@ public class Showcase : MonoBehaviour
   public TextMeshProUGUI country1;
   public TextMeshProUGUI team1;
   public TextMeshProUGUI over1;
+  public GameObject face1;
 
   public AudioSource btn_sound;
 
@@ -21,6 +22,7 @@ public class Showcase : MonoBehaviour
     country1.text = World.pilots[0].Country;
     team1.text = World.teams[0].Name;
     over1.text = World.pilots[0].Over.ToString();
+    face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[0].PilotString);
   }
 
   // Update is called once per frame
@@ -32,7 +34,7 @@ public class Showcase : MonoBehaviour
       select--;
       if(select < 0)
       {
-        select = 9;
+        select = 22;
       }
       Selection(select);
     }
@@ -40,7 +42,7 @@ public class Showcase : MonoBehaviour
     {
       btn_sound.Play();
       select++;
-      if(select > 9)
+      if(select > 22)
       {
         select = 0;
       }
@@ -50,17 +52,37 @@ public class Showcase : MonoBehaviour
 
   public void Selection(int opc)
   {
-    piloto1.text = World.pilots[opc].Name;
-    country1.text = World.pilots[opc].Country;
-    team1.text = World.teams[opc].Name;
-    over1.text = World.pilots[opc].Over.ToString();
+    if(opc < 10)
+    {
+      piloto1.text = World.pilots[opc].Name;
+      country1.text = World.pilots[opc].Country;
+      team1.text = World.teams[opc].Name;
+      over1.text = World.pilots[opc].Over.ToString();
+      face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+    }
+    else if(opc < 13)
+    {
+      piloto1.text = World.pilots[opc].Name;
+      country1.text = World.pilots[opc].Country;
+      team1.text = "Free Agent";
+      over1.text = World.pilots[opc].Over.ToString();
+      face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+    }
+    else
+    {
+      piloto1.text = World.pilots[opc].Name;
+      country1.text = World.pilots[opc].Country;
+      team1.text = World.teams[opc-3].Name;
+      over1.text = World.pilots[opc].Over.ToString();
+      face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+    }
   }
 
   public void AdvanceItem()
   {
     btn_sound.Play();
     select++;
-    if (select > 9)
+    if (select > 22)
     {
       select = 0;
     }
@@ -73,7 +95,7 @@ public class Showcase : MonoBehaviour
     select--;
     if (select < 0)
     {
-      select = 9;
+      select = 22;
     }
     Selection(select);
   }
