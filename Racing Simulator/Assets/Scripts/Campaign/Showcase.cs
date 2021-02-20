@@ -10,6 +10,7 @@ public class Showcase : MonoBehaviour
   public TextMeshProUGUI team1;
   public TextMeshProUGUI over1;
   public GameObject face1;
+  public GameObject car1;
 
   public AudioSource btn_sound;
 
@@ -23,6 +24,7 @@ public class Showcase : MonoBehaviour
     team1.text = World.teams[0].Name;
     over1.text = World.pilots[0].Over.ToString();
     face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[0].PilotString);
+    car1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[0].CarString);
   }
 
   // Update is called once per frame
@@ -59,6 +61,7 @@ public class Showcase : MonoBehaviour
       team1.text = World.teams[opc].Name;
       over1.text = World.pilots[opc].Over.ToString();
       face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+      car1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[opc].CarString);
     }
     else if(opc < 13)
     {
@@ -67,6 +70,7 @@ public class Showcase : MonoBehaviour
       team1.text = "Free Agent";
       over1.text = World.pilots[opc].Over.ToString();
       face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+      car1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[0].CarString);
     }
     else
     {
@@ -75,6 +79,7 @@ public class Showcase : MonoBehaviour
       team1.text = World.teams[opc-3].Name;
       over1.text = World.pilots[opc].Over.ToString();
       face1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + World.pilots[opc].PilotString);
+      car1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[opc-3].CarString);
     }
   }
 
