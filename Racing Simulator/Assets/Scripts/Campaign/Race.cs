@@ -126,6 +126,13 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI nineteenth_tyre;
   public TextMeshProUGUI twenty_tyre;
 
+  // Quali Cars Display
+  public GameObject car1;
+  public GameObject car2;
+  public GameObject car3;
+  public GameObject car4;
+  public GameObject car5;
+
   // Overtaking Screen
   public TextMeshProUGUI overtaking_text;
   public TextMeshProUGUI pitStop_text;
@@ -223,6 +230,32 @@ public class Race : MonoBehaviour
     {
       t.SetLapTime(time);
       time++;
+    }
+
+    contador = 0;
+    foreach(Team team in leaderboard)
+    {
+      if (contador == 0)
+      {
+        car1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + leaderboard[0].CarString);
+      }
+      else if (contador == 1)
+      {
+        car2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + leaderboard[1].CarString);
+      }
+      else if (contador == 2)
+      {
+        car3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + leaderboard[2].CarString);
+      }
+      else if (contador == 3)
+      {
+        car4.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + leaderboard[3].CarString);
+      }
+      else if(contador == 4)
+      {
+        car5.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + leaderboard[4].CarString);
+      }
+      contador++;
     }
   }
 
