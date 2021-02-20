@@ -11,6 +11,7 @@ public class GameSession : MonoBehaviour
 
   int currentTrack = 0;
   int gpTrack = 0;
+  int chosenPilot = 0;
 
   private void Awake()
   {
@@ -52,6 +53,7 @@ public class GameSession : MonoBehaviour
     pilot.SetPoints(3);
     team.SetPilot(i + 1);
     World.SetPlayerTeam(team);
+    chosenPilot = i;
   }
 
   public void SetTeamScore(int score)
@@ -71,12 +73,17 @@ public class GameSession : MonoBehaviour
 
   public int GetPilotOver()
   {
-    return pilot.Over;
+    return World.pilots[chosenPilot].Over;
   }
 
   public int GetPilotTyre()
   {
     return team.pneu_id;
+  }
+
+  public string GetPilotName()
+  {
+    return World.pilots[chosenPilot].Name;
   }
 
   public string GetCarString()
@@ -203,6 +210,41 @@ public class GameSession : MonoBehaviour
         {
           team.Car.Chassis++;
           pilot.Points--;
+        }
+        break;
+    }
+  }
+
+  public void DecreaseStatus(string improvement)
+  {
+    switch (improvement)
+    {
+      case "power":
+        if (team.Car.Power > 0)
+        {
+          team.Car.Power--;
+          pilot.Points++;
+        }
+        break;
+      case "durability":
+        if (team.Car.Durability > 0)
+        {
+          team.Car.Durability--;
+          pilot.Points++;
+        }
+        break;
+      case "aerodynamics":
+        if (team.Car.Aerodynamics > 0)
+        {
+          team.Car.Aerodynamics--;
+          pilot.Points++;
+        }
+        break;
+      case "chassi":
+        if (team.Car.Chassis > 0)
+        {
+          team.Car.Chassis--;
+          pilot.Points++;
         }
         break;
     }

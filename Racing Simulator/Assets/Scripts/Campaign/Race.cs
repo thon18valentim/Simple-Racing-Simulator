@@ -11,6 +11,29 @@ public class Race : MonoBehaviour
   public GameObject quali_screen;
   public GameObject race_screen;
 
+  public TextMeshProUGUI pilot_marker1;
+  public TextMeshProUGUI pilot_marker2;
+  public TextMeshProUGUI pilot_marker3;
+  public TextMeshProUGUI pilot_marker4;
+  public TextMeshProUGUI pilot_marker5;
+  public TextMeshProUGUI pilot_marker6;
+  public TextMeshProUGUI pilot_marker7;
+  public TextMeshProUGUI pilot_marker8;
+  public TextMeshProUGUI pilot_marker9;
+  public TextMeshProUGUI pilot_marker10;
+  public TextMeshProUGUI pilot_marker11;
+  public TextMeshProUGUI pilot_marker12;
+  public TextMeshProUGUI pilot_marker13;
+  public TextMeshProUGUI pilot_marker14;
+  public TextMeshProUGUI pilot_marker15;
+  public TextMeshProUGUI pilot_marker16;
+  public TextMeshProUGUI pilot_marker17;
+  public TextMeshProUGUI pilot_marker18;
+  public TextMeshProUGUI pilot_marker19;
+  public TextMeshProUGUI pilot_marker20;
+
+  List<TextMeshProUGUI> Markers = new List<TextMeshProUGUI>();
+
   // Set Current Track Img
   public GameObject australia_track;
   public GameObject bahrain_track;
@@ -129,6 +152,7 @@ public class Race : MonoBehaviour
 
   private void Start()
   {
+    PopulateMarkers();
     session = FindObjectOfType<GameSession>();
 
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
@@ -406,6 +430,7 @@ public class Race : MonoBehaviour
     int current_lap = 0;
     do
     {
+      int contador = 0;
       foreach (Team team in leaderboard)
       {
         team.SetScore(CalculateTeamScore(team));
@@ -413,6 +438,17 @@ public class Race : MonoBehaviour
         ReduceLapTime(team);
         ShowRaceLeaderboard();
         team.pneu_dura--;
+        if(team.Pilot.Id == 1 || team.Pilot.Id == 2 || team.Pilot.Id == 3)
+        {
+          Markers[contador].color = new Color(255, 217, 0, 255);
+          Markers[contador].text = "You";
+        }
+        else
+        {
+          Markers[contador].color = new Color(0, 0, 0, 0);
+          Markers[contador].text = "IA";
+        }
+        contador++;
       }
       Overtaking();
       gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
@@ -1025,4 +1061,28 @@ public class Race : MonoBehaviour
       }
     }
   }*/
+
+  private void PopulateMarkers()
+  {
+    Markers.Add(pilot_marker1);
+    Markers.Add(pilot_marker2);
+    Markers.Add(pilot_marker3);
+    Markers.Add(pilot_marker4);
+    Markers.Add(pilot_marker5);
+    Markers.Add(pilot_marker6);
+    Markers.Add(pilot_marker7);
+    Markers.Add(pilot_marker8);
+    Markers.Add(pilot_marker9);
+    Markers.Add(pilot_marker10);
+    Markers.Add(pilot_marker11);
+    Markers.Add(pilot_marker12);
+    Markers.Add(pilot_marker13);
+    Markers.Add(pilot_marker14);
+    Markers.Add(pilot_marker15);
+    Markers.Add(pilot_marker16);
+    Markers.Add(pilot_marker17);
+    Markers.Add(pilot_marker18);
+    Markers.Add(pilot_marker19);
+    Markers.Add(pilot_marker20);
+  }
 }

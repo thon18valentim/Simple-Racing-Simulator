@@ -13,6 +13,9 @@ public class ImprovementsScene : MonoBehaviour
   public GameObject carDisplay;
   public GameObject arrow;
 
+  public TextMeshProUGUI PilotNameDisplay;
+  public TextMeshProUGUI PilotOverDisplay;
+
   public TextMeshProUGUI player_points;
   public TextMeshProUGUI power;
   public TextMeshProUGUI aero;
@@ -28,11 +31,13 @@ public class ImprovementsScene : MonoBehaviour
 
   private void Start()
   {
+    session = FindObjectOfType<GameSession>();
+
     // Loading player pilot and car images
     pilotFace.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
     carDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
-
-    session = FindObjectOfType<GameSession>();
+    PilotOverDisplay.text = session.GetPilotOver().ToString();
+    PilotNameDisplay.text = session.GetPilotName();
   }
 
   // Update is called once per frame
@@ -86,6 +91,26 @@ public class ImprovementsScene : MonoBehaviour
           break;
         case 3:
           session.IncreaseStatus("chassi");
+          break;
+      }
+    }
+
+    if (Input.GetKeyDown(KeyCode.LeftArrow))
+    {
+      conf_sound.Play();
+      switch (selection)
+      {
+        case 0:
+          session.DecreaseStatus("power");
+          break;
+        case 1:
+          session.DecreaseStatus("durability");
+          break;
+        case 2:
+          session.DecreaseStatus("aerodynamics");
+          break;
+        case 3:
+          session.DecreaseStatus("chassi");
           break;
       }
     }
