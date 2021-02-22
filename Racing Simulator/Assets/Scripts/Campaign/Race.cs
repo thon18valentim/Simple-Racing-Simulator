@@ -138,6 +138,19 @@ public class Race : MonoBehaviour
   public TextMeshProUGUI pitStop_text;
   public TextMeshProUGUI mechIssue_text;
 
+  // Player Pit Stop Laps Text
+  public TextMeshProUGUI pit1_text;
+  public TextMeshProUGUI pit2_text;
+  public TextMeshProUGUI pit3_text;
+
+  // Player Pit Stop Laps
+  public int pit1;
+  public int pit2;
+  public int pit3;
+
+  public int chosen_tyre;
+  public int tyre_life;
+
   // Setting race sound
   public AudioSource race_sound;
 
@@ -157,6 +170,9 @@ public class Race : MonoBehaviour
 
   public GameObject flag;
 
+  // GP Current Laps
+  int current_lap = 0;
+
   private void Start()
   {
     PopulateMarkers();
@@ -171,7 +187,17 @@ public class Race : MonoBehaviour
 
     ShowQuali();
     gp_name.text = track.Name;
-    ShowQualiLeaderboard(); 
+    ShowQualiLeaderboard();
+
+    pit1 = 20;
+    pit2 = 30;
+    pit3 = 40;
+
+    pit1_text.text = pit1.ToString();
+    pit2_text.text = pit2.ToString();
+    pit3_text.text = pit3.ToString();
+
+    chosen_tyre = 1;
   }
 
   // Racing
@@ -460,7 +486,7 @@ public class Race : MonoBehaviour
   IEnumerator Wait()
   {
     int laps = track.Laps;
-    int current_lap = 0;
+    //int current_lap = 0;
     do
     {
       int contador = 0;
@@ -490,7 +516,7 @@ public class Race : MonoBehaviour
       MechIssue();
       SettingTyreText();
       // Wait for X second
-      yield return new WaitForSeconds(0f);
+      yield return new WaitForSeconds(2f);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -566,39 +592,53 @@ public class Race : MonoBehaviour
     SumTeamsPoints();
   }
 
+  // Doing AI Pit Stop
   public void PitStop()
   {
-    //int contador = 0;
     int sort_pneu;
+    int pit_time;
 
     foreach(Team t in leaderboard)
     {
-      if(t.pneu_dura <= 0)
+      if(t.Pilot.Id > 3)
       {
-        sort_pneu = RandomNumberGenerator.NumberBetween(1, 3);
+        if (t.pneu_dura <= 0)
+        {
+          sort_pneu = RandomNumberGenerator.NumberBetween(1, 3);
 
-        if(sort_pneu == 1)
-        {
-          Debug.Log("Colocando Pneus Macios");
-          t.pneu_id = 30;
-          t.pneu_dura = 20;
-          t.SetLapTime(t.LapTime + 20.0f);
+          if (sort_pneu == 1)
+          {
+            Debug.Log("Colocando Pneus Macios");
+            t.pneu_id = 30;
+            t.pneu_dura = 20;
+            pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+            t.SetLapTime(t.LapTime + pit_time);
+          }
+          else if (sort_pneu == 2)
+          {
+            Debug.Log("Colocando Pneus Médios");
+            t.pneu_id = 27;
+            t.pneu_dura = 30;
+            pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+            t.SetLapTime(t.LapTime + pit_time);
+          }
+          else if (sort_pneu == 3)
+          {
+            Debug.Log("Colocando Pneus Duros");
+            t.pneu_id = 24;
+            t.pneu_dura = 40;
+            pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+            t.SetLapTime(t.LapTime + pit_time);
+          }
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
         }
-        else if(sort_pneu == 2)
+      }
+      else
+      {
+        if(current_lap == pit1 || current_lap == pit2 || current_lap == pit3)
         {
-          Debug.Log("Colocando Pneus Médios");
-          t.pneu_id = 27;
-          t.pneu_dura = 30;
-          t.SetLapTime(t.LapTime + 20.0f);
+          Debug.Log("Player no Pit Stop");
         }
-        else if(sort_pneu == 3)
-        {
-          Debug.Log("Colocando Pneus Duros");
-          t.pneu_id = 24;
-          t.pneu_dura = 40;
-          t.SetLapTime(t.LapTime + 20.0f);
-        }
-        pitStop_text.text = t.Pilot.Name + " is changing tyres";
       }
     }
   }
@@ -1117,5 +1157,63 @@ public class Race : MonoBehaviour
     Markers.Add(pilot_marker18);
     Markers.Add(pilot_marker19);
     Markers.Add(pilot_marker20);
+  }
+
+  public void IncreasePitLap(int id)
+  {
+    if(id == 1)
+    {
+      pit1++;
+      if (pit1 > track.Laps)
+        pit1 = 0;
+
+      pit1_text.text = pit1.ToString();
+    }
+    else if(id == 2)
+    {
+      pit2++;
+      if (pit2 > track.Laps)
+        pit2 = 0;
+      pit2_text.text = pit2.ToString();
+    }
+    else if (id == 3)
+    {
+      pit3++;
+      if (pit3 > track.Laps)
+        pit3 = 0;
+      pit3_text.text = pit3.ToString();
+    }
+  }
+
+  public void DecreasePitLap(int id)
+  {
+    if (id == 1)
+    {
+      pit1--;
+      if (pit1 < 0)
+        pit1 = track.Laps;
+
+      pit1_text.text = pit1.ToString();
+    }
+    else if (id == 2)
+    {
+      pit2--;
+      if (pit2 < 0)
+        pit2 = track.Laps;
+      pit2_text.text = pit2.ToString();
+    }
+    else if (id == 3)
+    {
+      pit3--;
+      if (pit3 < 0)
+        pit3 = track.Laps;
+      pit3_text.text = pit3.ToString();
+    }
+  }
+
+  public void SelectPitTyre(int tyre_id)
+  {
+    chosen_tyre = tyre_id;
+    Debug.Log("Tyre Selected " + tyre_id.ToString());
   }
 }

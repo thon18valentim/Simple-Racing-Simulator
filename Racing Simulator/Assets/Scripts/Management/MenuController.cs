@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
   public List<GameObject> buttons = new List<GameObject>(); // List of buttons in the scene
   public List<GameObject> stripes = new List<GameObject>(); // List of background stripes in the scene
+
+  public TextMeshProUGUI subText; // Help Text
 
   int selection = 0; // Index to acces the lists
 
@@ -39,6 +42,23 @@ public class MenuController : MonoBehaviour
     {
       if (buttons[selection].name == "Campaign Button") // Changing the scene
         FindObjectOfType<SceneLoader>().LoadNextScene();
+    }
+
+    if (selection == 0)
+    {
+      subText.text = "Live your dream as a professional pilot";
+    }
+    else if (selection == 1)
+    {
+      subText.text = "Prove yourself among our challenges";
+    }
+    else if (selection == 2)
+    {
+      subText.text = "Every Team and Pilot";
+    }
+    else
+    {
+      subText.text = "Exit Game";
     }
   }
 
