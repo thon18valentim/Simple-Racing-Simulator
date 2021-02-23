@@ -157,6 +157,15 @@ public class Race : MonoBehaviour
   // Setting back to menu btn
   public GameObject btn_back;
 
+  // Getting Pit Stop 3 GameObjects
+  public GameObject arrowRight;
+  public GameObject arrowLeft;
+  public GameObject trashIcon;
+  public GameObject plusIcon;
+
+  // Player Tyre Life Text
+  public TextMeshProUGUI tyreLife_text;
+
   public int contador = 0;
 
   public TextMeshProUGUI tempoText;
@@ -245,7 +254,7 @@ public class Race : MonoBehaviour
     foreach (Team team in World.teams)
     {
       team.SetScore(CalculateTeamScore(team));
-      team.pneu_dura = 20;
+      team.pneu_dura = 25;
       leaderboard.Add(team);
     }
 
@@ -509,12 +518,14 @@ public class Race : MonoBehaviour
         }
         contador++;
       }
-      Overtaking();
       gp_lap.text = "Lap " + current_lap.ToString() + " / " + laps.ToString();
       current_lap++;
+      VerifyTyreLife();
+      PlayerLifeTyre();
       PitStop();
       MechIssue();
       SettingTyreText();
+      Overtaking();
       // Wait for X second
       yield return new WaitForSeconds(2f);
     } while (current_lap <= laps);
@@ -602,7 +613,7 @@ public class Race : MonoBehaviour
     {
       if(t.Pilot.Id > 3)
       {
-        if (t.pneu_dura <= 0)
+        if (t.pneu_dura <= 10)
         {
           sort_pneu = RandomNumberGenerator.NumberBetween(1, 3);
 
@@ -610,7 +621,7 @@ public class Race : MonoBehaviour
           {
             Debug.Log("Colocando Pneus Macios");
             t.pneu_id = 30;
-            t.pneu_dura = 20;
+            t.pneu_dura = 25;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
             t.SetLapTime(t.LapTime + pit_time);
           }
@@ -618,7 +629,7 @@ public class Race : MonoBehaviour
           {
             Debug.Log("Colocando Pneus Médios");
             t.pneu_id = 27;
-            t.pneu_dura = 30;
+            t.pneu_dura = 35;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
             t.SetLapTime(t.LapTime + pit_time);
           }
@@ -626,7 +637,7 @@ public class Race : MonoBehaviour
           {
             Debug.Log("Colocando Pneus Duros");
             t.pneu_id = 24;
-            t.pneu_dura = 40;
+            t.pneu_dura = 45;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
             t.SetLapTime(t.LapTime + pit_time);
           }
@@ -635,9 +646,74 @@ public class Race : MonoBehaviour
       }
       else
       {
-        if(current_lap == pit1 || current_lap == pit2 || current_lap == pit3)
+        if(current_lap == pit1)
         {
-          Debug.Log("Player no Pit Stop");
+          Debug.Log("Player no Pit Stop 1");
+          t.pneu_id = chosen_tyre;
+          if (chosen_tyre == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player colocando Pneus Macios");
+          }
+          else if (chosen_tyre == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+        }
+        else if(current_lap == pit2)
+        {
+          Debug.Log("Player no Pit Stop 2");
+          t.pneu_id = chosen_tyre;
+          if (chosen_tyre == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player colocando Pneus Macios");
+          }
+          else if (chosen_tyre == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+        }
+        else if (current_lap == pit3)
+        {
+          Debug.Log("Player no Pit Stop 3");
+          t.pneu_id = chosen_tyre;
+          if (chosen_tyre == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player colocando Pneus Macios");
+          }
+          else if (chosen_tyre == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
         }
       }
     }
@@ -1215,5 +1291,53 @@ public class Race : MonoBehaviour
   {
     chosen_tyre = tyre_id;
     Debug.Log("Tyre Selected " + tyre_id.ToString());
+  }
+
+  public void DesablePitStop()
+  {
+    pit3 = 0;
+    pit3_text.text = pit3.ToString();
+    pit3_text.color = new Color(255,0,0,255);
+    arrowRight.SetActive(false);
+    arrowLeft.SetActive(false);
+    //trashIcon.SetActive(false);
+    //plusIcon.SetActive(true);
+  }
+
+  public void AblePitStop()
+  {
+    pit3 = 0;
+    pit3_text.text = pit3.ToString();
+    pit3_text.color = new Color(0, 0, 0, 0);
+    arrowRight.SetActive(true);
+    arrowLeft.SetActive(true);
+    trashIcon.SetActive(true);
+    plusIcon.SetActive(false);
+  }
+
+  public void VerifyTyreLife()
+  {
+    foreach(Team team in leaderboard)
+    {
+      if (team.pneu_dura < 10)
+        team.SetLapTime(team.LapTime + 3.5f);
+      else if (team.pneu_dura < 0)
+        team.SetLapTime(team.LapTime + 6.0f);
+    }
+  }
+
+  public void PlayerLifeTyre()
+  {
+    foreach (Team team in leaderboard)
+    {
+      if (team.Pilot.Id < 3)
+      {
+        tyreLife_text.text = "Life Tyre " + team.pneu_dura.ToString();
+        if (team.pneu_dura < 11)
+          tyreLife_text.color = new Color(255, 0, 0, 255);
+        else
+          tyreLife_text.color = new Color(20, 156, 4);
+      }
+    }
   }
 }
