@@ -8,6 +8,7 @@ public class World : MonoBehaviour
   public static List<Pilot> pilots = new List<Pilot>();
   public static List<Team> teams = new List<Team>();
   public static List<Track> tracks = new List<Track>();
+  public static List<Email> emails = new List<Email>();
 
   // Definig the variables with id for use later
   public const int PILOT_VAND_ID = 1;
@@ -70,8 +71,25 @@ public class World : MonoBehaviour
   public const int TRACK_RUSSIA_ID = 8;
   public const int TRACK_USA_ID = 9;
   public const int TRACK_ABU_ID = 10;
-  
-  
+
+  // Id for emails pre race
+  public const int EMAIL_AUSTRALIA_ID = 1;
+  public const int EMAIL_BAHREIN_ID = 2;
+  public const int EMAIL_BRAZIL_ID = 3;
+  public const int EMAIL_AUSTRIA_ID = 4;
+  public const int EMAIL_ENGLAND_ID = 5;
+  public const int EMAIL_ITALY_ID = 6;
+  public const int EMAIL_SINGAPORE_ID = 7;
+  public const int EMAIL_RUSSIA_ID = 8;
+  public const int EMAIL_USA_ID = 9;
+  public const int EMAIL_ABU_ID = 10;
+
+  // Id for emails general
+  public const int EMAIL_WELCOME_ID = 11;
+  public const int EMAIL_CHALLENGES_ID = 12;
+  public const int EMAIL_END_ID = 13;
+
+
 
   // Class constructor
   // It populates the list with the data needed
@@ -81,9 +99,10 @@ public class World : MonoBehaviour
     PopulateTeams();
     PopulateCars();
     PopulateTracks();
+    PopulateEmails();
   }
 
-  //Creating pilots and adding them to the list
+  // Creating pilots and adding them to the list
   public static void PopulatePilots()
   {
     pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace01", 35, 94));
@@ -138,7 +157,7 @@ public class World : MonoBehaviour
     teams.Add(new Team(TEAM_BLUE_SKY_IDP2, "Blue Sky Racing", "blueSkyLogo", "blueSkyCar", PILOT_LAT_ID));
   }
 
-  //Creating the Tracks
+  // Creating the Tracks
   public static void PopulateTracks()
   { 
     tracks.Add(new Track(TRACK_AUSTRALIA_ID, "Albert Park", "Australia", 58, 30, 35, 30, 32, "bandeira_australia"));
@@ -151,6 +170,75 @@ public class World : MonoBehaviour
     tracks.Add(new Track(TRACK_RUSSIA_ID, "Sochi Autodrom", "Russia", 53, 34, 33, 30, 29, "bandeira_russia"));
     tracks.Add(new Track(TRACK_USA_ID, "Circuit of the Americas", "United States", 56, 30, 30, 33, 32, "bandeira_usa"));
     tracks.Add(new Track(TRACK_ABU_ID, "Yas Marina Circuit", "Abu Dhabi", 55, 30,29,35,32, "bandeira_abu"));
+  }
+
+  // Creating Emails
+  public static void PopulateEmails()
+  {
+    emails.Add(new Email(EMAIL_AUSTRALIA_ID, "Manuel Vieira - Team Assistant", "Australia GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Aerodynamics & Durability are the big dogs here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "1º Month"));
+    emails.Add(new Email(EMAIL_BAHREIN_ID, "Manuel Vieira - Team Assistant", "Bahrein GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Power & Durability are the big dogs here;" +
+      "\n>> Your great rivals here are Silver Tech & Blue Devils & Float Point;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "2º Month"));
+    emails.Add(new Email(EMAIL_BRAZIL_ID, "Manuel Vieira - Team Assistant", "Brazil GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> This track is very balanced among each attribute;" +
+      "\n>> Your great rivals here are Silver Tech & Blue Devils & Float Point;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "3º Month"));
+    emails.Add(new Email(EMAIL_AUSTRIA_ID, "Manuel Vieira - Team Assistant", "Austria GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Power is the big dog here;" +
+      "\n>> Your great rivals here are Silver Tech & Blue Devils & Float Point;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "4º Month"));
+    emails.Add(new Email(EMAIL_ENGLAND_ID, "Manuel Vieira - Team Assistant", "England GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Aerodynamics is the big dog here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "5º Month"));
+    emails.Add(new Email(EMAIL_ITALY_ID, "Manuel Vieira - Team Assistant", "Italy GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Power is the big dog here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "6º Month"));
+    emails.Add(new Email(EMAIL_SINGAPORE_ID, "Manuel Vieira - Team Assistant", "Singapore GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Chassi & Durability are the big dogs here;" +
+      "\n>> Your great rivals here are Siver Tech & Blue Devils & Float Point;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "7º Month"));
+    emails.Add(new Email(EMAIL_RUSSIA_ID, "Manuel Vieira - Team Assistant", "Russia GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Chassi is the big dog here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "8º Month"));
+    emails.Add(new Email(EMAIL_USA_ID, "Manuel Vieira - Team Assistant", "USA GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Aerodynamics & Power are the big dogs here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "9º Month"));
+    emails.Add(new Email(EMAIL_ABU_ID, "Manuel Vieira - Team Assistant", "Abu Dhabi GP Pre-race", "Hi, Manuel here!" +
+      "\n>> Don't forget to have a look at the Calender;" +
+      "\n>> Power is the big dog here;" +
+      "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
+      "\n>> Take care of your tyres, a great strategy can win titles;", "10º Month"));
+    emails.Add(new Email(EMAIL_WELCOME_ID,"Oliver Rashford - Team Principal", "Welcome", "I would like to " +
+      "welcome you to your new seat this season. Be free to make any change during the races and backstages." +
+      "If you want to have a look at the Season Standings, Calender or Showcase, just click on Management." +
+      "If you have to make an improvement in your Car, just click on Improvements, there you will have an" +
+      "overview of our Car attributes. Good Luck!", "1º Month"));
+    emails.Add(new Email(EMAIL_CHALLENGES_ID, "Alan Right - Team Performance Princial", "Some tips", "Hi, my name is Alan Right." +
+      "I'm the Team Performance Principal, I would like to tell you some tips before you start." +
+      "Firstly, take a time to read your season challenges, they will increase your final points at " +
+      "the end of the season. Before each race, take a look at the calender, it will give you a north" +
+      "about the next race characteristics. After every race you will have new Improvements Points," +
+      "don't forget to indicate to the Team the necessary changes. I wish you a good season!", "1º Month"));
+    emails.Add(new Email(EMAIL_END_ID, "Oliver Rashford - Team Principal", "Goodbye, and Thank you", "Before the last" +
+      "race of the season I would like to thank you for all the hard work you spent here. All the Team employees" +
+      "are happy with your work. I wish you have a great race tomorrow!", "10º Month"));
   }
 
   public static Car CreatePlayerCar()
