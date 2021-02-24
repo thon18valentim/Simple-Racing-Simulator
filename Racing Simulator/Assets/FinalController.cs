@@ -30,7 +30,11 @@ public class FinalController : MonoBehaviour
   public TextMeshProUGUI nono_pts;
   public TextMeshProUGUI decimo_pts;
 
+  // Player Final Score
+  public TextMeshProUGUI playerPoints;
+
   List<Team> championship = new List<Team>();
+  List<Team> top10 = new List<Team>();
   GameSession session;
 
   // Start is called before the first frame update
@@ -49,12 +53,20 @@ public class FinalController : MonoBehaviour
 
   private void DefineStandings()
   {
+    int contador = 0;
     foreach (Team team in World.teams)
     {
       championship.Add(team);
     }
 
     SortStandings();
+
+    foreach (Team team in championship)
+    {
+      if (contador < 10)
+        top10.Add(team);
+      contador++;
+    }
   }
 
   private void SortStandings()
@@ -64,7 +76,7 @@ public class FinalController : MonoBehaviour
     {
       for (int j = 0; j < championship.Count - 1; j++)
       {
-        if (championship[j + 1].points > championship[j].points)
+        if (championship[j + 1].Pilot.points > championship[j].Pilot.points)
         {
           temp = championship[j];
           championship[j] = championship[j + 1];
@@ -78,57 +90,57 @@ public class FinalController : MonoBehaviour
   {
     int contador = 0;
 
-    foreach (Team t in championship)
+    foreach (Team t in top10)
     {
       if (contador == 0)
       {
         primeiro_col.text = t.Pilot.Name;
-        primeiro_pts.text = t.points.ToString();
+        primeiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 1)
       {
         segundo_col.text = t.Pilot.Name;
-        segundo_pts.text = t.points.ToString();
+        segundo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 2)
       {
         terceiro_col.text = t.Pilot.Name;
-        terceiro_pts.text = t.points.ToString();
+        terceiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 3)
       {
         quarto_col.text = t.Pilot.Name;
-        quarto_pts.text = t.points.ToString();
+        quarto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 4)
       {
         quinto_col.text = t.Pilot.Name;
-        quinto_pts.text = t.points.ToString();
+        quinto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 5)
       {
         sexto_col.text = t.Pilot.Name;
-        sexto_pts.text = t.points.ToString();
+        sexto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 6)
       {
         setimo_col.text = t.Pilot.Name;
-        setimo_pts.text = t.points.ToString();
+        setimo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 7)
       {
         oitavo_col.text = t.Pilot.Name;
-        oitavo_pts.text = t.points.ToString();
+        oitavo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 8)
       {
         nono_col.text = t.Pilot.Name;
-        nono_pts.text = t.points.ToString();
+        nono_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 9)
       {
         decimo_col.text = t.Pilot.Name;
-        decimo_pts.text = t.points.ToString();
+        decimo_pts.text = t.Pilot.points.ToString();
       }
 
       contador++;

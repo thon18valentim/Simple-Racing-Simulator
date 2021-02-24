@@ -166,6 +166,10 @@ public class Race : MonoBehaviour
   // Player Tyre Life Text
   public TextMeshProUGUI tyreLife_text;
 
+  // Race Speed Variable
+  public float raceSpeed = 3f;
+  public TextMeshProUGUI raceSpeed_text;
+
   public int contador = 0;
 
   public TextMeshProUGUI tempoText;
@@ -202,9 +206,22 @@ public class Race : MonoBehaviour
     pit2 = 30;
     pit3 = 40;
 
+    tyreLife_text.text = "Tyre Life 20";
+
+    foreach (Team team in leaderboard)
+    {
+      if (team.Pilot.Id < 4)
+      {
+        team.pneu_id = 30;
+        team.pneu_dura = 25;
+      }
+    }
+
     pit1_text.text = pit1.ToString();
     pit2_text.text = pit2.ToString();
     pit3_text.text = pit3.ToString();
+
+    raceSpeed_text.text = "x 1";
 
     chosen_tyre = 1;
   }
@@ -527,7 +544,7 @@ public class Race : MonoBehaviour
       SettingTyreText();
       Overtaking();
       // Wait for X second
-      yield return new WaitForSeconds(2f);
+      yield return new WaitForSeconds(raceSpeed);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -1180,6 +1197,7 @@ public class Race : MonoBehaviour
     World.teams[8].points += World.teams[18].points;
     World.teams[9].points += World.teams[19].points;
 
+    World.teams[10].points = 0;
     World.teams[11].points = 0;
     World.teams[12].points = 0;
     World.teams[13].points = 0;
@@ -1330,14 +1348,55 @@ public class Race : MonoBehaviour
   {
     foreach (Team team in leaderboard)
     {
-      if (team.Pilot.Id < 3)
+      if (team.Pilot.Id < 4)
       {
-        tyreLife_text.text = "Life Tyre " + team.pneu_dura.ToString();
+        tyreLife_text.text = "Tyre Life " + team.pneu_dura.ToString();
         if (team.pneu_dura < 11)
           tyreLife_text.color = new Color(255, 0, 0, 255);
         else
           tyreLife_text.color = new Color(20, 156, 4);
       }
     }
+  }
+
+  public void ChangingRaceSpeed(int func)
+  {
+    if (func == 1) // Plus
+    {
+      raceSpeed -= 0.5f;
+      if (raceSpeed < 1.0f)
+      {
+        raceSpeed = 1.0f;
+      }
+      UpdateSpeedText(raceSpeed);
+    }
+    if (func == 2) // Less
+    {
+      raceSpeed += 0.5f;
+      if (raceSpeed > 4.0f)
+      {
+        raceSpeed = 4.0f;
+      }
+      UpdateSpeedText(raceSpeed);
+    }
+  }
+
+  // Updating Speed Text
+  public void UpdateSpeedText(float speed)
+  {
+    if (speed == 1.0f)
+      raceSpeed_text.text = "x 3";
+    else if (speed == 1.5f)
+      raceSpeed_text.text = "x 2.5";
+    else if (speed == 2.0f)
+      raceSpeed_text.text = "x 2";
+    else if (speed == 2.5f)
+      raceSpeed_text.text = "x 1.5";
+    else if (speed == 3.0f)
+      raceSpeed_text.text = "x 1";
+    else if (speed == 3.5f)
+      raceSpeed_text.text = "x 0.5";
+    else if (speed == 4.0f)
+      raceSpeed_text.text = "x 0.1";
   }
 }
