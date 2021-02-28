@@ -6,6 +6,19 @@ using Assets.Scripts;
 
 public class FinalController : MonoBehaviour
 {
+  // Player Texts
+  public TextMeshProUGUI pilotName_text;
+  public TextMeshProUGUI pilotOver_text;
+  public TextMeshProUGUI pilotTeam_text;
+  public GameObject pilotCarDisplay;
+  public GameObject pilotFaceDisplay;
+  public TextMeshProUGUI playerScore_text;
+
+  public TextMeshProUGUI playerAero_text;
+  public TextMeshProUGUI playerChassi_text;
+  public TextMeshProUGUI playerPower_text;
+  public TextMeshProUGUI playerDura_text;
+
   // Pilots Text
   public TextMeshProUGUI primeiro_col;
   public TextMeshProUGUI segundo_col;
@@ -43,6 +56,17 @@ public class FinalController : MonoBehaviour
     session = FindObjectOfType<GameSession>();
     DefineStandings();
     Standings();
+
+    pilotName_text.text = session.GetPilotName();
+    pilotOver_text.text = session.GetPilotOver().ToString();
+    pilotTeam_text.text = session.GetTeamName();
+    playerAero_text.text = session.GetAero().ToString();
+    playerChassi_text.text = session.GetChassis().ToString();
+    playerDura_text.text = session.GetDura().ToString();
+    playerPower_text.text = session.GetPower().ToString();
+    playerScore_text.text = session.GetPlayerFinalScore().ToString();
+    pilotCarDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
+    pilotFaceDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
   }
 
   // Update is called once per frame
