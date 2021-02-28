@@ -10,6 +10,7 @@ public class GameSession : MonoBehaviour
   static Track track; // Currently track
 
   int currentTrack = 0;
+  int week = 0;
   int gpTrack = 0;
   int chosenPilot = 0;
 
@@ -140,6 +141,12 @@ public class GameSession : MonoBehaviour
   public void NextRace()
   {
     currentTrack++;
+    week++;
+  }
+
+  public int GetCurrentWeek()
+  {
+    return week;
   }
 
   public void GameOver()
@@ -249,4 +256,6 @@ public class GameSession : MonoBehaviour
         break;
     }
   }
+
+  
 }

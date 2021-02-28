@@ -85,9 +85,9 @@ public class World : MonoBehaviour
   public const int EMAIL_ABU_ID = 10;
 
   // Id for emails general
-  public const int EMAIL_WELCOME_ID = 11;
-  public const int EMAIL_CHALLENGES_ID = 12;
-  public const int EMAIL_END_ID = 13;
+  public const int EMAIL_WELCOME_ID = 1;
+  public const int EMAIL_CHALLENGES_ID = 1;
+  public const int EMAIL_END_ID = 10;
 
 
 
@@ -180,6 +180,17 @@ public class World : MonoBehaviour
       "\n>> Aerodynamics & Durability are the big dogs here;" +
       "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
       "\n>> Take care of your tyres, a great strategy can win titles;", "1º Month"));
+    emails.Add(new Email(EMAIL_WELCOME_ID, "Oliver Rashford - Team Principal", "Welcome", "I would like to " +
+      "welcome you to your new seat this season. Be free to make any change during the races and backstages." +
+      "If you want to have a look at the Season Standings, Calender or Showcase, just click on Management." +
+      "If you have to make an improvement in your Car, just click on Improvements, there you will have an" +
+      "overview of our Car attributes. Good Luck!", "1º Month"));
+    emails.Add(new Email(EMAIL_CHALLENGES_ID, "Alan Right - Team Performance Principal", "Some tips", "Hi, my name is Alan Right." +
+      "I'm the Team Performance Principal, I would like to tell you some tips before you start." +
+      "Firstly, take a time to read your season challenges, they will increase your final points at " +
+      "the end of the season. Before each race, take a look at the calender, it will give you a north" +
+      "about the next race characteristics. After every race you will have new Improvements Points," +
+      "don't forget to indicate to the Team the necessary changes. I wish you a good season!", "1º Month"));
     emails.Add(new Email(EMAIL_BAHREIN_ID, "Manuel Vieira - Team Assistant", "Bahrein GP Pre-race", "Hi, Manuel here!" +
       "\n>> Don't forget to have a look at the Calender;" +
       "\n>> Power & Durability are the big dogs here;" +
@@ -225,17 +236,6 @@ public class World : MonoBehaviour
       "\n>> Power is the big dog here;" +
       "\n>> Your great rivals here are Blue Devils & Silver Tech & Orange Team;" +
       "\n>> Take care of your tyres, a great strategy can win titles;", "10º Month"));
-    emails.Add(new Email(EMAIL_WELCOME_ID,"Oliver Rashford - Team Principal", "Welcome", "I would like to " +
-      "welcome you to your new seat this season. Be free to make any change during the races and backstages." +
-      "If you want to have a look at the Season Standings, Calender or Showcase, just click on Management." +
-      "If you have to make an improvement in your Car, just click on Improvements, there you will have an" +
-      "overview of our Car attributes. Good Luck!", "1º Month"));
-    emails.Add(new Email(EMAIL_CHALLENGES_ID, "Alan Right - Team Performance Princial", "Some tips", "Hi, my name is Alan Right." +
-      "I'm the Team Performance Principal, I would like to tell you some tips before you start." +
-      "Firstly, take a time to read your season challenges, they will increase your final points at " +
-      "the end of the season. Before each race, take a look at the calender, it will give you a north" +
-      "about the next race characteristics. After every race you will have new Improvements Points," +
-      "don't forget to indicate to the Team the necessary changes. I wish you a good season!", "1º Month"));
     emails.Add(new Email(EMAIL_END_ID, "Oliver Rashford - Team Principal", "Goodbye, and Thank you", "Before the last" +
       "race of the season I would like to thank you for all the hard work you spent here. All the Team employees" +
       "are happy with your work. I wish you have a great race tomorrow!", "10º Month"));
