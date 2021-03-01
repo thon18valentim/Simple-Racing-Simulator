@@ -203,28 +203,28 @@ public class GameSession : MonoBehaviour
     switch (improvement)
     {
       case "power":
-        if (pilot.Points > 0)
+        if (pilot.Points > 0 && team.Car.Power < 29)
         {
           team.Car.Power++;
           pilot.Points--;
         }
         break;
       case "durability":
-        if (pilot.Points > 0)
+        if (pilot.Points > 0 && team.Car.Durability < 29)
         {
           team.Car.Durability++;
           pilot.Points--;
         }
         break;
       case "aerodynamics":
-        if (pilot.Points > 0)
+        if (pilot.Points > 0 && team.Car.Aerodynamics < 29)
         {
           team.Car.Aerodynamics++;
           pilot.Points--;
         }
         break;
       case "chassi":
-        if (pilot.Points > 0)
+        if (pilot.Points > 0 && team.Car.Chassis < 29)
         {
           team.Car.Chassis++;
           pilot.Points--;
@@ -265,6 +265,19 @@ public class GameSession : MonoBehaviour
           pilot.Points++;
         }
         break;
+    }
+  }
+
+  public void NewSeason()
+  {
+    currentTrack = 0;
+    week = 0;
+    playerScore = 0;
+
+    foreach (Team t in World.teams)
+    {
+      t.Pilot.points = 0;
+      t.points = 0;
     }
   }
 

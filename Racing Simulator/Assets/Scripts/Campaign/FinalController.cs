@@ -67,12 +67,15 @@ public class FinalController : MonoBehaviour
     playerScore_text.text = session.GetPlayerFinalScore().ToString();
     pilotCarDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
     pilotFaceDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
+
+    session.NewSeason();
+    Debug.Log("New Season");
   }
 
   // Update is called once per frame
   void Update()
   {
-
+    
   }
 
   private void DefineStandings()
