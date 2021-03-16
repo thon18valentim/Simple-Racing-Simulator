@@ -68,7 +68,7 @@ public class FinalController : MonoBehaviour
     pilotCarDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
     pilotFaceDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
 
-    session.NewSeason();
+    //session.NewSeason();
     Debug.Log("New Season");
   }
 
@@ -76,6 +76,11 @@ public class FinalController : MonoBehaviour
   void Update()
   {
     
+  }
+
+  public void NextSeason()
+  {
+    FindObjectOfType<GameSession>().NewSeason();
   }
 
   private void DefineStandings()
