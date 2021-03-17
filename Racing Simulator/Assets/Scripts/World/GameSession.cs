@@ -162,7 +162,7 @@ public class GameSession : MonoBehaviour
 
   public void GameOver()
   {
-    if(currentTrack > 0)
+    if(currentTrack > 9)
     {
       FindObjectOfType<SceneLoader>().LoadScene(10);
     }
@@ -203,28 +203,28 @@ public class GameSession : MonoBehaviour
     switch (improvement)
     {
       case "power":
-        if (pilot.Points > 0 && team.Car.Power < 29)
+        if (pilot.Points > 0 && team.Car.Power < 27)
         {
           team.Car.Power++;
           pilot.Points--;
         }
         break;
       case "durability":
-        if (pilot.Points > 0 && team.Car.Durability < 29)
+        if (pilot.Points > 0 && team.Car.Durability < 27)
         {
           team.Car.Durability++;
           pilot.Points--;
         }
         break;
       case "aerodynamics":
-        if (pilot.Points > 0 && team.Car.Aerodynamics < 29)
+        if (pilot.Points > 0 && team.Car.Aerodynamics < 27)
         {
           team.Car.Aerodynamics++;
           pilot.Points--;
         }
         break;
       case "chassi":
-        if (pilot.Points > 0 && team.Car.Chassis < 29)
+        if (pilot.Points > 0 && team.Car.Chassis < 27)
         {
           team.Car.Chassis++;
           pilot.Points--;

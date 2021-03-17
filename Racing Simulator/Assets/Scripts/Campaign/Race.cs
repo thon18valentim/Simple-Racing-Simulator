@@ -151,8 +151,9 @@ public class Race : MonoBehaviour
   public int chosen_tyre;
   public int tyre_life;
 
-  // Setting race sound
+  // Setting race sounds
   public AudioSource race_sound;
+  public AudioSource pitStop_sound;
 
   // Setting back to menu btn
   public GameObject btn_back;
@@ -412,97 +413,267 @@ public class Race : MonoBehaviour
       else if (contador == 1)
       {
         second_race.text = t.Pilot.Name;
-        second_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          second_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          second_time.text = "+2 lap";
+        }
+        else
+          second_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 2)
       {
         third_race.text = t.Pilot.Name;
-        third_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          third_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          third_time.text = "+2 lap";
+        }
+        else
+          third_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 3)
       {
         fourth_race.text = t.Pilot.Name;
-        fourth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          fourth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          fourth_time.text = "+2 lap";
+        }
+        else
+          fourth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 4)
       {
         fifth_race.text = t.Pilot.Name;
-        fifth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          fifth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          fifth_time.text = "+2 lap";
+        }
+        else
+          fifth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 5)
       {
         sixth_race.text = t.Pilot.Name;
-        sixth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          sixth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          sixth_time.text = "+2 lap";
+        }
+        else
+          sixth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 6)
       {
         seventh_race.text = t.Pilot.Name;
-        seventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          seventh_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          seventh_time.text = "+2 lap";
+        }
+        else
+          seventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 7)
       {
-        eighth_race.text = t.Pilot.Name; 
-        eighth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        eighth_race.text = t.Pilot.Name;
+        if (t.LapTime - gapAux > 60)
+        {
+          eighth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          eighth_time.text = "+2 lap";
+        }
+        else
+          eighth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 8)
       {
         nineth_race.text = t.Pilot.Name;
-        nineth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          nineth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          nineth_time.text = "+2 lap";
+        }
+        else
+          nineth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 9)
       {
         tenth_race.text = t.Pilot.Name;
-        tenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          tenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          tenth_time.text = "+2 lap";
+        }
+        else
+          tenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 10)
       {
         eleventh_race.text = t.Pilot.Name;
-        eleventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          eleventh_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          eleventh_time.text = "+2 lap";
+        }
+        else
+          eleventh_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 11)
       {
         twelfth_race.text = t.Pilot.Name;
-        twelfth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          twelfth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          twelfth_time.text = "+2 lap";
+        }
+        else
+          twelfth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 12)
       {
         thirdth_race.text = t.Pilot.Name;
-        thirdth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          thirdth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          thirdth_time.text = "+2 lap";
+        }
+        else
+          thirdth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 13)
       {
         fourteenth_race.text = t.Pilot.Name;
-        fourteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          fourteenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          fourteenth_time.text = "+2 lap";
+        }
+        else
+          fourteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 14)
       {
         fifteenth_race.text = t.Pilot.Name;
-        fifteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          fifteenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          fifteenth_time.text = "+2 lap";
+        }
+        else
+          fifteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 15)
       {
         sixteenth_race.text = t.Pilot.Name;
-        sixteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          sixteenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          sixteenth_time.text = "+2 lap";
+        }
+        else
+          sixteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 16)
       {
         seventeenth_race.text = t.Pilot.Name;
-        seventeenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          seventeenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          seventeenth_time.text = "+2 lap";
+        }
+        else
+          seventeenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 17)
       {
         eighteenth_race.text = t.Pilot.Name;
-        eighteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if (t.LapTime - gapAux > 60)
+        {
+          eighteenth_time.text = "+1 lap";
+        }
+        else if (t.LapTime - gapAux > 120)
+        {
+          eighteenth_time.text = "+2 lap";
+        }
+        else
+          eighteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 18)
       {
         nineteenth_race.text = t.Pilot.Name;
-        nineteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if(t.LapTime - gapAux > 60)
+        {
+          nineteenth_time.text = "+1 lap";
+        }
+        else if(t.LapTime - gapAux > 120)
+        {
+          nineteenth_time.text = "+2 lap";
+        }
+        else
+          nineteenth_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
       else if (contador == 19)
       {
         twenty_race.text = t.Pilot.Name;
-        twenty_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
+        if(t.LapTime - gapAux > 60)
+        {
+          twenty_time.text = "+1 lap";
+        }
+        else if(t.LapTime - gapAux > 120)
+        {
+          twenty_time.text = "+2 lap";
+        }else
+          twenty_time.text = "+" + (t.LapTime - gapAux).ToString("N1");
       }
 
       contador++;
@@ -544,7 +715,7 @@ public class Race : MonoBehaviour
       SettingTyreText();
       Overtaking();
       // Wait for X second
-      yield return new WaitForSeconds(0f);
+      yield return new WaitForSeconds(raceSpeed);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -666,6 +837,8 @@ public class Race : MonoBehaviour
         if(current_lap == pit1)
         {
           Debug.Log("Player no Pit Stop 1");
+          pitStop_sound.Play();
+          pit1_text.color = new Color(0,242,59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)
           {
@@ -689,6 +862,8 @@ public class Race : MonoBehaviour
         else if(current_lap == pit2)
         {
           Debug.Log("Player no Pit Stop 2");
+          pitStop_sound.Play();
+          pit2_text.color = new Color(0, 242, 59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)
           {
@@ -712,6 +887,8 @@ public class Race : MonoBehaviour
         else if (current_lap == pit3)
         {
           Debug.Log("Player no Pit Stop 3");
+          pitStop_sound.Play();
+          pit3_text.color = new Color(0, 242, 59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)
           {

@@ -35,7 +35,7 @@ public class CampaignMenu : MonoBehaviour
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
     NextTrack_text.text = track.Name;
 
-    week_text.text = "Week " + (FindObjectOfType<GameSession>().GetCurrentWeek()+1).ToString();
+    week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek()+1).ToString();
 
     ShowRace();
     ShowingEmail(0);
@@ -45,7 +45,7 @@ public class CampaignMenu : MonoBehaviour
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
     NextTrack_text.text = track.Name;
 
-    week_text.text = "Week " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
+    week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
