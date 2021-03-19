@@ -14,6 +14,7 @@ public class GameSession : MonoBehaviour
   int gpTrack = 0;
   int chosenPilot = 0;
   int playerScore = 0;
+  public int year = 2020;
 
   private void Awake()
   {
@@ -66,6 +67,11 @@ public class GameSession : MonoBehaviour
   public void SetTeamScore(int score)
   {
     team.Score = score;
+  }
+
+  public int GetSeasonYear()
+  {
+    return year;
   }
 
   public string GetPilotFaceString()
@@ -155,6 +161,11 @@ public class GameSession : MonoBehaviour
     week++;
   }
 
+  public void NextYear()
+  {
+    year++;
+  }
+
   public int GetCurrentWeek()
   {
     return week;
@@ -162,7 +173,7 @@ public class GameSession : MonoBehaviour
 
   public void GameOver()
   {
-    if(currentTrack > 9)
+    if(currentTrack > 0)
     {
       FindObjectOfType<SceneLoader>().LoadScene(10);
     }

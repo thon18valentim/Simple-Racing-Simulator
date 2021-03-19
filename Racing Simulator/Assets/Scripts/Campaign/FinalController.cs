@@ -19,6 +19,7 @@ public class FinalController : MonoBehaviour
   public TextMeshProUGUI playerPower_text;
   public TextMeshProUGUI playerDura_text;
 
+  // Table 1
   // Pilots Text
   public TextMeshProUGUI primeiro_col;
   public TextMeshProUGUI segundo_col;
@@ -43,11 +44,33 @@ public class FinalController : MonoBehaviour
   public TextMeshProUGUI nono_pts;
   public TextMeshProUGUI decimo_pts;
 
+  // Table
+  // Teams Text
+  public TextMeshProUGUI primeiro_team;
+  public TextMeshProUGUI segundo_team;
+  public TextMeshProUGUI terceiro_team;
+  public TextMeshProUGUI quarto_team;
+  public TextMeshProUGUI quinto_team;
+
+  // Points Text
+  public TextMeshProUGUI primeiroteam_pts;
+  public TextMeshProUGUI segundoteam_pts;
+  public TextMeshProUGUI terceiroteam_pts;
+  public TextMeshProUGUI quartoteam_pts;
+  public TextMeshProUGUI quintoteam_pts;
+
+  public TextMeshProUGUI temporada_text;
+
   // Player Final Score
   public TextMeshProUGUI playerPoints;
 
+  // Table
   List<Team> championship = new List<Team>();
+  List<Team> Teamschampionship = new List<Team>();
+  // Pilots
   List<Team> top10 = new List<Team>();
+  // Teams
+  List<Team> top5 = new List<Team>();
   GameSession session;
 
   // Start is called before the first frame update
@@ -56,6 +79,15 @@ public class FinalController : MonoBehaviour
     session = FindObjectOfType<GameSession>();
     DefineStandings();
     Standings();
+    DefineTop5();
+    Top5();
+
+    temporada_text.text = "Season " + session.GetSeasonYear().ToString();
+    //ShowNextYear();
+
+    FindObjectOfType<GameSession>().NextYear();
+    Debug.Log("New Year");
+    Debug.Log(session.GetSeasonYear());
 
     pilotName_text.text = session.GetPilotName();
     pilotOver_text.text = session.GetPilotOver().ToString();
@@ -82,6 +114,14 @@ public class FinalController : MonoBehaviour
   {
     FindObjectOfType<GameSession>().NewSeason();
   }
+  public void NextYear()
+  {
+    
+  }
+  public void ShowNextYear()
+  {
+    temporada_text.text = "Season " + session.GetSeasonYear().ToString();
+  }
 
   private void DefineStandings()
   {
@@ -97,6 +137,72 @@ public class FinalController : MonoBehaviour
     {
       if (contador < 10)
         top10.Add(team);
+      contador++;
+    }
+  }
+
+  private void DefineTop5()
+  {
+    int contador = 0;
+    foreach (Team team in World.teams)
+    {
+      if (contador < 10)
+        Teamschampionship.Add(team);
+      contador++;
+    }
+
+    SortTop5();
+  }
+
+  private void SortTop5()
+  {
+    Team temp;
+    for (int i = 0; i < Teamschampionship.Count; i++)
+    {
+      for (int j = 0; j < Teamschampionship.Count - 1; j++)
+      {
+        if (Teamschampionship[j + 1].points > Teamschampionship[j].points)
+        {
+          temp = Teamschampionship[j];
+          Teamschampionship[j] = Teamschampionship[j + 1];
+          Teamschampionship[j + 1] = temp;
+        }
+      }
+    }
+  }
+
+  public void Top5()
+  {
+    int contador = 0;
+
+    foreach (Team t in Teamschampionship)
+    {
+      if (contador == 0)
+      {
+        primeiro_team.text = t.Name;
+        primeiroteam_pts.text = t.points.ToString();
+      }
+      else if (contador == 1)
+      {
+        segundo_team.text = t.Name;
+        segundoteam_pts.text = t.points.ToString();
+      }
+      else if (contador == 2)
+      {
+        terceiro_team.text = t.Name;
+        terceiroteam_pts.text = t.points.ToString();
+      }
+      else if (contador == 3)
+      {
+        quarto_team.text = t.Name;
+        quartoteam_pts.text = t.points.ToString();
+      }
+      else if (contador == 4)
+      {
+        quinto_team.text = t.Name;
+        quintoteam_pts.text = t.points.ToString();
+      }
+
       contador++;
     }
   }

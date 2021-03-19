@@ -797,17 +797,16 @@ public class Race : MonoBehaviour
     int sort_pneu;
     int pit_time;
 
-    foreach(Team t in leaderboard)
+    foreach (Team t in leaderboard)
     {
       if(t.Pilot.Id > 3)
       {
-        if (t.pneu_dura <= 10)
+        if (t.pneu_dura <= 11 && current_lap < (track.Laps-5))
         {
-          sort_pneu = RandomNumberGenerator.NumberBetween(1, 3);
-
+          sort_pneu = RandomNumberGenerator.NumberBetween(1, 4);
           if (sort_pneu == 1)
           {
-            Debug.Log("Colocando Pneus Macios");
+            Debug.Log(t.Pilot.Name + " | Colocando Pneus Macios");
             t.pneu_id = 30;
             t.pneu_dura = 25;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -815,7 +814,7 @@ public class Race : MonoBehaviour
           }
           else if (sort_pneu == 2)
           {
-            Debug.Log("Colocando Pneus Médios");
+            Debug.Log(t.Pilot.Name + " | Colocando Pneus Médios");
             t.pneu_id = 27;
             t.pneu_dura = 35;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -823,14 +822,22 @@ public class Race : MonoBehaviour
           }
           else if (sort_pneu == 3)
           {
-            Debug.Log("Colocando Pneus Duros");
+            Debug.Log(t.Pilot.Name + " | Colocando Pneus Duros");
             t.pneu_id = 24;
             t.pneu_dura = 45;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
             t.SetLapTime(t.LapTime + pit_time);
           }
-          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+          else
+          {
+            Debug.Log(t.Pilot.Name + " | Colocando Pneus Médios");
+            t.pneu_id = 27;
+            t.pneu_dura = 35;
+            pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+            t.SetLapTime(t.LapTime + pit_time);
+          }
         }
+        pitStop_text.text = t.Pilot.Name + " is changing tyres";
       }
       else
       {
@@ -1385,26 +1392,6 @@ public class Race : MonoBehaviour
     World.teams[18].points = 0;
     World.teams[19].points = 0;
   }
-
-  /*public void IncreasingPilotsOver()
-  {
-    if(session.GetCurrentTrack() == 3 || session.GetCurrentTrack() == 6)
-    {
-      foreach(Team team in leaderboard)
-      {
-        int overIncrease = RandomNumberGenerator.NumberBetween(0, 2);
-
-        if (team.Pilot.Age < 30)
-        {
-          team.Pilot.Over += overIncrease;
-        }
-        else if(team.Pilot.Age > 30)
-        {
-          team.Pilot.Over -= overIncrease;
-        }
-      }
-    }
-  }*/
 
   private void PopulateMarkers()
   {

@@ -28,6 +28,9 @@ public class CampaignMenu : MonoBehaviour
 
   public TextMeshProUGUI NextTrack_text;
 
+  public List<Email> email_to_show = new List<Email>();
+  public int email_count;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -36,18 +39,19 @@ public class CampaignMenu : MonoBehaviour
     NextTrack_text.text = track.Name;
 
     week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek()+1).ToString();
+    SettingEmailDisplay();
 
     ShowRace();
-    ShowingEmail(0);
   }
   private void Update()
   {
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
     NextTrack_text.text = track.Name;
+    SettingEmailDisplay();
 
     week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
 
-    if (Input.GetKeyDown(KeyCode.RightArrow))
+    /*if (Input.GetKeyDown(KeyCode.RightArrow))
     {
       email_selection++;
 
@@ -64,7 +68,7 @@ public class CampaignMenu : MonoBehaviour
         email_selection = World.emails.Count;
 
       ShowingEmail(email_selection);
-    }
+    }*/
   }
 
   public void ShowRace()
@@ -99,7 +103,7 @@ public class CampaignMenu : MonoBehaviour
   {
     email_selection++;
 
-    if (email_selection > World.emails.Count)
+    if (email_selection > CountDisplayEmail())
       email_selection = 0;
 
     ShowingEmail(email_selection);
@@ -110,17 +114,171 @@ public class CampaignMenu : MonoBehaviour
     email_selection--;
 
     if (email_selection < 0)
-      email_selection = World.emails.Count;
+      email_selection = CountDisplayEmail();
 
     ShowingEmail(email_selection);
   }
 
   // Set the correct email Text
-  public void ShowingEmail(int week)
+  public void ShowingEmail(int selection)
   {
-    email_mandatory.text = World.emails[week].Mandatory;
-    email_subject.text = World.emails[week].Subject;
-    email_body.text = World.emails[week].Body;
-    email_date.text = World.emails[week].Date;
+    if (email_to_show[selection].IsDisplay())
+    {
+      email_mandatory.text = email_to_show[selection].Mandatory;
+      email_subject.text = email_to_show[selection].Subject;
+      email_body.text = email_to_show[selection].Body;
+      email_date.text = email_to_show[selection].Date;
+    }
+  }
+
+  public void SettingEmailDisplay()
+  {
+    foreach (Email mail in World.emails)
+    {
+      if (FindObjectOfType<GameSession>().GetCurrentTrack() == 0)
+      {
+        if(mail.Id == 1)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 1");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 1)
+      {
+        if(mail.Id == 2)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 2");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 2)
+      {
+        if (mail.Id == 3)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 3");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 3)
+      {
+        if (mail.Id == 4)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 4");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 4)
+      {
+        if (mail.Id == 5)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 5");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 5)
+      {
+        if (mail.Id == 6)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 6");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 6)
+      {
+        if (mail.Id == 7)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 7");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 7)
+      {
+        if (mail.Id == 8)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 8");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 8)
+      {
+        if (mail.Id == 9)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 9");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+      else if (FindObjectOfType<GameSession>().GetCurrentTrack() == 9)
+      {
+        if(mail.Id == 10)
+        {
+          mail.setDisplay(true);
+          email_to_show.Add(mail);
+          //Debug.Log("Setando email id 10");
+        }
+        else
+        {
+          mail.setDisplay(false);
+        }
+      }
+    } 
+  }
+
+  public int CountDisplayEmail()
+  {
+    int count = 0;
+
+    foreach(Email mail in email_to_show)
+    {
+      if (mail.IsDisplay())
+      {
+        count++;
+      }
+    }
+    return count; 
   }
 }
