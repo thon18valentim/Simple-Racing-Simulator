@@ -8,8 +8,6 @@ using Assets.Scripts;
 public class CampaignMenu : MonoBehaviour
 {
   public GameObject game_menu;
-  public GameObject management_menu;
-  public GameObject race_menu;
   public GameObject email_menu;
 
   public TextMeshProUGUI email_mandatory;
@@ -17,7 +15,7 @@ public class CampaignMenu : MonoBehaviour
   public TextMeshProUGUI email_body;
   public TextMeshProUGUI email_date;
 
-  public TextMeshProUGUI week_text;
+  //public TextMeshProUGUI week_text;
 
   Track track;
   GameSession session;
@@ -38,10 +36,9 @@ public class CampaignMenu : MonoBehaviour
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
     NextTrack_text.text = track.Name;
 
-    week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek()+1).ToString();
+    //week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek()+1).ToString();
     SettingEmailDisplay();
 
-    ShowRace();
   }
   private void Update()
   {
@@ -49,7 +46,7 @@ public class CampaignMenu : MonoBehaviour
     NextTrack_text.text = track.Name;
     SettingEmailDisplay();
 
-    week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
+    //week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
 
     /*if (Input.GetKeyDown(KeyCode.RightArrow))
     {
@@ -71,24 +68,15 @@ public class CampaignMenu : MonoBehaviour
     }*/
   }
 
-  public void ShowRace()
+  public void HideMenuInbox()
   {
-    race_menu.SetActive(true);
-    management_menu.SetActive(false);
-    email_menu.SetActive(false);
-  }
-
-  public void HideRace()
-  {
-    race_menu.SetActive(false);
-    management_menu.SetActive(true);
+    game_menu.SetActive(true);
     email_menu.SetActive(false);
   }
 
   public void ShowEmailInbox()
   {
-    race_menu.SetActive(false);
-    management_menu.SetActive(false);
+    game_menu.SetActive(false);
     email_menu.SetActive(true);
   }
 
