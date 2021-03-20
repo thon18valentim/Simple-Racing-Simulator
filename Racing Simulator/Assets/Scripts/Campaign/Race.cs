@@ -167,6 +167,14 @@ public class Race : MonoBehaviour
   // Player Tyre Life Text
   public TextMeshProUGUI tyreLife_text;
 
+  // Player Chosen Tyre Marker
+  public TextMeshProUGUI soft_marker;
+  public TextMeshProUGUI med_marker;
+  public TextMeshProUGUI hard_marker;
+
+  // Player select tyre sound
+  public AudioSource tyreSelect_sound;
+
   // Race Speed Variable
   public float raceSpeed = 3f;
   public TextMeshProUGUI raceSpeed_text;
@@ -272,6 +280,7 @@ public class Race : MonoBehaviour
     foreach (Team team in World.teams)
     {
       team.SetScore(CalculateTeamScore(team));
+      team.pneu_id = 30;
       team.pneu_dura = 25;
       leaderboard.Add(team);
     }
@@ -1473,6 +1482,27 @@ public class Race : MonoBehaviour
   {
     chosen_tyre = tyre_id;
     Debug.Log("Tyre Selected " + tyre_id.ToString());
+    if (tyre_id == 30)
+    {
+      soft_marker.color = new Color(20,156,4,255);
+      med_marker.color = new Color(0, 0, 0);
+      hard_marker.color = new Color(0, 0, 0);
+      tyreSelect_sound.Play();
+    }
+    else if (tyre_id == 27)
+    {
+      soft_marker.color = new Color(0, 0, 0);
+      med_marker.color = new Color(20, 156, 4, 255);
+      hard_marker.color = new Color(0, 0, 0);
+      tyreSelect_sound.Play();
+    }
+    else
+    {
+      soft_marker.color = new Color(0, 0, 0);
+      med_marker.color = new Color(0, 0, 0);
+      hard_marker.color = new Color(20, 156, 4, 255);
+      tyreSelect_sound.Play();
+    }
   }
 
   public void DesablePitStop()
@@ -1518,7 +1548,7 @@ public class Race : MonoBehaviour
         if (team.pneu_dura < 11)
           tyreLife_text.color = new Color(255, 0, 0, 255);
         else
-          tyreLife_text.color = new Color(20, 156, 4);
+          tyreLife_text.color = new Color(20, 156, 4, 255);
       }
     }
   }

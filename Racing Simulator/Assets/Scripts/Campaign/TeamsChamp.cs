@@ -81,51 +81,101 @@ public class TeamsChamp : MonoBehaviour
       {
         primeiro_col.text = t.Name;
         primeiro_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          primeiro_col.color = new Color(0, 255, 8, 255);
+          primeiro_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 1)
       {
         segundo_col.text = t.Name;
         segundo_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          segundo_col.color = new Color(0, 255, 8, 255);
+          segundo_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 2)
       {
         terceiro_col.text = t.Name;
         terceiro_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          terceiro_col.color = new Color(0, 255, 8, 255);
+          terceiro_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 3)
       {
         quarto_col.text = t.Name;
         quarto_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          quarto_col.color = new Color(0, 255, 8, 255);
+          quarto_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 4)
       {
         quinto_col.text = t.Name;
         quinto_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          quinto_col.color = new Color(0, 255, 8, 255);
+          quinto_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 5)
       {
         sexto_col.text = t.Name;
         sexto_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          sexto_col.color = new Color(0, 255, 8, 255);
+          sexto_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 6)
       {
         setimo_col.text = t.Name;
         setimo_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          setimo_col.color = new Color(0, 255, 8, 255);
+          setimo_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 7)
       {
         oitavo_col.text = t.Name;
         oitavo_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          oitavo_col.color = new Color(0, 255, 8, 255);
+          oitavo_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 8)
       {
         nono_col.text = t.Name;
         nono_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          nono_col.color = new Color(0, 255, 8, 255);
+          nono_pts.color = new Color(0, 255, 8, 255);
+        }
       }
       else if (contador == 9)
       {
         decimo_col.text = t.Name;
         decimo_pts.text = t.points.ToString();
+        if (t.Pilot.Id < 3)
+        {
+          decimo_col.color = new Color(0, 255, 8, 255);
+          decimo_pts.color = new Color(0, 255, 8, 255);
+        }
       }
 
       contador++;
