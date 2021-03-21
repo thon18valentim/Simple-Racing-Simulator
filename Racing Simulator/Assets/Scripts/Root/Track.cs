@@ -4,9 +4,11 @@ using UnityEngine;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 
 namespace Assets.Scripts
 {
+  [Serializable]
   public class Track
   {
     public int Id { get; set; }

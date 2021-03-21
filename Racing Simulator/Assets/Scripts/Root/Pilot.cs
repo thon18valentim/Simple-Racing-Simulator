@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
+  [Serializable]
   public class Pilot
   {
     public int Id { get; set; }

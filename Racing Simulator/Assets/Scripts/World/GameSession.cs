@@ -69,6 +69,27 @@ public class GameSession : MonoBehaviour
     team.Score = score;
   }
 
+  public void SetCurrentTrack(int i)
+  {
+    currentTrack = i;
+  }
+  public void SetWeek(int i)
+  {
+    week = i;
+  }
+  public void SetPlayerScore(int i)
+  {
+    playerScore = i;
+  }
+  public void SetSavedPlayerTeam(Team player)
+  {
+    team = player;
+  }
+  public void SetSavedPlayerPilot(Pilot player)
+  {
+    pilot = player;
+  }
+
   public int GetSeasonYear()
   {
     return year;
@@ -87,6 +108,15 @@ public class GameSession : MonoBehaviour
   public int GetPilotOver()
   {
     return team.Pilot.Over;
+  }
+
+  public Team GetPlayerTeam()
+  {
+    return team;
+  }
+  public Pilot GetPlayerPilot()
+  {
+    return pilot;
   }
 
   public int GetPilotTyre()

@@ -46,7 +46,7 @@ public class MenuController : MonoBehaviour
 
     if (selection == 0)
     {
-      subText.text = "Live your dream as a professional pilot";
+      subText.text = "Start or Load your Pilot Journey";
     }
     else if (selection == 1)
     {
@@ -54,7 +54,7 @@ public class MenuController : MonoBehaviour
     }
     else if (selection == 2)
     {
-      subText.text = "Every Team and Pilot";
+      subText.text = "Our glorious team";
     }
     else
     {

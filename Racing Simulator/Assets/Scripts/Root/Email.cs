@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    
+  [Serializable]
   public class Email
   {
     public int Id { get; set; }

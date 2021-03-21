@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
+  [Serializable]
   public class Team
   {
     public int Id { get; set; }

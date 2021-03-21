@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
+  [Serializable]
   public class Car
   {
     public int Power { get; set; }
