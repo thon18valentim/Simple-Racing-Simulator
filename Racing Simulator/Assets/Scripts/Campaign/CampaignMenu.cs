@@ -9,6 +9,9 @@ public class CampaignMenu : MonoBehaviour
 {
   public GameObject game_menu;
   public GameObject email_menu;
+  public GameObject profile_menu;
+  public GameObject challenge_menu;
+  public GameObject exit_popup;
 
   public TextMeshProUGUI email_mandatory;
   public TextMeshProUGUI email_subject;
@@ -72,12 +75,55 @@ public class CampaignMenu : MonoBehaviour
   {
     game_menu.SetActive(true);
     email_menu.SetActive(false);
+    profile_menu.SetActive(false);
+    challenge_menu.SetActive(false);
   }
 
   public void ShowEmailInbox()
   {
     game_menu.SetActive(false);
     email_menu.SetActive(true);
+    profile_menu.SetActive(false);
+    challenge_menu.SetActive(false);
+  }
+
+  public void ShowProfile()
+  {
+    game_menu.SetActive(false);
+    email_menu.SetActive(false);
+    profile_menu.SetActive(true);
+    challenge_menu.SetActive(false);
+  }
+  public void HideProfile()
+  {
+    game_menu.SetActive(true);
+    email_menu.SetActive(false);
+    profile_menu.SetActive(false);
+    challenge_menu.SetActive(false);
+  }
+  public void ShowChallenge()
+  {
+    game_menu.SetActive(false);
+    email_menu.SetActive(false);
+    profile_menu.SetActive(false);
+    challenge_menu.SetActive(true);
+  }
+  public void HideChallenge()
+  {
+    game_menu.SetActive(true);
+    email_menu.SetActive(false);
+    profile_menu.SetActive(false);
+    challenge_menu.SetActive(false);
+  }
+  public void ShowExit()
+  {
+    profile_menu.SetActive(false);
+    exit_popup.SetActive(true);
+  }
+  public void HideExit()
+  {
+    profile_menu.SetActive(true);
+    exit_popup.SetActive(false);
   }
 
   public void UpdatingNextText()
