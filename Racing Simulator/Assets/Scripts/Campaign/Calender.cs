@@ -18,6 +18,7 @@ public class Calender : MonoBehaviour
   public GameObject england_info;
 
   public TextMeshProUGUI gp_name;
+  public TextMeshProUGUI country_name;
   public TextMeshProUGUI gp_laps;
   public TextMeshProUGUI gp_aero;
   public TextMeshProUGUI gp_power;
@@ -58,12 +59,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 1)
     {
@@ -78,12 +73,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 2)
     {
@@ -98,12 +87,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 3)
     {
@@ -118,12 +101,7 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
+      
     }
     else if(i == 4)
     {
@@ -138,12 +116,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 5)
     {
@@ -158,12 +130,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 6)
     {
@@ -178,12 +144,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 7)
     {
@@ -198,12 +158,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 8)
     {
@@ -218,12 +172,6 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(true);
       abu_info.SetActive(false);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
     else if(i == 9)
     {
@@ -238,12 +186,14 @@ public class Calender : MonoBehaviour
       usa_info.SetActive(false);
       abu_info.SetActive(true);
 
-      gp_name.text = tracks_list[i].Name;
-      gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
-      gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
-      gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
-      gp_power.text = tracks_list[i].Power.ToString() + " Pow";
-      gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
     }
+
+    gp_name.text = tracks_list[i].Name;
+    country_name.text = tracks_list[i].Country;
+    gp_laps.text = tracks_list[i].Laps.ToString() + " Laps";
+    gp_aero.text = tracks_list[i].Aerodynamics.ToString() + " Aer";
+    gp_chassi.text = tracks_list[i].Chassi.ToString() + " Cha";
+    gp_power.text = tracks_list[i].Power.ToString() + " Pow";
+    gp_dura.text = tracks_list[i].Durability.ToString() + " Dur";
   }
 }
