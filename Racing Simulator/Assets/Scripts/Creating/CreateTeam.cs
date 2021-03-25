@@ -12,6 +12,11 @@ public class CreateTeam : MonoBehaviour
   public TextMeshProUGUI teamName;
   public GameObject car;
 
+  public GameObject logo2;
+  public GameObject car2;
+  public GameObject logo3;
+  public GameObject car3;
+
   // Audios
   public AudioSource conf_sound;
   public AudioSource btn_sound;
@@ -59,5 +64,27 @@ public class CreateTeam : MonoBehaviour
     teamName.text = World.teams[selection].Name;
     logo.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[selection].LogoString); // Accessing the sprites via file name in the resoruces file
     car.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[selection].CarString);
+
+    if(selection == 0)
+    {
+      logo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[9].LogoString);
+      car2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[9].CarString);
+    }
+    else
+    {
+      logo2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[selection-1].LogoString);
+      car2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[selection - 1].CarString);
+    }
+
+    if(selection == 9)
+    {
+      logo3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[0].LogoString);
+      car3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[0].CarString);
+    }
+    else
+    {
+      logo3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Logos/" + World.teams[selection + 1].LogoString);
+      car3.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + World.teams[selection + 1].CarString);
+    }
   }
 }

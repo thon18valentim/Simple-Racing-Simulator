@@ -6,6 +6,11 @@ using Assets.Scripts;
 
 public class FinalController : MonoBehaviour
 {
+  // Sound Control
+  public GameObject sound_play;
+  public GameObject sound_mute;
+  public AudioSource back_sound;
+
   // Player Texts
   public TextMeshProUGUI pilotName_text;
   public TextMeshProUGUI pilotOver_text;
@@ -73,6 +78,11 @@ public class FinalController : MonoBehaviour
   List<Team> top5 = new List<Team>();
   GameSession session;
 
+  private void Awake()
+  {
+    back_sound.Play();
+  }
+
   // Start is called before the first frame update
   void Start()
   {
@@ -108,6 +118,19 @@ public class FinalController : MonoBehaviour
   void Update()
   {
     
+  }
+
+  public void muteSound()
+  {
+    back_sound.Stop();
+    sound_play.SetActive(false);
+    sound_mute.SetActive(true);
+  }
+  public void playSound()
+  {
+    back_sound.Play();
+    sound_play.SetActive(true);
+    sound_mute.SetActive(false);
   }
 
   public void NextSeason()

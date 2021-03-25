@@ -7,6 +7,10 @@ using Assets.Scripts;
 
 public class Race : MonoBehaviour
 {
+  // Sound Control
+  public GameObject sound_play;
+  public GameObject sound_mute;
+
   // Set Qualification and Race Screen
   public GameObject quali_screen;
   public GameObject race_screen;
@@ -1592,5 +1596,18 @@ public class Race : MonoBehaviour
       raceSpeed_text.text = "x 0.5";
     else if (speed == 4.0f)
       raceSpeed_text.text = "x 0.1";
+  }
+
+  public void muteSound()
+  {
+    race_sound.Stop();
+    sound_play.SetActive(false);
+    sound_mute.SetActive(true);
+  }
+  public void playSound()
+  {
+    race_sound.Play();
+    sound_play.SetActive(true);
+    sound_mute.SetActive(false);
   }
 }

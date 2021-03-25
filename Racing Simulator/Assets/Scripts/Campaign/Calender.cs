@@ -27,8 +27,21 @@ public class Calender : MonoBehaviour
 
   List<Track> tracks_list = new List<Track>();
 
-    // Start is called before the first frame update
-    void Start()
+  // GP Order Text
+  public TextMeshProUGUI gp1;
+  public TextMeshProUGUI gp2;
+  public TextMeshProUGUI gp3;
+  public TextMeshProUGUI gp4;
+  public TextMeshProUGUI gp5;
+  public TextMeshProUGUI gp6;
+  public TextMeshProUGUI gp7;
+  public TextMeshProUGUI gp8;
+  public TextMeshProUGUI gp9;
+  public TextMeshProUGUI gp10;
+
+
+  // Start is called before the first frame update
+  void Start()
     {
         foreach(Track track in World.tracks)
         {
@@ -43,6 +56,52 @@ public class Calender : MonoBehaviour
     {
         
     }
+
+  public void GettingCurrentTrack()
+  {
+    int current_track = FindObjectOfType<GameSession>().GetCurrentTrack();
+
+    if(current_track == 0)
+    {
+      gp1.color = new Color(255, 60, 0, 255);
+    }
+    else if(current_track == 1)
+    {
+      gp2.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 2)
+    {
+      gp3.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 3)
+    {
+      gp4.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 4)
+    {
+      gp5.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 5)
+    {
+      gp6.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 6)
+    {
+      gp7.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 7)
+    {
+      gp8.color = new Color(255, 60, 0, 255);
+    }
+    else if (current_track == 8)
+    {
+      gp9.color = new Color(255, 60, 0, 255);
+    }
+    else
+    {
+      gp10.color = new Color(255, 60, 0, 255);
+    }
+  }
 
   public void ShowTrackInfo(int i)
   {
