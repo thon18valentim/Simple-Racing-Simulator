@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameSession : MonoBehaviour
   int chosenPilot = 0;
   int playerScore = 0;
   public int year = 2020;
+  public int count_temporada = 0;
 
   private void Awake()
   {
@@ -203,7 +205,7 @@ public class GameSession : MonoBehaviour
 
   public void GameOver()
   {
-    if(currentTrack > 9)
+    if(currentTrack > 0)
     {
       FindObjectOfType<SceneLoader>().LoadScene(10);
     }
@@ -225,9 +227,9 @@ public class GameSession : MonoBehaviour
     {
       foreach (Team team in World.teams)
       {
-        int overIncrease = RandomNumberGenerator.NumberBetween(0, 2);
+        int overIncrease = RandomNumberGenerator.NumberBetween(0, 3);
 
-        if (team.Pilot.Age < 30)
+        if (team.Pilot.Age < 30 && team.Pilot.Over < 97)
         {
           team.Pilot.Over += overIncrease;
         }
@@ -309,17 +311,49 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void PilotRetire()
+  {
+    int contador = 0;
+
+    foreach (Pilot p in World.pilots)
+    {
+      if (p.Age > 35)
+      {
+        Debug.Log(p.Name + " retire!");
+        p.Id = World.pilots_juniors[contador].Id;
+        p.Name = World.pilots_juniors[contador].Name;
+        p.Country = World.pilots_juniors[contador].Country;
+        p.PilotString = World.pilots_juniors[contador].PilotString;
+        p.Age = World.pilots_juniors[contador].Age;
+        p.Over = World.pilots_juniors[contador].Over;
+        Debug.Log(p.Name + " is the new Pilot");
+      }
+      contador++;
+    }
+  }
+
   public void NewSeason()
   {
     currentTrack = 0;
     week = 0;
     playerScore = 0;
 
+    PilotRetire();
+
     foreach (Team t in World.teams)
     {
       t.Pilot.points = 0;
       t.points = 0;
     }
+    foreach (Pilot p in World.pilots)
+    {
+      p.Age += 1;
+    }
+    if(count_temporada > 9)
+    {
+      SceneManager.LoadScene(0);
+    }
+    count_temporada++;
   }
 
   

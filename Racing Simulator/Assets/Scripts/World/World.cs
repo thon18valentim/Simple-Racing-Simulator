@@ -9,6 +9,7 @@ public class World : MonoBehaviour
   public static List<Team> teams = new List<Team>();
   public static List<Track> tracks = new List<Track>();
   public static List<Email> emails = new List<Email>();
+  public static List<Pilot> pilots_juniors = new List<Pilot>();
 
   // Definig the variables with id for use later
   public const int PILOT_VAND_ID = 1;
@@ -36,6 +37,31 @@ public class World : MonoBehaviour
   public const int PILOT_GIO_ID = 21;
   public const int PILOT_GRO_ID = 22;
   public const int PILOT_LAT_ID = 23;
+
+  // Definig the variables with id for use later on Junior pilots
+  public const int PILOT_FIT_ID = 24;
+  public const int PILOT_ILO_ID = 25;
+  public const int PILOT_TSU_ID = 26;
+  public const int PILOT_SHW_ID = 27;
+  public const int PILOT_MAZ_ID = 28;
+  public const int PILOT_ZHO_ID = 29;
+  public const int PILOT_LUN_ID = 30;
+  public const int PILOT_DEL_ID = 31;
+  public const int PILOT_GHI_ID = 32;
+  public const int PILOT_TIC_ID = 33;
+  public const int PILOT_DAR_ID = 34;
+  public const int PILOT_ARM_ID = 35;
+  public const int PILOT_AIT_ID = 36;
+  public const int PILOT_MAT_ID = 37;
+  public const int PILOT_VIP_ID = 38;
+  public const int PILOT_ALE_ID = 39;
+  public const int PILOT_MAR_ID = 40;
+  public const int PILOT_NIS_ID = 41;
+  public const int PILOT_PIQ_ID = 42;
+  public const int PILOT_GEL_ID = 43;
+  public const int PILOT_SAT_ID = 44;
+  public const int PILOT_OTH_ID = 45;
+  public const int PILOT_ANA_ID = 46;
 
   // Id for teams
   public const int TEAM_SILVER_TECH_ID = 1;
@@ -100,6 +126,7 @@ public class World : MonoBehaviour
     PopulateCars();
     PopulateTracks();
     PopulateEmails();
+    PopulateJuniors();
   }
 
   // Creating pilots and adding them to the list
@@ -129,6 +156,34 @@ public class World : MonoBehaviour
     pilots.Add(new Pilot(PILOT_GIO_ID, "Giovinazzi", "Italy", "PilotFace06", 27, 79));
     pilots.Add(new Pilot(PILOT_GRO_ID, "Grosjean", "France", "PilotFace06", 34, 78));
     pilots.Add(new Pilot(PILOT_LAT_ID, "Latifi", "Canada", "PilotFace03", 25, 73));
+  }
+
+  // Creating pilots juniors
+  public static void PopulateJuniors()
+  {
+    pilots_juniors.Add(new Pilot(PILOT_FIT_ID, "Fittipaldi", "Brazil","PilotFace06",24,72));
+    pilots_juniors.Add(new Pilot(PILOT_ILO_ID, "Ilott", "England", "PilotFace06", 22, 71));
+    pilots_juniors.Add(new Pilot(PILOT_TSU_ID, "Tsunoda", "Japan", "PilotFace06", 20, 71));
+    pilots_juniors.Add(new Pilot(PILOT_SHW_ID, "Shwartzman", "Russia", "PilotFace02", 21, 70));
+    pilots_juniors.Add(new Pilot(PILOT_MAZ_ID, "Mazepin", "Russia", "PilotFace02", 22, 70));
+    pilots_juniors.Add(new Pilot(PILOT_ZHO_ID, "Zhou", "China", "PilotFace06", 21, 70));
+    pilots_juniors.Add(new Pilot(PILOT_LUN_ID, "Lundgaard", "Denmark", "PilotFace03", 19, 70));
+    pilots_juniors.Add(new Pilot(PILOT_DEL_ID, "Delétraz", "Swiss", "PilotFace03", 23, 69));
+    pilots_juniors.Add(new Pilot(PILOT_GHI_ID, "Ghiotto", "Italian", "PilotFace03", 26, 69));
+    pilots_juniors.Add(new Pilot(PILOT_TIC_ID, "Ticktum", "England", "PilotFace03", 21, 69));
+    pilots_juniors.Add(new Pilot(PILOT_DAR_ID, "Daruvala", "India", "PilotFace04", 22, 68));
+    pilots_juniors.Add(new Pilot(PILOT_ARM_ID, "Armstrong", "New Zealand", "PilotFace02", 20, 67));
+    pilots_juniors.Add(new Pilot(PILOT_AIT_ID, "Aitken", "England", "PilotFace03", 25, 67));
+    pilots_juniors.Add(new Pilot(PILOT_MAT_ID, "Matsushita", "Japan", "PilotFace03", 27, 67));
+    pilots_juniors.Add(new Pilot(PILOT_VIP_ID, "Vips", "Estonia", "PilotFace02", 20, 65));
+    pilots_juniors.Add(new Pilot(PILOT_ALE_ID, "Alesi", "France", "PilotFace03", 21, 65));
+    pilots_juniors.Add(new Pilot(PILOT_PIQ_ID, "Piquet", "Brazil", "PilotFace03", 22, 63));
+    pilots_juniors.Add(new Pilot(PILOT_MAR_ID, "Markelov", "Russia", "PilotFace02", 26, 63));
+    pilots_juniors.Add(new Pilot(PILOT_NIS_ID, "Nissany", "Israel", "PilotFace04", 26, 63));
+    pilots_juniors.Add(new Pilot(PILOT_GEL_ID, "Gelael", "Indonesia", "PilotFace04", 24, 63));
+    pilots_juniors.Add(new Pilot(PILOT_OTH_ID, "Valentim", "Brazil", "PilotFace04", 19, 60));
+    pilots_juniors.Add(new Pilot(PILOT_ANA_ID, "Reche", "Spain", "PilotFace04", 19, 61));
+    pilots_juniors.Add(new Pilot(PILOT_SAT_ID, "Sato", "Japan", "PilotFace06", 21, 62));
   }
 
   // Creating the teams

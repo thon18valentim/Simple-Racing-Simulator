@@ -728,7 +728,7 @@ public class Race : MonoBehaviour
       SettingTyreText();
       Overtaking();
       // Wait for X second
-      yield return new WaitForSeconds(raceSpeed);
+      yield return new WaitForSeconds(0f);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
@@ -800,7 +800,7 @@ public class Race : MonoBehaviour
       contador++;
     }
 
-    session.IncreasePlayerStatus(3);
+    session.IncreasePlayerStatus(2);
     SumTeamsPoints();
   }
 
