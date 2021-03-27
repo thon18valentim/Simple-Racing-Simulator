@@ -37,6 +37,24 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void SetYear(int year_temp)
+  {
+    year = year_temp;
+  }
+  public int GetYear()
+  {
+    return year;
+  }
+
+  public void SetTemporada(int temporada)
+  {
+    count_temporada = temporada;
+  }
+  public int GetTemporada()
+  {
+    return count_temporada;
+  }
+
   public int GetGpTrack()
   {
     return gpTrack;

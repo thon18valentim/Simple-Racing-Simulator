@@ -42,6 +42,8 @@ public class SaveData : MonoBehaviour
     // Getting data
     s.currentGP = FindObjectOfType<GameSession>().GetCurrentTrack();
     s.week = FindObjectOfType<GameSession>().GetCurrentWeek();
+    s.year = FindObjectOfType<GameSession>().GetYear();
+    s.count_season = FindObjectOfType<GameSession>().GetTemporada();
     s.playerScore = FindObjectOfType<GameSession>().GetPlayerFinalScore();
     s.playerTeam = FindObjectOfType<GameSession>().GetPlayerTeam();
     s.playerPilot = FindObjectOfType<GameSession>().GetPlayerPilot();
@@ -75,6 +77,8 @@ public class SaveData : MonoBehaviour
       // Setting Saved Data
       FindObjectOfType<GameSession>().SetCurrentTrack(s.currentGP);
       FindObjectOfType<GameSession>().SetWeek(s.week);
+      FindObjectOfType<GameSession>().SetYear(s.year);
+      FindObjectOfType<GameSession>().SetTemporada(s.count_season);
       FindObjectOfType<GameSession>().SetPlayerScore(s.playerScore);
       FindObjectOfType<GameSession>().SetSavedPlayerPilot(s.playerPilot);
       FindObjectOfType<GameSession>().SetSavedPlayerTeam(s.playerTeam);
@@ -105,6 +109,8 @@ class SaveClass
   // Campaign Localization
   public int currentGP;
   public int week;
+  public int year;
+  public int count_season;
   // Player Info
   public int playerScore;
   public Team playerTeam;
