@@ -223,7 +223,7 @@ public class GameSession : MonoBehaviour
 
   public void GameOver()
   {
-    if(currentTrack > 0)
+    if(currentTrack > 9)
     {
       FindObjectOfType<SceneLoader>().LoadScene(10);
     }
@@ -329,6 +329,71 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  public void IncreaseIAStatus()
+  {
+    int contador = 0;
+    foreach(Team t in World.teams)
+    {
+      // Generating random numbers to improve IA Cars
+      int imp_points1 = RandomNumberGenerator.NumberBetween(0, 2);
+      int imp_points2 = RandomNumberGenerator.NumberBetween(0, 1);
+
+      if (contador <= 9)
+      {
+        // Improving Power
+        if (t.Car.Power < 26)
+        {
+          t.Car.Power += imp_points1;
+        }
+        else if (t.Car.Power < 27)
+        {
+          t.Car.Power += imp_points2;
+        }
+
+        // Improving Aero
+        if (t.Car.Aerodynamics < 26)
+        {
+          t.Car.Aerodynamics += imp_points1;
+        }
+        else if (t.Car.Aerodynamics < 27)
+        {
+          t.Car.Aerodynamics += imp_points2;
+        }
+
+        // Improving Chassi
+        if (t.Car.Chassis < 26)
+        {
+          t.Car.Chassis += imp_points1;
+        }
+        else if (t.Car.Chassis < 27)
+        {
+          t.Car.Chassis += imp_points2;
+        }
+
+        // Improving Durability
+        if (t.Car.Durability < 26)
+        {
+          t.Car.Durability += imp_points1;
+        }
+        else if (t.Car.Durability < 27)
+        {
+          t.Car.Durability += imp_points2;
+        }
+      }
+      contador++;
+    }
+
+    for(int i=0; i<9; i++)
+    {
+      World.teams[i + 10].Car.Power = World.teams[i].Car.Power;
+      World.teams[i + 10].Car.Aerodynamics = World.teams[i].Car.Aerodynamics;
+      World.teams[i + 10].Car.Chassis = World.teams[i].Car.Chassis;
+      World.teams[i + 10].Car.Durability = World.teams[i].Car.Durability;
+      Debug.Log(World.teams[i].Name + " improved their car!");
+    }
+    
+  }
+
   public void PilotRetire()
   {
     int contador = 0;
@@ -356,6 +421,7 @@ public class GameSession : MonoBehaviour
     week = 0;
     playerScore = 0;
 
+    IncreaseIAStatus();
     PilotRetire();
 
     foreach (Team t in World.teams)
@@ -369,7 +435,7 @@ public class GameSession : MonoBehaviour
     }
     if(count_temporada > 9)
     {
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(11);
     }
     count_temporada++;
   }

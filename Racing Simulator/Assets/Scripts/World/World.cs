@@ -142,7 +142,7 @@ public class World : MonoBehaviour
     pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace02", 41, 88));
     pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace02", 28, 80));
     pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace06", 22, 78));
-    pilots.Add(new Pilot(PILOT_VAND_ID, "Vandoorne", "Belgium", "PilotFace06", 28, 74));
+    pilots.Add(new Pilot(PILOT_VAND_ID, "Wehrlein", "Germany", "PilotFace04", 24, 74));
     pilots.Add(new Pilot(PILOT_MICK_ID, "Shumacher", "Germany", "PilotFace03", 21, 72));
     pilots.Add(new Pilot(PILOT_DRUG_ID, "Drugovich", "Brazil", "PilotFace06", 20, 69));
     //Second Pilot
@@ -168,7 +168,7 @@ public class World : MonoBehaviour
     pilots_juniors.Add(new Pilot(PILOT_MAZ_ID, "Mazepin", "Russia", "PilotFace02", 22, 70));
     pilots_juniors.Add(new Pilot(PILOT_ZHO_ID, "Zhou", "China", "PilotFace06", 21, 70));
     pilots_juniors.Add(new Pilot(PILOT_LUN_ID, "Lundgaard", "Denmark", "PilotFace03", 19, 70));
-    pilots_juniors.Add(new Pilot(PILOT_DEL_ID, "Delétraz", "Swiss", "PilotFace03", 23, 69));
+    pilots_juniors.Add(new Pilot(PILOT_DEL_ID, "Deletraz", "Swiss", "PilotFace03", 23, 69));
     pilots_juniors.Add(new Pilot(PILOT_GHI_ID, "Ghiotto", "Italian", "PilotFace03", 26, 69));
     pilots_juniors.Add(new Pilot(PILOT_TIC_ID, "Ticktum", "England", "PilotFace03", 21, 69));
     pilots_juniors.Add(new Pilot(PILOT_DAR_ID, "Daruvala", "India", "PilotFace04", 22, 68));
@@ -310,21 +310,21 @@ public class World : MonoBehaviour
 
   public static void PopulateCars()
   {
-    Car car = new Car(26, 20, 21, 19); //Power, Aero, Dura, Chassis
+    Car car = new Car(25, 23, 25, 24); //Power, Aero, Dura, Chassis
     teams[0].Car = car; // Silver Tech
-    car = new Car(20, 18, 22, 18);
+    car = new Car(24, 21, 24, 23);
     teams[1].Car = car; // Blue Devils
-    car = new Car(14, 13, 10, 13);
+    car = new Car(15, 14, 11, 14);
     teams[2].Car = car; // Team Italy
-    car = new Car(17, 16, 15, 16);
+    car = new Car(20, 19, 18, 19);
     teams[3].Car = car; // Float Point
-    car = new Car(15, 15, 19, 14);
+    car = new Car(18, 18, 22, 17);
     teams[4].Car = car; // Orange Team
-    car = new Car(15, 17, 14, 15);
+    car = new Car(17, 19, 16, 17);
     teams[5].Car = car; // Yell Motors
-    car = new Car(13, 13, 17, 12);
+    car = new Car(15, 15, 19, 14);
     teams[6].Car = car; // White Devils
-    car = new Car(8, 10, 15, 8);
+    car = new Car(9, 11, 16, 9);
     teams[7].Car = car; // Juliet Motors
     car = new Car(7, 9, 9, 10);
     teams[8].Car = car; // American Mono
@@ -332,21 +332,21 @@ public class World : MonoBehaviour
     teams[9].Car = car; // Blue Sky
 
     // Second Team Car
-    car = new Car(26, 20, 21, 19);
+    car = new Car(25, 23, 25, 24);
     teams[10].Car = car; // Silver Teach P2
-    car = new Car(20, 18, 22, 18);
+    car = new Car(24, 21, 24, 23);
     teams[11].Car = car; // Blue Devils P2
-    car = new Car(14, 13, 10, 13);
+    car = new Car(15, 14, 11, 14);
     teams[12].Car = car; // Team Italy P2
-    car = new Car(17, 16, 15, 16);
+    car = new Car(20, 19, 18, 19);
     teams[13].Car = car; // Float Point P2
-    car = new Car(15, 15, 19, 14);
+    car = new Car(18, 18, 22, 17);
     teams[14].Car = car; // Orange Team P2
-    car = new Car(15, 17, 14, 15);
+    car = new Car(17, 19, 16, 17);
     teams[15].Car = car; // Yell Motors P2
-    car = new Car(13, 13, 17, 12);
+    car = new Car(15, 15, 19, 14);
     teams[16].Car = car; // White Devils P2
-    car = new Car(8, 10, 15, 8);
+    car = new Car(9, 11, 16, 9);
     teams[17].Car = car; // Juliet Motors P2
     car = new Car(7, 9, 9, 10);
     teams[18].Car = car; // American Mono P2

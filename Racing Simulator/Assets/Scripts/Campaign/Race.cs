@@ -728,7 +728,7 @@ public class Race : MonoBehaviour
       SettingTyreText();
       Overtaking();
       // Wait for X second
-      yield return new WaitForSeconds(0f);
+      yield return new WaitForSeconds(raceSpeed);
     } while (current_lap <= laps);
     btn_back.SetActive(true);
     GivingPoints();
