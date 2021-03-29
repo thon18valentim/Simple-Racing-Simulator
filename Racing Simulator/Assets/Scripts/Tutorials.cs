@@ -143,7 +143,7 @@ public class Tutorials : MonoBehaviour
         arrow_one.transform.Rotate(0f, 0f, -90f);
         arrow_one.transform.position = arrowPosition;
         SetIsOpen(1);
-        Debug.Log("Opening Accordion 1");
+        
       }
       // Closing Accordion 1
       else
@@ -162,7 +162,7 @@ public class Tutorials : MonoBehaviour
         arrow_one.transform.Rotate(0f, 0f, 90f);
         arrow_one.transform.position = oriArrowPosition;
         SetNotOpen(1);
-        Debug.Log("Closing Accordion 1");
+        
       }
     }
     else if (i == 2)
@@ -184,7 +184,7 @@ public class Tutorials : MonoBehaviour
         arrow_two.transform.Rotate(0f, 0f, -90f);
         arrow_two.transform.position = arrowPosition;
         SetIsOpen(2);
-        Debug.Log("Opening Accordion 2");
+        
       }
       // Closing Accordion 2
       else
@@ -203,7 +203,7 @@ public class Tutorials : MonoBehaviour
         arrow_two.transform.Rotate(0f, 0f, 90f);
         arrow_two.transform.position = oriArrowPosition2;
         SetNotOpen(2);
-        Debug.Log("Closing Accordion 2");
+        
       }
     }
     else
@@ -225,7 +225,7 @@ public class Tutorials : MonoBehaviour
         arrow_three.transform.Rotate(0f, 0f, -90f);
         arrow_three.transform.position = arrowPosition;
         SetIsOpen(3);
-        Debug.Log("Opening Accordion 3");
+        
       }
       // Closing Accordion 3
       else
@@ -244,7 +244,7 @@ public class Tutorials : MonoBehaviour
         arrow_three.transform.Rotate(0f, 0f, 90f);
         arrow_three.transform.position = oriArrowPosition3;
         SetNotOpen(3);
-        Debug.Log("Closing Accordion 3");
+        
       }
     }
   }
