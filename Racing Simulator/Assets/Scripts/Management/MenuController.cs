@@ -13,9 +13,17 @@ public class MenuController : MonoBehaviour
 
   int selection = 0; // Index to acces the lists
 
+  public AudioSource backMusic;
+
   // Start is called before the first frame update
   void Start()
   {
+    backMusic = GameObject.Find("Music Source").GetComponent<AudioSource>();
+    if (!backMusic.isPlaying)
+    {
+      backMusic.Play();
+    }
+
     SetOption(selection);
   }
 
