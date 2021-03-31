@@ -17,9 +17,11 @@ namespace Assets.Scripts
     public int Over { get; set; }
     public int Points { get; set; }
     public int points { get; set; }
+    public int Title { get; set; }
+    public int Wins { get; set; }
 
     // Constructor
-    public Pilot(int id, string name, string country, string faceString, int age, int over)
+    public Pilot(int id, string name, string country, string faceString, int age, int over, int title, int wins)
     {
       Id = id;
       Name = name;
@@ -27,6 +29,8 @@ namespace Assets.Scripts
       PilotString = faceString;
       Age = age;
       Over = over;
+      Title = title;
+      Wins = wins;
     }
 
     public void SetPoints(int points)

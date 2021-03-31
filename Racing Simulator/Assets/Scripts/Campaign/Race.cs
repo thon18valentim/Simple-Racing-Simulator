@@ -158,6 +158,7 @@ public class Race : MonoBehaviour
   // Setting race sounds
   public AudioSource race_sound;
   public AudioSource pitStop_sound;
+  public AudioSource box_sound;
 
   // Setting back to menu btn
   public GameObject btn_back;
@@ -804,7 +805,7 @@ public class Race : MonoBehaviour
     SumTeamsPoints();
   }
 
-  // Doing AI Pit Stop
+  // Doing AI and Player Pit Stop
   public void PitStop()
   {
     int sort_pneu;
@@ -858,6 +859,7 @@ public class Race : MonoBehaviour
         {
           Debug.Log("Player no Pit Stop 1");
           pitStop_sound.Play();
+          box_sound.Play();
           pit1_text.color = new Color(0,242,59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)
@@ -883,6 +885,7 @@ public class Race : MonoBehaviour
         {
           Debug.Log("Player no Pit Stop 2");
           pitStop_sound.Play();
+          box_sound.Play();
           pit2_text.color = new Color(0, 242, 59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)
@@ -908,6 +911,7 @@ public class Race : MonoBehaviour
         {
           Debug.Log("Player no Pit Stop 3");
           pitStop_sound.Play();
+          box_sound.Play();
           pit3_text.color = new Color(0, 242, 59);
           t.pneu_id = chosen_tyre;
           if (chosen_tyre == 30)

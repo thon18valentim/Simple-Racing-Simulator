@@ -132,58 +132,58 @@ public class World : MonoBehaviour
   // Creating pilots and adding them to the list
   public static void PopulatePilots()
   {
-    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace01", 35, 94));
-    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace03", 23, 90));
-    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace03", 23, 87));
-    pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace06", 22, 82));
-    pilots.Add(new Pilot(PILOT_SAINZ_ID, "Sainz", "Spanish", "PilotFace03", 26, 85));
-    pilots.Add(new Pilot(PILOT_RIC_ID, "Ricciardo", "Australia", "PilotFace07", 31, 89));
-    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace06", 24, 83));
-    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace02", 41, 88));
-    pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace02", 28, 80));
-    pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace06", 22, 78));
-    pilots.Add(new Pilot(PILOT_VAND_ID, "Wehrlein", "Germany", "PilotFace04", 24, 74));
-    pilots.Add(new Pilot(PILOT_MICK_ID, "Shumacher", "Germany", "PilotFace03", 21, 72));
-    pilots.Add(new Pilot(PILOT_DRUG_ID, "Drugovich", "Brazil", "PilotFace06", 20, 69));
+    pilots.Add(new Pilot(PILOT_HAMILTON_ID, "Hamilton", "England", "PilotFace01", 35, 94,7,95));
+    pilots.Add(new Pilot(PILOT_VERSTAPPEN_ID, "Verstappen", "Netherlands", "PilotFace03", 23, 90,0,10));
+    pilots.Add(new Pilot(PILOT_LECLERC_ID, "Leclerc", "Monaco", "PilotFace03", 23, 87,0,2));
+    pilots.Add(new Pilot(PILOT_STROLL_ID, "Stroll", "Canada", "PilotFace06", 22, 82,0,0));
+    pilots.Add(new Pilot(PILOT_SAINZ_ID, "Sainz", "Spanish", "PilotFace03", 26, 85,0,0));
+    pilots.Add(new Pilot(PILOT_RIC_ID, "Ricciardo", "Australia", "PilotFace07", 31, 89,0,7));
+    pilots.Add(new Pilot(PILOT_GASLY_ID, "Gasly", "France", "PilotFace06", 24, 83,0,1));
+    pilots.Add(new Pilot(PILOT_RAIK_ID, "Raikkonen", "Finland", "PilotFace02", 41, 88,1,21));
+    pilots.Add(new Pilot(PILOT_MAG_ID, "Magnussen", "Denmark", "PilotFace02", 28, 80, 0, 0));
+    pilots.Add(new Pilot(PILOT_RUSS_ID, "Russel", "England", "PilotFace06", 22, 78, 0, 0));
+    pilots.Add(new Pilot(PILOT_VAND_ID, "Wehrlein", "Germany", "PilotFace04", 24, 74, 0, 0));
+    pilots.Add(new Pilot(PILOT_MICK_ID, "Shumacher", "Germany", "PilotFace03", 21, 72, 0, 0));
+    pilots.Add(new Pilot(PILOT_DRUG_ID, "Drugovich", "Brazil", "PilotFace06", 20, 69, 0, 0));
     //Second Pilot
-    pilots.Add(new Pilot(PILOT_BOT_ID, "Bottas", "Finland", "PilotFace02", 31, 87));
-    pilots.Add(new Pilot(PILOT_ALB_ID, "Albon", "Thailand", "PilotFace04", 24, 81));
-    pilots.Add(new Pilot(PILOT_VET_ID, "Vettel", "Germany", "PilotFace05", 33, 84));
-    pilots.Add(new Pilot(PILOT_PER_ID, "Perez", "Mexico", "PilotFace06", 31, 86));
-    pilots.Add(new Pilot(PILOT_NOR_ID, "Norris", "England", "PilotFace03", 21, 83));
-    pilots.Add(new Pilot(PILOT_OCO_ID, "Ocon", "France", "PilotFace06", 24, 82));
-    pilots.Add(new Pilot(PILOT_KVY_ID, "Kvyat", "Russia", "PilotFace06", 26, 81));
-    pilots.Add(new Pilot(PILOT_GIO_ID, "Giovinazzi", "Italy", "PilotFace06", 27, 79));
-    pilots.Add(new Pilot(PILOT_GRO_ID, "Grosjean", "France", "PilotFace06", 34, 78));
-    pilots.Add(new Pilot(PILOT_LAT_ID, "Latifi", "Canada", "PilotFace03", 25, 73));
+    pilots.Add(new Pilot(PILOT_BOT_ID, "Bottas", "Finland", "PilotFace02", 31, 87,0,9));
+    pilots.Add(new Pilot(PILOT_ALB_ID, "Albon", "Thailand", "PilotFace04", 24, 81, 0, 0));
+    pilots.Add(new Pilot(PILOT_VET_ID, "Vettel", "Germany", "PilotFace05", 33, 84,4,53));
+    pilots.Add(new Pilot(PILOT_PER_ID, "Perez", "Mexico", "PilotFace06", 31, 86,0,1));
+    pilots.Add(new Pilot(PILOT_NOR_ID, "Norris", "England", "PilotFace03", 21, 83, 0, 0));
+    pilots.Add(new Pilot(PILOT_OCO_ID, "Ocon", "France", "PilotFace06", 24, 82, 0, 0));
+    pilots.Add(new Pilot(PILOT_KVY_ID, "Kvyat", "Russia", "PilotFace06", 26, 81, 0, 0));
+    pilots.Add(new Pilot(PILOT_GIO_ID, "Giovinazzi", "Italy", "PilotFace06", 27, 79, 0, 0));
+    pilots.Add(new Pilot(PILOT_GRO_ID, "Grosjean", "France", "PilotFace06", 34, 78, 0, 0));
+    pilots.Add(new Pilot(PILOT_LAT_ID, "Latifi", "Canada", "PilotFace03", 25, 73, 0, 0));
   }
 
   // Creating pilots juniors
   public static void PopulateJuniors()
   {
-    pilots_juniors.Add(new Pilot(PILOT_FIT_ID, "Fittipaldi", "Brazil","PilotFace06",24,72));
-    pilots_juniors.Add(new Pilot(PILOT_ILO_ID, "Ilott", "England", "PilotFace06", 22, 71));
-    pilots_juniors.Add(new Pilot(PILOT_TSU_ID, "Tsunoda", "Japan", "PilotFace06", 20, 71));
-    pilots_juniors.Add(new Pilot(PILOT_SHW_ID, "Shwartzman", "Russia", "PilotFace02", 21, 70));
-    pilots_juniors.Add(new Pilot(PILOT_MAZ_ID, "Mazepin", "Russia", "PilotFace02", 22, 70));
-    pilots_juniors.Add(new Pilot(PILOT_ZHO_ID, "Zhou", "China", "PilotFace06", 21, 70));
-    pilots_juniors.Add(new Pilot(PILOT_LUN_ID, "Lundgaard", "Denmark", "PilotFace03", 19, 70));
-    pilots_juniors.Add(new Pilot(PILOT_DEL_ID, "Deletraz", "Swiss", "PilotFace03", 23, 69));
-    pilots_juniors.Add(new Pilot(PILOT_GHI_ID, "Ghiotto", "Italian", "PilotFace03", 26, 69));
-    pilots_juniors.Add(new Pilot(PILOT_TIC_ID, "Ticktum", "England", "PilotFace03", 21, 69));
-    pilots_juniors.Add(new Pilot(PILOT_DAR_ID, "Daruvala", "India", "PilotFace04", 22, 68));
-    pilots_juniors.Add(new Pilot(PILOT_ARM_ID, "Armstrong", "New Zealand", "PilotFace02", 20, 67));
-    pilots_juniors.Add(new Pilot(PILOT_AIT_ID, "Aitken", "England", "PilotFace03", 25, 67));
-    pilots_juniors.Add(new Pilot(PILOT_MAT_ID, "Matsushita", "Japan", "PilotFace03", 27, 67));
-    pilots_juniors.Add(new Pilot(PILOT_VIP_ID, "Vips", "Estonia", "PilotFace02", 20, 65));
-    pilots_juniors.Add(new Pilot(PILOT_ALE_ID, "Alesi", "France", "PilotFace03", 21, 65));
-    pilots_juniors.Add(new Pilot(PILOT_PIQ_ID, "Piquet", "Brazil", "PilotFace03", 22, 63));
-    pilots_juniors.Add(new Pilot(PILOT_MAR_ID, "Markelov", "Russia", "PilotFace02", 26, 63));
-    pilots_juniors.Add(new Pilot(PILOT_NIS_ID, "Nissany", "Israel", "PilotFace04", 26, 63));
-    pilots_juniors.Add(new Pilot(PILOT_GEL_ID, "Gelael", "Indonesia", "PilotFace04", 24, 63));
-    pilots_juniors.Add(new Pilot(PILOT_OTH_ID, "Valentim", "Brazil", "PilotFace04", 19, 60));
-    pilots_juniors.Add(new Pilot(PILOT_ANA_ID, "Reche", "Spain", "PilotFace04", 19, 61));
-    pilots_juniors.Add(new Pilot(PILOT_SAT_ID, "Sato", "Japan", "PilotFace06", 21, 62));
+    pilots_juniors.Add(new Pilot(PILOT_FIT_ID, "Fittipaldi", "Brazil","PilotFace06",24,72, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_ILO_ID, "Ilott", "England", "PilotFace06", 22, 71, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_TSU_ID, "Tsunoda", "Japan", "PilotFace06", 20, 71, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_SHW_ID, "Shwartzman", "Russia", "PilotFace02", 21, 70, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_MAZ_ID, "Mazepin", "Russia", "PilotFace02", 22, 70, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_ZHO_ID, "Zhou", "China", "PilotFace06", 21, 70, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_LUN_ID, "Lundgaard", "Denmark", "PilotFace03", 19, 70, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_DEL_ID, "Deletraz", "Swiss", "PilotFace03", 23, 69, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_GHI_ID, "Ghiotto", "Italian", "PilotFace03", 26, 69, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_TIC_ID, "Ticktum", "England", "PilotFace03", 21, 69, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_DAR_ID, "Daruvala", "India", "PilotFace04", 22, 68, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_ARM_ID, "Armstrong", "New Zealand", "PilotFace02", 20, 67, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_AIT_ID, "Aitken", "England", "PilotFace03", 25, 67, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_MAT_ID, "Matsushita", "Japan", "PilotFace03", 27, 67, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_VIP_ID, "Vips", "Estonia", "PilotFace02", 20, 65, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_ALE_ID, "Alesi", "France", "PilotFace03", 21, 65, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_PIQ_ID, "Piquet", "Brazil", "PilotFace03", 22, 63, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_MAR_ID, "Markelov", "Russia", "PilotFace02", 26, 63, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_NIS_ID, "Nissany", "Israel", "PilotFace04", 26, 63, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_GEL_ID, "Gelael", "Indonesia", "PilotFace04", 24, 63, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_OTH_ID, "Valentim", "Brazil", "PilotFace04", 19, 60, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_ANA_ID, "Reche", "Spain", "PilotFace04", 19, 61, 0, 0));
+    pilots_juniors.Add(new Pilot(PILOT_SAT_ID, "Sato", "Japan", "PilotFace06", 21, 62, 0, 0));
   }
 
   // Creating the teams
