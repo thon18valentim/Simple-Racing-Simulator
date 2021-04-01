@@ -255,6 +255,7 @@ public class FinalController : MonoBehaviour
     {
       if (contador == 0)
       {
+        t.Pilot.Title += 1;
         primeiro_col.text = t.Pilot.Name;
         primeiro_pts.text = t.Pilot.points.ToString();
       }

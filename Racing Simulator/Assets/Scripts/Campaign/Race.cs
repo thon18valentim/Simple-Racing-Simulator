@@ -745,6 +745,7 @@ public class Race : MonoBehaviour
       if(contador == 0)
       {
         t.Pilot.points += 25;
+        t.Pilot.Wins += 1;
         t.points += 25;
       }
       else if(contador == 1)

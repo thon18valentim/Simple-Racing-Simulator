@@ -154,6 +154,16 @@ public class GameSession : MonoBehaviour
     return team.Name;
   }
 
+  public int GetPilotAge()
+  {
+    return pilot.Age;
+  }
+
+  public string GetPilotNation()
+  {
+    return pilot.Country;
+  }
+
   public string GetPilotName()
   {
     return team.Pilot.Name;
@@ -414,6 +424,8 @@ public class GameSession : MonoBehaviour
         p.PilotString = World.pilots_juniors[contador].PilotString;
         p.Age = World.pilots_juniors[contador].Age;
         p.Over = World.pilots_juniors[contador].Over;
+        p.Wins = World.pilots_juniors[contador].Wins;
+        p.Title = World.pilots_juniors[contador].Title;
         Debug.Log(p.Name + " is the new Pilot");
       }
       contador++;
