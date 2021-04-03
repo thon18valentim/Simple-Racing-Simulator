@@ -12,9 +12,7 @@ public class GameSession : MonoBehaviour
 
   int currentTrack = 0;
   int week = 0;
-  int gpTrack = 0;
   int chosenPilot = 0;
-  int playerScore = 0;
   public int year = 2020;
   public int count_temporada = 0;
 
@@ -55,16 +53,6 @@ public class GameSession : MonoBehaviour
     return count_temporada;
   }
 
-  public int GetGpTrack()
-  {
-    return gpTrack;
-  }
-
-  public int GetPlayerFinalScore()
-  {
-    return playerScore;
-  }
-
   // Setting the player team
   public void SetPlayerTeam(int i)
   {
@@ -97,10 +85,7 @@ public class GameSession : MonoBehaviour
   {
     week = i;
   }
-  public void SetPlayerScore(int i)
-  {
-    playerScore = i;
-  }
+
   public void SetSavedPlayerTeam(Team player)
   {
     team = player;
@@ -110,6 +95,7 @@ public class GameSession : MonoBehaviour
   {
     return team.CarString;
   }
+
   public void SetSavedPlayerPilot(Pilot player)
   {
     pilot = player;
@@ -122,7 +108,22 @@ public class GameSession : MonoBehaviour
 
   public string GetPilotFaceString()
   {
-    return pilot.PilotString;
+    return team.Pilot.PilotString;
+  }
+
+  public int GetPilotTitle()
+  {
+    return team.Pilot.Title;
+  }
+
+  public int GetPilotWins()
+  {
+    return team.Pilot.Wins;
+  }
+
+  public int GetPilotSeasonScore()
+  {
+    return team.Pilot.SeasonScore;
   }
 
   public string GetTrackString()
@@ -156,12 +157,12 @@ public class GameSession : MonoBehaviour
 
   public int GetPilotAge()
   {
-    return pilot.Age;
+    return team.Pilot.Age;
   }
 
   public string GetPilotNation()
   {
-    return pilot.Country;
+    return team.Pilot.Country;
   }
 
   public string GetPilotName()
@@ -213,11 +214,6 @@ public class GameSession : MonoBehaviour
   public int GetCurrentTrack()
   {
     return currentTrack;
-  }
-
-  public void ChooseTrack(int i)
-  {
-    gpTrack = i;
   }
 
   public void NextRace()
@@ -436,7 +432,6 @@ public class GameSession : MonoBehaviour
   {
     currentTrack = 0;
     week = 0;
-    playerScore = 0;
 
     IncreaseIAStatus();
     PilotRetire();
@@ -445,6 +440,7 @@ public class GameSession : MonoBehaviour
     {
       t.Pilot.points = 0;
       t.points = 0;
+      t.Pilot.SeasonScore = 0;
     }
     foreach (Pilot p in World.pilots)
     {

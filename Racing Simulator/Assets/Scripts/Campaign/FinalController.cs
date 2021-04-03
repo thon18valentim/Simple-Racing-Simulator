@@ -106,7 +106,7 @@ public class FinalController : MonoBehaviour
     playerChassi_text.text = session.GetChassis().ToString();
     playerDura_text.text = session.GetDura().ToString();
     playerPower_text.text = session.GetPower().ToString();
-    playerScore_text.text = session.GetPlayerFinalScore().ToString();
+    playerScore_text.text = session.GetPilotSeasonScore().ToString();
     pilotCarDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Cars/" + FindObjectOfType<GameSession>().GetCarString());
     pilotFaceDisplay.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Pilots/" + FindObjectOfType<GameSession>().GetPilotFaceString());
 

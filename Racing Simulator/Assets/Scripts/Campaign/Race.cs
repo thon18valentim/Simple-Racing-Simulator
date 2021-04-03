@@ -747,51 +747,61 @@ public class Race : MonoBehaviour
         t.Pilot.points += 25;
         t.Pilot.Wins += 1;
         t.points += 25;
+        t.Pilot.AddSeasonScore(85);
       }
       else if(contador == 1)
       {
         t.Pilot.points += 18;
         t.points += 18;
+        t.Pilot.AddSeasonScore(55);
       }
       else if(contador == 2)
       {
         t.Pilot.points += 15;
         t.points += 15;
+        t.Pilot.AddSeasonScore(55);
       }
       else if(contador == 3)
       {
         t.Pilot.points += 12;
         t.points += 12;
+        t.Pilot.AddSeasonScore(30);
       }
       else if(contador == 4)
       {
         t.Pilot.points += 10;
         t.points += 10;
+        t.Pilot.AddSeasonScore(30);
       }
       else if(contador == 5)
       {
         t.Pilot.points += 8;
         t.points += 8;
+        t.Pilot.AddSeasonScore(10);
       }
       else if(contador == 6)
       {
         t.Pilot.points += 6;
         t.points += 6;
+        t.Pilot.AddSeasonScore(10);
       }
       else if(contador == 7)
       {
         t.Pilot.points += 4;
         t.points += 4;
+        t.Pilot.AddSeasonScore(10);
       }
       else if(contador == 8)
       {
         t.Pilot.points += 2;
         t.points += 2;
+        t.Pilot.AddSeasonScore(10);
       }
       else if(contador == 9)
       {
         t.Pilot.points += 1;
         t.points += 1;
+        t.Pilot.AddSeasonScore(10);
       }
       else
       {

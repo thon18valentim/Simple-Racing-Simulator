@@ -19,6 +19,7 @@ namespace Assets.Scripts
     public int points { get; set; }
     public int Title { get; set; }
     public int Wins { get; set; }
+    public int SeasonScore { get; set; }
 
     // Constructor
     public Pilot(int id, string name, string country, string faceString, int age, int over, int title, int wins)
@@ -36,6 +37,10 @@ namespace Assets.Scripts
     public void SetPoints(int points)
     {
       Points = points;
+    }
+    public void AddSeasonScore(int add_amount)
+    {
+      SeasonScore += add_amount;
     }
   }
 }

@@ -44,7 +44,7 @@ public class SaveData : MonoBehaviour
     s.week = FindObjectOfType<GameSession>().GetCurrentWeek();
     s.year = FindObjectOfType<GameSession>().GetYear();
     s.count_season = FindObjectOfType<GameSession>().GetTemporada();
-    s.playerScore = FindObjectOfType<GameSession>().GetPlayerFinalScore();
+    //s.playerScore = FindObjectOfType<GameSession>().GetPlayerFinalScore();
     s.playerTeam = FindObjectOfType<GameSession>().GetPlayerTeam();
     s.playerPilot = FindObjectOfType<GameSession>().GetPlayerPilot();
     foreach(Pilot pilot in World.pilots)
@@ -79,7 +79,7 @@ public class SaveData : MonoBehaviour
       FindObjectOfType<GameSession>().SetWeek(s.week);
       FindObjectOfType<GameSession>().SetYear(s.year);
       FindObjectOfType<GameSession>().SetTemporada(s.count_season);
-      FindObjectOfType<GameSession>().SetPlayerScore(s.playerScore);
+      //FindObjectOfType<GameSession>().SetPlayerScore(s.playerScore);
       FindObjectOfType<GameSession>().SetSavedPlayerPilot(s.playerPilot);
       FindObjectOfType<GameSession>().SetSavedPlayerTeam(s.playerTeam);
       int contador = 0;
