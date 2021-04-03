@@ -256,53 +256,91 @@ public class FinalController : MonoBehaviour
       if (contador == 0)
       {
         t.Pilot.Title += 1;
+        t.Pilot.AddSeasonScore(68);
         primeiro_col.text = t.Pilot.Name;
         primeiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 1)
       {
+        t.Pilot.AddSeasonScore(28);
         segundo_col.text = t.Pilot.Name;
         segundo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 2)
       {
+        t.Pilot.AddSeasonScore(28);
         terceiro_col.text = t.Pilot.Name;
         terceiro_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 3)
       {
+        t.Pilot.AddSeasonScore(28);
         quarto_col.text = t.Pilot.Name;
         quarto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 4)
       {
+        t.Pilot.AddSeasonScore(28);
         quinto_col.text = t.Pilot.Name;
         quinto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 5)
       {
+        t.Pilot.AddSeasonScore(28);
         sexto_col.text = t.Pilot.Name;
         sexto_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 6)
       {
+        t.Pilot.AddSeasonScore(28);
         setimo_col.text = t.Pilot.Name;
         setimo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 7)
       {
+        t.Pilot.AddSeasonScore(28);
         oitavo_col.text = t.Pilot.Name;
         oitavo_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 8)
       {
+        t.Pilot.AddSeasonScore(28);
         nono_col.text = t.Pilot.Name;
         nono_pts.text = t.Pilot.points.ToString();
       }
       else if (contador == 9)
       {
+        t.Pilot.AddSeasonScore(28);
         decimo_col.text = t.Pilot.Name;
         decimo_pts.text = t.Pilot.points.ToString();
+      }
+      else if (contador == 10)
+      {
+        t.Pilot.AddSeasonScore(13);
+      }
+      else if (contador == 11)
+      {
+        t.Pilot.AddSeasonScore(13);
+      }
+      else if (contador == 12)
+      {
+        t.Pilot.AddSeasonScore(5);
+      }
+      else if (contador == 13)
+      {
+        t.Pilot.AddSeasonScore(5);
+      }
+      else if (contador == 14)
+      {
+        t.Pilot.AddSeasonScore(5);
+      }
+
+      if (t.Pilot.Id <= 3)
+      {
+        if (t.Pilot.points >= 40)
+        {
+          t.Pilot.AddSeasonScore(12);
+        }
       }
 
       contador++;
