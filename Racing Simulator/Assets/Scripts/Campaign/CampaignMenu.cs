@@ -7,28 +7,33 @@ using Assets.Scripts;
 
 public class CampaignMenu : MonoBehaviour
 {
+  // Setting Campaign Modals
   public GameObject game_menu;
   public GameObject email_menu;
   public GameObject profile_menu;
   public GameObject challenge_menu;
   public GameObject exit_popup;
 
+  // Setting Email struct
   public TextMeshProUGUI email_mandatory;
   public TextMeshProUGUI email_subject;
   public TextMeshProUGUI email_body;
   public TextMeshProUGUI email_date;
 
-  //public TextMeshProUGUI week_text;
-
+  // Creating Track and GameSession vars
   Track track;
   GameSession session;
 
+  // Current Track Var
   public int currentTrack;
 
+  // Controlling email selection
   public int email_selection = 0;
 
+  // Setting Next Track Text
   public TextMeshProUGUI NextTrack_text;
 
+  // Setting Email inbox and count
   public List<Email> email_to_show = new List<Email>();
   public int email_count;
 
@@ -48,29 +53,9 @@ public class CampaignMenu : MonoBehaviour
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
     NextTrack_text.text = track.Name;
     SettingEmailDisplay();
-
-    //week_text.text = "Month " + (FindObjectOfType<GameSession>().GetCurrentWeek() + 1).ToString();
-
-    /*if (Input.GetKeyDown(KeyCode.RightArrow))
-    {
-      email_selection++;
-
-      if (email_selection > World.emails.Count)
-        email_selection = 0;
-
-      ShowingEmail(email_selection);
-    }
-    else if (Input.GetKeyDown(KeyCode.LeftArrow))
-    {
-      email_selection--;
-
-      if (email_selection < 0)
-        email_selection = World.emails.Count;
-
-      ShowingEmail(email_selection);
-    }*/
   }
 
+  // Hiding Email inbox
   public void HideMenuInbox()
   {
     game_menu.SetActive(true);
@@ -79,6 +64,7 @@ public class CampaignMenu : MonoBehaviour
     challenge_menu.SetActive(false);
   }
 
+  // Showing Email inbox
   public void ShowEmailInbox()
   {
     game_menu.SetActive(false);
@@ -87,6 +73,7 @@ public class CampaignMenu : MonoBehaviour
     challenge_menu.SetActive(false);
   }
 
+  // Showing Profile Modal
   public void ShowProfile()
   {
     game_menu.SetActive(false);
@@ -94,6 +81,8 @@ public class CampaignMenu : MonoBehaviour
     profile_menu.SetActive(true);
     challenge_menu.SetActive(false);
   }
+
+  // Hiding Profile Modal
   public void HideProfile()
   {
     game_menu.SetActive(true);
@@ -101,6 +90,8 @@ public class CampaignMenu : MonoBehaviour
     profile_menu.SetActive(false);
     challenge_menu.SetActive(false);
   }
+
+  // Showing Challenges Modal
   public void ShowChallenge()
   {
     game_menu.SetActive(false);
@@ -108,6 +99,8 @@ public class CampaignMenu : MonoBehaviour
     profile_menu.SetActive(false);
     challenge_menu.SetActive(true);
   }
+
+  // Hiding Challenge Modal
   public void HideChallenge()
   {
     game_menu.SetActive(true);
@@ -115,17 +108,22 @@ public class CampaignMenu : MonoBehaviour
     profile_menu.SetActive(false);
     challenge_menu.SetActive(false);
   }
+
+  // Showing Exit Popup Modal
   public void ShowExit()
   {
     profile_menu.SetActive(false);
     exit_popup.SetActive(true);
   }
+
+  // Hiding Exit Popup Modal
   public void HideExit()
   {
     profile_menu.SetActive(true);
     exit_popup.SetActive(false);
   }
 
+  // Updating Next Race Text
   public void UpdatingNextText()
   {
     track = World.tracks[FindObjectOfType<GameSession>().GetCurrentTrack()];
@@ -165,6 +163,7 @@ public class CampaignMenu : MonoBehaviour
     }
   }
 
+  // Setting correct email to display
   public void SettingEmailDisplay()
   {
     foreach (Email mail in World.emails)
@@ -302,6 +301,7 @@ public class CampaignMenu : MonoBehaviour
     } 
   }
 
+  // Counting emails to display
   public int CountDisplayEmail()
   {
     int count = 0;

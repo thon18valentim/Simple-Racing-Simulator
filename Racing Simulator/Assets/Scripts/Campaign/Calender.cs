@@ -6,6 +6,7 @@ using Assets.Scripts;
 
 public class Calender : MonoBehaviour
 {
+  // Setting Track info box
   public GameObject australia_info;
   public GameObject bahrain_info;
   public GameObject brazil_info;
@@ -17,6 +18,7 @@ public class Calender : MonoBehaviour
   public GameObject italy_info;
   public GameObject england_info;
 
+  // Setting Track info
   public TextMeshProUGUI gp_name;
   public TextMeshProUGUI country_name;
   public TextMeshProUGUI gp_laps;
@@ -25,6 +27,7 @@ public class Calender : MonoBehaviour
   public TextMeshProUGUI gp_dura;
   public TextMeshProUGUI gp_chassi;
 
+  // Creating Tracks List
   List<Track> tracks_list = new List<Track>();
 
   // GP Order Text
@@ -43,6 +46,7 @@ public class Calender : MonoBehaviour
   // Start is called before the first frame update
   void Start()
     {
+        // Populating Tracks List
         foreach(Track track in World.tracks)
         {
           tracks_list.Add(track);
@@ -51,12 +55,7 @@ public class Calender : MonoBehaviour
     ShowTrackInfo(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+  // Getting and Coloring Current Track
   public void GettingCurrentTrack()
   {
     int current_track = FindObjectOfType<GameSession>().GetCurrentTrack();
@@ -103,6 +102,7 @@ public class Calender : MonoBehaviour
     }
   }
 
+  // Showing Track Selected Info
   public void ShowTrackInfo(int i)
   {
     if(i == 0)

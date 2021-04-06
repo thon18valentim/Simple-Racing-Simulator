@@ -26,7 +26,7 @@ public class SceneLoader : MonoBehaviour
     }
   }
 
-
+  // Loading Next Scene and Saving current scene index
   public void LoadNextScene()
   {
     scene = SceneManager.GetActiveScene().buildIndex;
@@ -35,12 +35,14 @@ public class SceneLoader : MonoBehaviour
     SceneManager.LoadScene(currentScene + 1);
   }
 
+  // Loading indicated Scene and Saving current scene index
   public void LoadScene(int i)
   {
     scene = SceneManager.GetActiveScene().buildIndex;
     SceneManager.LoadScene(i);
   }
 
+  // Loading Previous Scene
   public void LoadPreviousScene()
   {
     SceneManager.LoadScene(scene);

@@ -114,18 +114,15 @@ public class FinalController : MonoBehaviour
     Debug.Log("New Season");
   }
 
-  // Update is called once per frame
-  void Update()
-  {
-    
-  }
-
+  // Muting Sound
   public void muteSound()
   {
     back_sound.Stop();
     sound_play.SetActive(false);
     sound_mute.SetActive(true);
   }
+
+  // Playing Sound
   public void playSound()
   {
     back_sound.Play();
@@ -133,19 +130,17 @@ public class FinalController : MonoBehaviour
     sound_mute.SetActive(false);
   }
 
+  // Advance to NextSeason button func
   public void NextSeason()
   {
     FindObjectOfType<GameSession>().NewSeason();
-  }
-  public void NextYear()
-  {
-    
   }
   public void ShowNextYear()
   {
     temporada_text.text = "Season " + session.GetSeasonYear().ToString();
   }
 
+  // Defining Pilots top10 Standings
   private void DefineStandings()
   {
     int contador = 0;
@@ -164,6 +159,7 @@ public class FinalController : MonoBehaviour
     }
   }
 
+  // Defining Teams Top5
   private void DefineTop5()
   {
     int contador = 0;
@@ -177,6 +173,7 @@ public class FinalController : MonoBehaviour
     SortTop5();
   }
 
+  // Sorting Teams Top5
   private void SortTop5()
   {
     Team temp;
@@ -194,6 +191,7 @@ public class FinalController : MonoBehaviour
     }
   }
 
+  // Showing Teams Top5
   public void Top5()
   {
     int contador = 0;
@@ -230,6 +228,7 @@ public class FinalController : MonoBehaviour
     }
   }
 
+  // Sorting Standings
   private void SortStandings()
   {
     Team temp;
@@ -247,6 +246,7 @@ public class FinalController : MonoBehaviour
     }
   }
 
+  // Showing Top10 Standings
   public void Standings()
   {
     int contador = 0;

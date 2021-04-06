@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class World : MonoBehaviour
 {
+  // Creating Root obj Lists
   public static List<Pilot> pilots = new List<Pilot>();
   public static List<Team> teams = new List<Team>();
   public static List<Track> tracks = new List<Track>();
@@ -296,6 +297,7 @@ public class World : MonoBehaviour
       "are happy with your work. I wish you have a great race tomorrow!", "10º Month"));
   }
 
+  // Creating player Car Status
   public static Car CreatePlayerCar()
   {
     Car car = new Car(6, 7, 5, 4); //Player Starting points
@@ -303,11 +305,13 @@ public class World : MonoBehaviour
     return car;
   }
 
+  // Choosing player Team
   public static void SetPlayerTeam(Team team)
   {
     teams[team.Id - 1] = team; 
   }
 
+  // Populating Teams with their cars
   public static void PopulateCars()
   {
     Car car = new Car(25, 23, 25, 24); //Power, Aero, Dura, Chassis
@@ -354,6 +358,7 @@ public class World : MonoBehaviour
     teams[19].Car = car; // Blue Sky P2
   }
 
+  // Getting a Pilot by Id
   public static Pilot GetPilotById(int id)
   {
     foreach (Pilot pilot in pilots)
@@ -363,6 +368,7 @@ public class World : MonoBehaviour
     return null;
   }
 
+  // Getting Team By Id
   public static Team GetTeamById(int id)
   {
     foreach (Team team in teams)

@@ -9,13 +9,16 @@ namespace Assets.Scripts
   [Serializable]
   public class Pilot
   {
+    // Core Pilot Attributes
     public int Id { get; set; }
     public string Name { get; set; }
     public string Country { get; set; }
     public string PilotString { get; set; }
     public int Age { get; set; }
     public int Over { get; set; }
+    // Improving car Points
     public int Points { get; set; }
+    // Championship & Season vars
     public int points { get; set; }
     public int Title { get; set; }
     public int Wins { get; set; }
@@ -34,10 +37,12 @@ namespace Assets.Scripts
       Wins = wins;
     }
 
+    // Setting current Points Attribute Value
     public void SetPoints(int points)
     {
       Points = points;
     }
+    // Adding a ammount to SeasonScore Attribute
     public void AddSeasonScore(int add_amount)
     {
       SeasonScore += add_amount;

@@ -52,6 +52,7 @@ public class Champ : MonoBehaviour
   public TextMeshProUGUI dezenove_pts;
   public TextMeshProUGUI vinte_pts;
 
+  // Setting Championship List (Standings)
   List<Team> championship = new List<Team>();
   GameSession session;
 

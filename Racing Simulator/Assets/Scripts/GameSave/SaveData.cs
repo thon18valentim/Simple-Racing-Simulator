@@ -8,31 +8,21 @@ using Assets.Scripts;
 
 public class SaveData : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+  // Saving Game button func
   public void SavingGame()
   {
     Save();
     Debug.Log("Saving Game");
   }
 
+  // Loading Game button func
   public void LoadingGame()
   {
     LoadSave();
     Debug.Log("Loading Game");
   }
 
+  // Saving Data
   void Save()
   {
     BinaryFormatter bf = new BinaryFormatter();
@@ -44,7 +34,6 @@ public class SaveData : MonoBehaviour
     s.week = FindObjectOfType<GameSession>().GetCurrentWeek();
     s.year = FindObjectOfType<GameSession>().GetYear();
     s.count_season = FindObjectOfType<GameSession>().GetTemporada();
-    //s.playerScore = FindObjectOfType<GameSession>().GetPlayerFinalScore();
     s.playerTeam = FindObjectOfType<GameSession>().GetPlayerTeam();
     s.playerPilot = FindObjectOfType<GameSession>().GetPlayerPilot();
     foreach(Pilot pilot in World.pilots)
@@ -63,6 +52,7 @@ public class SaveData : MonoBehaviour
     Debug.Log("Serializing data");
   }
 
+  // Loading Data
   void LoadSave()
   {
     if (File.Exists(Application.persistentDataPath + "/gameSave.data"))
@@ -79,7 +69,6 @@ public class SaveData : MonoBehaviour
       FindObjectOfType<GameSession>().SetWeek(s.week);
       FindObjectOfType<GameSession>().SetYear(s.year);
       FindObjectOfType<GameSession>().SetTemporada(s.count_season);
-      //FindObjectOfType<GameSession>().SetPlayerScore(s.playerScore);
       FindObjectOfType<GameSession>().SetSavedPlayerPilot(s.playerPilot);
       FindObjectOfType<GameSession>().SetSavedPlayerTeam(s.playerTeam);
       int contador = 0;
@@ -118,5 +107,4 @@ class SaveClass
   // World Info
   public List<Pilot> pilots_data = new List<Pilot>();
   public List<Team> teams_data = new List<Team>();
-  //public List<Car> cars_data = new List<Car>();
 }

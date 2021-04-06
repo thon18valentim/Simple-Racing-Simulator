@@ -6,48 +6,51 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu Screen.unity
+    path: Assets/Scenes/Central/Menu Screen.unity
     guid: e31af709ef466e547ba34a7a33e00a9f
   - enabled: 1
-    path: Assets/Scenes/Select Team Scene.unity
+    path: Assets/Scenes/Campaign/Select Team Scene.unity
     guid: 6b3d488ce7b36564785a783e1731a95b
   - enabled: 1
-    path: Assets/Scenes/Select Pilot Scene.unity
+    path: Assets/Scenes/Campaign/Select Pilot Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Improvements Scene.unity
+    path: Assets/Scenes/Campaign/Improvements Scene.unity
     guid: 2b9285aa557edb2418b7e9192e81ccf0
   - enabled: 1
-    path: Assets/Scenes/Campaign.unity
+    path: Assets/Scenes/Campaign/Campaign.unity
     guid: f6ad3a2c57aae4540aa90d43cba5e2ed
   - enabled: 1
-    path: Assets/Scenes/Race.unity
+    path: Assets/Scenes/Campaign/Race.unity
     guid: 30984c507400c8944a559c579814e211
   - enabled: 1
-    path: Assets/Scenes/Calender.unity
+    path: Assets/Scenes/Campaign/Calender.unity
     guid: c64db5ea48fc92c41ac978059fc34d49
   - enabled: 1
-    path: Assets/Scenes/Champ.unity
+    path: Assets/Scenes/Campaign/Champ.unity
     guid: 5a699110fc2b8c342909699696dd6615
   - enabled: 1
-    path: Assets/Scenes/Showcase.unity
+    path: Assets/Scenes/Campaign/Showcase.unity
     guid: cca6d1591903eeb48b07d42060767eff
   - enabled: 1
-    path: Assets/Scenes/TeamsChamp.unity
+    path: Assets/Scenes/Campaign/TeamsChamp.unity
     guid: e3772cd0fff9df142bcf013fb8314a0e
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/Campaign/GameOver.unity
     guid: d2e8422a122c35547872f661d15e9356
   - enabled: 1
-    path: Assets/Scenes/GameOver2.unity
+    path: Assets/Scenes/Campaign/GameOver2.unity
     guid: c9c5e54c8d712314d9ff605a681b3f41
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/Central/Tutorial.unity
     guid: 3fd1ec7efa45d0c4884b787568a77b5f
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
+    path: Assets/Scenes/Central/Credits.unity
     guid: 7d0ce026d3ec2eb47ac9743fef70a88a
   - enabled: 1
-    path: Assets/Scenes/Profile.unity
+    path: Assets/Scenes/Campaign/Profile.unity
     guid: 2bdc8981f1204d844bc609467aed044d
+  - enabled: 1
+    path: Assets/Scenes/GP/GP.unity
+    guid: 049dc14e0484d9c41a658099c8b5011d
   m_configObjects: {}

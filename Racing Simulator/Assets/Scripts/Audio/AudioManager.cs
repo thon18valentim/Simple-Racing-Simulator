@@ -7,16 +7,13 @@ public class AudioManager : MonoBehaviour
 {
   public AudioSource backMusic;
 
-  public void Start()
-  {
-    
-  }
-
+  // Pausing Current Back Music
   public void PauseMusic()
   {
     backMusic = GameObject.Find("Music Source").GetComponent<AudioSource>();
     backMusic.Pause();
   }
+  // Playing Back Music
   public void PlayMusic()
   {
     backMusic = GameObject.Find("Music Source").GetComponent<AudioSource>();

@@ -54,6 +54,7 @@ public class TeamsChamp : MonoBehaviour
     SortStandings();
   }
 
+  // Sorting Standings
   private void SortStandings()
   {
     Team temp;
@@ -71,6 +72,7 @@ public class TeamsChamp : MonoBehaviour
     }
   }
 
+  // Showing Standings
   public void Standings()
   {
     int contador = 0;

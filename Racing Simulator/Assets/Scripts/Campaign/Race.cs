@@ -694,6 +694,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Racing func
   IEnumerator Wait()
   {
     int laps = track.Laps;
@@ -831,7 +832,6 @@ public class Race : MonoBehaviour
           sort_pneu = RandomNumberGenerator.NumberBetween(1, 4);
           if (sort_pneu == 1)
           {
-            Debug.Log(t.Pilot.Name + " | Colocando Pneus Macios");
             t.pneu_id = 30;
             t.pneu_dura = 25;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -839,7 +839,6 @@ public class Race : MonoBehaviour
           }
           else if (sort_pneu == 2)
           {
-            Debug.Log(t.Pilot.Name + " | Colocando Pneus Médios");
             t.pneu_id = 27;
             t.pneu_dura = 35;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -847,7 +846,6 @@ public class Race : MonoBehaviour
           }
           else if (sort_pneu == 3)
           {
-            Debug.Log(t.Pilot.Name + " | Colocando Pneus Duros");
             t.pneu_id = 24;
             t.pneu_dura = 45;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -855,7 +853,6 @@ public class Race : MonoBehaviour
           }
           else
           {
-            Debug.Log(t.Pilot.Name + " | Colocando Pneus Médios");
             t.pneu_id = 27;
             t.pneu_dura = 35;
             pit_time = RandomNumberGenerator.NumberBetween(18, 25);
@@ -948,6 +945,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Pilots getting mech Issues
   public void MechIssue()
   {
     int sort;
@@ -960,7 +958,6 @@ public class Race : MonoBehaviour
         if(sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
-          Debug.Log("Problema mecânico!");
           mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
       }
@@ -970,7 +967,6 @@ public class Race : MonoBehaviour
         if (sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
-          Debug.Log("Problema mecânico!");
           mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
       }
@@ -980,7 +976,6 @@ public class Race : MonoBehaviour
         if (sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
-          Debug.Log("Problema mecânico!");
           mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
       }
@@ -990,18 +985,19 @@ public class Race : MonoBehaviour
         if (sort == 1)
         {
           t.SetLapTime(t.LapTime + 5.0f);
-          Debug.Log("Problema mecânico!");
           mechIssue_text.text = t.Pilot.Name + " had mech Issues";
         }
       }
     }
   }
 
+  // Muting Race Sound
   public void StopMusic()
   {
     race_sound.Stop();
   }
 
+  // Setting Correct tyre Text
   public void SettingTyreText()
   {
     int contador = 0;
@@ -1262,6 +1258,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Showing Correct Track Image
   public void ShowGpImg()
   {
     if(track.Id == 1)
@@ -1396,6 +1393,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Sum Pilot 1 and 2 Points
   private void SumTeamsPoints()
   {
     World.teams[0].points += World.teams[10].points;
@@ -1421,6 +1419,7 @@ public class Race : MonoBehaviour
     World.teams[19].points = 0;
   }
 
+  // Populating Pilots Markes
   private void PopulateMarkers()
   {
     Markers.Add(pilot_marker1);
@@ -1445,6 +1444,7 @@ public class Race : MonoBehaviour
     Markers.Add(pilot_marker20);
   }
 
+  // Increasing selected Lap to Pit
   public void IncreasePitLap(int id)
   {
     if(id == 1)
@@ -1471,6 +1471,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Decrease selected Lap to Pit
   public void DecreasePitLap(int id)
   {
     if (id == 1)
@@ -1497,6 +1498,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Selecting a Tyre
   public void SelectPitTyre(int tyre_id)
   {
     chosen_tyre = tyre_id;
@@ -1524,6 +1526,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Desabling third Pit Stop
   public void DesablePitStop()
   {
     pit3 = 0;
@@ -1535,6 +1538,7 @@ public class Race : MonoBehaviour
     //plusIcon.SetActive(true);
   }
 
+  // Ableing third Pit Stop
   public void AblePitStop()
   {
     pit3 = 0;
@@ -1546,6 +1550,7 @@ public class Race : MonoBehaviour
     plusIcon.SetActive(false);
   }
 
+  // Verifying Tyre Life
   public void VerifyTyreLife()
   {
     foreach(Team team in leaderboard)
@@ -1557,6 +1562,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Showing Current Player Life Tyre
   public void PlayerLifeTyre()
   {
     foreach (Team team in leaderboard)
@@ -1572,6 +1578,7 @@ public class Race : MonoBehaviour
     }
   }
 
+  // Changing Race Simulation Speed
   public void ChangingRaceSpeed(int func)
   {
     if (func == 1) // Plus
@@ -1613,12 +1620,14 @@ public class Race : MonoBehaviour
       raceSpeed_text.text = "x 0.1";
   }
 
+  // Muting Sound
   public void muteSound()
   {
     race_sound.Stop();
     sound_play.SetActive(false);
     sound_mute.SetActive(true);
   }
+  // Playing Sound
   public void playSound()
   {
     race_sound.Play();

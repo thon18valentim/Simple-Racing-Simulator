@@ -123,6 +123,7 @@ public class ImprovementsScene : MonoBehaviour
     }
   }
 
+  // Disable Current Text
   private void DisableTexts(int s)
   { 
     for (int i = 0; i < 4; i++)
@@ -141,6 +142,7 @@ public class ImprovementsScene : MonoBehaviour
     }
   }
 
+  // Checking Boundaries
   public void CheckBoundaries()
   {
     if (arrow.transform.position.y < -0.88f)

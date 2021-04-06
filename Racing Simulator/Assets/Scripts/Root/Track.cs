@@ -11,6 +11,7 @@ namespace Assets.Scripts
   [Serializable]
   public class Track
   {
+    // Core Track Attributes
     public int Id { get; set; }
     public string Name { get; set; }
     public string Country { get; set; }
@@ -21,6 +22,7 @@ namespace Assets.Scripts
     public int Durability { get; set; }
     public int Chassi { get; set; }
 
+    // Constructor
     public Track(int id, string name, string country, int laps, int aero, int power, int dura, int chassi, string flagString)
     {
       Id = id;

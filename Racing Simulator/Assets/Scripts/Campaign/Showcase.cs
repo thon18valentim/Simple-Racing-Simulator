@@ -5,6 +5,7 @@ using TMPro;
 
 public class Showcase : MonoBehaviour
 {
+  // Setting Pilot Infos
   public TextMeshProUGUI piloto1;
   public TextMeshProUGUI country1;
   public TextMeshProUGUI team1;
@@ -15,8 +16,10 @@ public class Showcase : MonoBehaviour
   public GameObject face1;
   public GameObject car1;
 
+  // Button Sound
   public AudioSource btn_sound;
 
+  // Selection var
   private int select = 0;
 
   // Start is called before the first frame update
@@ -58,6 +61,7 @@ public class Showcase : MonoBehaviour
     }
   }
 
+  // Selecting the correct Pilot
   public void Selection(int opc)
   {
     if(opc < 10)
@@ -98,6 +102,7 @@ public class Showcase : MonoBehaviour
     }
   }
 
+  // Advance and Selecting a Pilot 
   public void AdvanceItem()
   {
     btn_sound.Play();
@@ -109,6 +114,7 @@ public class Showcase : MonoBehaviour
     Selection(select);
   }
 
+  // Back and Selecting a Pilot 
   public void BackItem()
   {
     btn_sound.Play();
@@ -120,6 +126,7 @@ public class Showcase : MonoBehaviour
     Selection(select);
   }
 
+  // Loading Previous Scene
   public void LoadPreviousScene()
   {
     FindObjectOfType<SceneLoader>().LoadPreviousScene();

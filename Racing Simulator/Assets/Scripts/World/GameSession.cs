@@ -10,6 +10,7 @@ public class GameSession : MonoBehaviour
   static Pilot pilot; // Player chosen pilot
   static Track track; // Currently track
 
+  // Setting count vars
   int currentTrack = 0;
   int week = 0;
   int chosenPilot = 0;
@@ -35,19 +36,25 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Setting Current Season Year
   public void SetYear(int year_temp)
   {
     year = year_temp;
   }
+  
+  // Getting Current Year
   public int GetYear()
   {
     return year;
   }
-
+  
+  // Setting Current Season Count
   public void SetTemporada(int temporada)
   {
     count_temporada = temporada;
   }
+
+  // Getting Current Season Count
   public int GetTemporada()
   {
     return count_temporada;
@@ -72,109 +79,133 @@ public class GameSession : MonoBehaviour
     chosenPilot = i;
   }
 
+  // Setting Team Score
   public void SetTeamScore(int score)
   {
     team.Score = score;
   }
 
+  // Setting Current Track
   public void SetCurrentTrack(int i)
   {
     currentTrack = i;
   }
+
+  // Setting Current Week
   public void SetWeek(int i)
   {
     week = i;
   }
 
+  // Getting player Team from Save Game File
   public void SetSavedPlayerTeam(Team player)
   {
     team = player;
   }
 
+  // Getting Player Car
   public string GetPlayerCar()
   {
     return team.CarString;
   }
 
+  // Getting player Pilot from Save Game File
   public void SetSavedPlayerPilot(Pilot player)
   {
     pilot = player;
   }
 
+  // Getting Season Year
   public int GetSeasonYear()
   {
     return year;
   }
 
+  // Getting Pilot Face
   public string GetPilotFaceString()
   {
     return team.Pilot.PilotString;
   }
 
+  // Getting Pilot Titles count
   public int GetPilotTitle()
   {
     return team.Pilot.Title;
   }
 
+  // Getting Pilot Wins count
   public int GetPilotWins()
   {
     return team.Pilot.Wins;
   }
 
+  // Getting Pilot SeasonScore (Challenges)
   public int GetPilotSeasonScore()
   {
     return team.Pilot.SeasonScore;
   }
 
+  // Getting Track String
   public string GetTrackString()
   {
     return track.TrackString;
   }
 
+  // Getting Pilot Over
   public int GetPilotOver()
   {
     return team.Pilot.Over;
   }
 
+  // Getting Player Team
   public Team GetPlayerTeam()
   {
     return team;
   }
+
+  // Getting Player Pilot
   public Pilot GetPlayerPilot()
   {
     return pilot;
   }
 
+  // Getting Pilot tyre
   public int GetPilotTyre()
   {
     return team.pneu_id;
   }
 
+  // Getting Team Name
   public string GetTeamName()
   {
     return team.Name;
   }
 
+  // Getting Pilot Current Age
   public int GetPilotAge()
   {
     return team.Pilot.Age;
   }
 
+  // Getting Pilot Country 
   public string GetPilotNation()
   {
     return team.Pilot.Country;
   }
 
+  // Getting Pilot Name
   public string GetPilotName()
   {
     return team.Pilot.Name;
   }
 
+  // Getting Car String
   public string GetCarString()
   {
     return team.CarString;
   }
 
+  // Getting Car Statu
   public int GetCarStatus(int selection)
   {
     if (selection == 0)
@@ -186,52 +217,62 @@ public class GameSession : MonoBehaviour
     return GetChassis();
   }
 
+  // Getting Car Power
   public int GetPower()
   {
     return team.Car.Power;
   }
 
+  // Getting Car Durability
   public int GetDura()
   {
     return team.Car.Durability;
   }
 
+  // Getting Car Aerodynamics
   public int GetAero()
   {
     return team.Car.Aerodynamics;
   }
 
+  // Getting Car Chassis
   public int GetChassis()
   {
     return team.Car.Chassis;
   }
 
+  // Getting Pilot Points
   public int GetPoints()
   {
     return pilot.Points;
   }
 
+  // Getting Current Track
   public int GetCurrentTrack()
   {
     return currentTrack;
   }
 
+  // Advance to next race
   public void NextRace()
   {
     currentTrack++;
     week++;
   }
 
+  // Advance to next year
   public void NextYear()
   {
     year++;
   }
 
+  // Getting Current Week
   public int GetCurrentWeek()
   {
     return week;
   }
 
+  // Set Campaign Game Over
   public void GameOver()
   {
     if(currentTrack > 9)
@@ -240,18 +281,22 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Getting Team Id
   public int GetTeamId()
   {
     return team.Id;
   }
 
+  // Increasing player Points for improvements
   public void IncreasePlayerStatus(int points)
   {
     pilot.Points += points;
   }
 
+  // Increasing Pilots Over
   public void IncreasingPilotsOver()
   {
+    // Increasing during race 3 & 6
     if (currentTrack == 3 || currentTrack == 6)
     {
       foreach (Team team in World.teams)
@@ -270,6 +315,7 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Increasing Car Status
   public void IncreaseStatus(string improvement)
   {
     switch (improvement)
@@ -305,6 +351,7 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Decreasing Car Status
   public void DecreaseStatus(string improvement)
   {
     switch (improvement)
@@ -340,6 +387,7 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Increasing AI Cars Status
   public void IncreaseIAStatus()
   {
     int contador = 0;
@@ -405,6 +453,7 @@ public class GameSession : MonoBehaviour
     
   }
 
+  // AI Pilot Retire
   public void PilotRetire()
   {
     int contador = 0;
@@ -428,6 +477,7 @@ public class GameSession : MonoBehaviour
     }
   }
 
+  // Setting a New Season
   public void NewSeason()
   {
     currentTrack = 0;
@@ -446,12 +496,11 @@ public class GameSession : MonoBehaviour
     {
       p.Age += 1;
     }
+    // Setting Final Game Over after 10 seasons
     if(count_temporada > 9)
     {
       SceneManager.LoadScene(11);
     }
     count_temporada++;
   }
-
-  
 }
