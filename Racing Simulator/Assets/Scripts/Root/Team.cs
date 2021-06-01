@@ -23,6 +23,8 @@ namespace Assets.Scripts
     // Setting Tyres vars
     public int pneu_id { get; set; }
     public int pneu_dura { get; set; }
+    public int pneu_id2 { get; set; }
+    public int pneu_dura2 { get; set; }
     // Setting Car
     public Car Car { get; set; }
     // Setting Pilot
@@ -37,6 +39,7 @@ namespace Assets.Scripts
       CarString = carName;
       Pilot = World.GetPilotById(pilotId);
       pneu_id = 30;
+      pneu_id2 = 30;
     }
 
     // Setting one pilot

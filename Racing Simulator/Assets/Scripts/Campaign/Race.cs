@@ -152,8 +152,15 @@ public class Race : MonoBehaviour
   public int pit2;
   public int pit3;
 
+  public int Spit1;
+  public int Spit2;
+  public int Spit3;
+
   public int chosen_tyre;
   public int tyre_life;
+
+  public int chosen_tyre2;
+  public int tyre_life2;
 
   // Setting race sounds
   public AudioSource race_sound;
@@ -220,11 +227,15 @@ public class Race : MonoBehaviour
     pit2 = 30;
     pit3 = 40;
 
+    Spit1 = 20;
+    Spit2 = 30;
+    Spit3 = 40;
+
     tyreLife_text.text = "Tyre Life 20";
 
     foreach (Team team in leaderboard)
     {
-      if (team.Pilot.Id < 4)
+      if (team.Pilot.Id < 4 || team.Pilot.Id == 14)
       {
         team.pneu_id = 30;
         team.pneu_dura = 25;
@@ -709,7 +720,7 @@ public class Race : MonoBehaviour
         ReduceLapTime(team);
         ShowRaceLeaderboard();
         team.pneu_dura--;
-        if(team.Pilot.Id == 1 || team.Pilot.Id == 2 || team.Pilot.Id == 3)
+        if(team.Pilot.Id == 1 || team.Pilot.Id == 2 || team.Pilot.Id == 3 || team.Pilot.Id == 14)
         {
           Markers[contador].color = new Color(255, 217, 0, 255);
           Markers[contador].text = "You";
@@ -825,7 +836,7 @@ public class Race : MonoBehaviour
 
     foreach (Team t in leaderboard)
     {
-      if(t.Pilot.Id > 3)
+      if(t.Pilot.Id > 3 && t.Pilot.Id != 14)
       {
         if (t.pneu_dura <= 11 && current_lap < (track.Laps-5))
         {
@@ -861,7 +872,7 @@ public class Race : MonoBehaviour
         }
         pitStop_text.text = t.Pilot.Name + " is changing tyres";
       }
-      else
+      else if(t.Pilot.Id < 3)
       {
         if(current_lap == pit1)
         {
@@ -936,6 +947,87 @@ public class Race : MonoBehaviour
           {
             t.pneu_dura = 45;
             Debug.Log("Player colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+        }
+      }
+      else
+      {
+        if (current_lap == Spit1)
+        {
+          Debug.Log("Player 2 no Pit Stop 1");
+          pitStop_sound.Play();
+          box_sound.Play();
+          //pit1_text.color = new Color(0, 242, 59);
+          t.pneu_id = chosen_tyre2;
+          if (chosen_tyre2 == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player 2 colocando Pneus Macios");
+          }
+          else if (chosen_tyre2 == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player 2 colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player 2 colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+        }
+        else if (current_lap == Spit2)
+        {
+          Debug.Log("Player 2 no Pit Stop 2");
+          pitStop_sound.Play();
+          box_sound.Play();
+          //pit2_text.color = new Color(0, 242, 59);
+          t.pneu_id = chosen_tyre2;
+          if (chosen_tyre2 == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player 2 colocando Pneus Macios");
+          }
+          else if (chosen_tyre2 == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player 2 colocando Pneus Duros");
+          }
+          pit_time = RandomNumberGenerator.NumberBetween(18, 25);
+          t.SetLapTime(t.LapTime + pit_time);
+          pitStop_text.text = t.Pilot.Name + " is changing tyres";
+        }
+        else if (current_lap == Spit3)
+        {
+          Debug.Log("Player 2 no Pit Stop 3");
+          pitStop_sound.Play();
+          box_sound.Play();
+          // pit3_text.color = new Color(0, 242, 59);
+          t.pneu_id = chosen_tyre2;
+          if (chosen_tyre2 == 30)
+          {
+            t.pneu_dura = 25;
+            Debug.Log("Player 2 colocando Pneus Macios");
+          }
+          else if (chosen_tyre2 == 27)
+          {
+            t.pneu_dura = 35;
+            Debug.Log("Player 2 colocando Pneus Médios");
+          }
+          else
+          {
+            t.pneu_dura = 45;
+            Debug.Log("Player 2 colocando Pneus Duros");
           }
           pit_time = RandomNumberGenerator.NumberBetween(18, 25);
           t.SetLapTime(t.LapTime + pit_time);
@@ -1524,6 +1616,12 @@ public class Race : MonoBehaviour
       hard_marker.color = new Color(20, 156, 4, 255);
       tyreSelect_sound.Play();
     }
+  }
+
+  public void SelectPitTyre2(int tyre_id)
+  {
+    chosen_tyre2 = tyre_id;
+    Debug.Log("Player 2 Tyre Selected " + tyre_id.ToString());
   }
 
   // Desabling third Pit Stop
